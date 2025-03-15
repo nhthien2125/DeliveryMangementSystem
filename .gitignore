@@ -365,9 +365,22 @@ FodyWeavers.xsd
 # Bỏ qua thư mục build, binary
 bin/
 obj/
+packages/
 *.exe
 *.dll
 
 # Bỏ qua các file cấu hình cá nhân
 appsettings.json
 appsettings.Development.json
+*.config
+*.settings
+*.log
+*.tmp
+*.bak
+*.pdb
+*.db
+*.mdf
+*.ldf
+*.sqlite
+*.xlsx
+*.docx
