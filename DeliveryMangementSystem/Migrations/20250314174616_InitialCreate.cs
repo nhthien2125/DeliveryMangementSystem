@@ -17,7 +17,8 @@ namespace DeliveryMangementSystem.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SHIPPER", x => x.Shipper_ID);
-                });
+                }
+            );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

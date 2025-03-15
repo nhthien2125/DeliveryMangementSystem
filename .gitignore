@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Bỏ qua thư mục build, binary
+bin/
+obj/
+*.exe
+*.dll
+
+# Bỏ qua các file cấu hình cá nhân
+appsettings.json
+appsettings.Development.json
