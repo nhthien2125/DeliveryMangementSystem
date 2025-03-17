@@ -1,4 +1,4 @@
-IMPORTANT: Sau khi pull project/
+IMPORTANT: Làm nếu clone project
 
 1. Mở Command Promt PowerShell chạy lệnh "dotnet restore"
 2. Chuột phải project hoặc click Tab "Build" -> Clean Build -> Repair Build
