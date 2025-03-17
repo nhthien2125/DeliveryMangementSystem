@@ -163,16 +163,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20250314174616_InitialCreate.cs" />
-    <Compile Include="Migrations\20250314174616_InitialCreate.Designer.cs">
-      <DependentUpon>20250314174616_InitialCreate.cs</DependentUpon>
+    <Compile Include="Datas\myDbContext.cs" />
+    <Compile Include="Migrations\20250317174406_InitialCreate.cs" />
+    <Compile Include="Migrations\20250317174406_InitialCreate.Designer.cs">
+      <DependentUpon>20250317174406_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20250317175649_RemodelShipper.cs" />
+    <Compile Include="Migrations\20250317175649_RemodelShipper.Designer.cs">
+      <DependentUpon>20250317175649_RemodelShipper.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
-    <Compile Include="Datas\myDbContext.cs" />
-    <Compile Include="Models\Administrator.cs" />
-    <Compile Include="Models\Shipper.cs" />
-    <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\xOrder.cs" />
+    <Compile Include="Models\ACCOUNT.cs" />
+    <Compile Include="Models\BRANCH.cs" />
+    <Compile Include="Models\CUSTOMER.cs" />
+    <Compile Include="Models\SHIPPER.cs" />
+    <Compile Include="Models\xORDER.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +216,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

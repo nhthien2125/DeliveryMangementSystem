@@ -1,22 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace dbShipper.Models
+
+namespace DeliveryMangementSystem.Models
 {   
     [Table ("SHIPPER")]
-    public class Shipper
+    public class SHIPPER
     {
         [Key]
         [StringLength (10)]
         [Column ("Shipper_ID")]
-        public String ID { get; set; }
+        public string Id { get; set; }
         [StringLength (10)]
         [Column ("Phone")] 
-        public String Phone { get; set; }
+        public string Phone { get; set; }
 
         [StringLength (100)]
         [Column ("Name")]
-        public String Name { get; set; }
+        public string Name { get; set; }
+        public virtual ICollection<xORDER> Orders { get; set; } = new List<xORDER>();
+
+
+        [ForeignKey("AccountId")]
+        public string AccountId { get; set; }
+        public virtual ACCOUNT Account { get; set; }
     }
 }
 

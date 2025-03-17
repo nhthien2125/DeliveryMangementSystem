@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Configuration;
-using dbShipper.Models;
+using DeliveryMangementSystem.Models;
 
 
 public class myDbContext : DbContext
 {
-    public DbSet<Shipper> Shippers { get; set; }
-
     public myDbContext() : base() { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -18,4 +16,10 @@ public class myDbContext : DbContext
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
+
+    public DbSet<BRANCH> Branches { get; set; }
+    public DbSet<CUSTOMER> Customers { get; set; }
+    public DbSet<SHIPPER> Shippers { get; set; }
+    public DbSet<xORDER> Orders { get; set; }
+    public DbSet<ACCOUNT> Accounts { get; set; }
 }

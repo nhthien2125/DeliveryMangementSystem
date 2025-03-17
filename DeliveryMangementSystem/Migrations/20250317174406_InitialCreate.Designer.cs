@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DeliveryMangementSystem.Migrations
 {
     [DbContext(typeof(myDbContext))]
-    partial class myDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250317174406_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,9 +103,6 @@ namespace DeliveryMangementSystem.Migrations
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("AccountId")
-                        .HasColumnType("nvarchar(10)");
-
                     b.Property<string>("Name")
                         .HasColumnName("Name")
                         .HasColumnType("nvarchar(100)")
@@ -115,10 +114,6 @@ namespace DeliveryMangementSystem.Migrations
                         .HasMaxLength(10);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AccountId")
-                        .IsUnique()
-                        .HasFilter("[AccountId] IS NOT NULL");
 
                     b.ToTable("SHIPPER");
                 });
@@ -173,13 +168,6 @@ namespace DeliveryMangementSystem.Migrations
                     b.HasIndex("ShipperId");
 
                     b.ToTable("xORDER");
-                });
-
-            modelBuilder.Entity("DeliveryMangementSystem.Models.SHIPPER", b =>
-                {
-                    b.HasOne("DeliveryMangementSystem.Models.ACCOUNT", "Account")
-                        .WithOne("Shipper")
-                        .HasForeignKey("DeliveryMangementSystem.Models.SHIPPER", "AccountId");
                 });
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.xORDER", b =>

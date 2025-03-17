@@ -1,14 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Administrator.Models
+namespace DeliveryMangementSystem.Models
 {
-    [Table ("ADMINISTRATOR")]
-    class Administrator
+    public enum UserRole
+    {
+        Admin,
+        Shipper
+    }
+
+    [Table ("Account")]
+    public class ACCOUNT
     {
         [Key]
         [StringLength (10)]
-        [Column ("Admin_ID")]
+        [Column ("Account_ID")]
         public string Id { get; set; }
 
         [StringLength (50)]
@@ -20,6 +25,10 @@ namespace Administrator.Models
         [Column ("Password")]
         [Required]
         public string Password { get; set; }
+        [Required]
+        public UserRole Role { get; set; }
+
+        public virtual SHIPPER Shipper { get; set; }
     }
 }
 
