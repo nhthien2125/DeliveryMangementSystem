@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryMangementSystem.Models
 {
-    class Class2
+    class xOrder
     {
     }
 }

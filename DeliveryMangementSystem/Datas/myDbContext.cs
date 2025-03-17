@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Configuration;
-using dbShipper;
+using dbShipper.Models;
 
 
 public class myDbContext : DbContext

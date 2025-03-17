@@ -169,7 +169,10 @@
     </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
     <Compile Include="Datas\myDbContext.cs" />
+    <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Shipper.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\xOrder.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
