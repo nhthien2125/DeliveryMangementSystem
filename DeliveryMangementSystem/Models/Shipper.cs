@@ -20,11 +20,6 @@ namespace DeliveryMangementSystem.Models
         [Column ("Name")]
         public string Name { get; set; }
         public virtual ICollection<xORDER> Orders { get; set; } = new List<xORDER>();
-
-
-        [ForeignKey("AccountId")]
-        public string AccountId { get; set; }
-        public virtual ACCOUNT Account { get; set; }
     }
 }
 

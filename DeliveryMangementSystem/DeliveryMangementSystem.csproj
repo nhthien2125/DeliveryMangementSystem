@@ -172,6 +172,10 @@
     <Compile Include="Migrations\20250317175649_RemodelShipper.Designer.cs">
       <DependentUpon>20250317175649_RemodelShipper.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250318110417_Add-Migration RemoveForeignkey.cs" />
+    <Compile Include="Migrations\20250318110417_Add-Migration RemoveForeignkey.Designer.cs">
+      <DependentUpon>20250318110417_Add-Migration RemoveForeignkey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
     <Compile Include="Models\ACCOUNT.cs" />
     <Compile Include="Models\BRANCH.cs" />

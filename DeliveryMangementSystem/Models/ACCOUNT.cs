@@ -28,7 +28,6 @@ namespace DeliveryMangementSystem.Models
         [Required]
         public UserRole Role { get; set; }
 
-        public virtual SHIPPER Shipper { get; set; }
     }
 }
 
