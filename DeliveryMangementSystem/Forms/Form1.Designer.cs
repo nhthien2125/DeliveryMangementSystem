@@ -50,7 +50,7 @@
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(444, 490);
+            this.pictureBox1.Size = new System.Drawing.Size(444, 507);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -68,7 +68,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 496F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(857, 496);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(857, 513);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -85,7 +85,7 @@
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.panel1.Location = new System.Drawing.Point(453, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 490);
+            this.panel1.Size = new System.Drawing.Size(401, 507);
             this.panel1.TabIndex = 1;
             // 
             // btnExit
@@ -125,7 +125,6 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(267, 34);
             this.txtPass.TabIndex = 4;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label3
             // 
@@ -146,7 +145,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(267, 34);
             this.txtName.TabIndex = 2;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label2
             // 
@@ -173,11 +171,14 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 496);
+            this.CancelButton = this.btnExit;
+            this.ClientSize = new System.Drawing.Size(857, 513);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
