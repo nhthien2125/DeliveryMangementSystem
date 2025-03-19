@@ -5,6 +5,7 @@ namespace DeliveryMangementSystem.Models
 {
     public enum OrderStatus
     {
+        Pending,
         Shipping,
         Delivered,
         Cancelled
