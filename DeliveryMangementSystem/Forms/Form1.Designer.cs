@@ -178,13 +178,10 @@
             this.ClientSize = new System.Drawing.Size(857, 513);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-<<<<<<< HEAD
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
-=======
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
->>>>>>> 51e4270c6f0df1ba7d3b0ac29bb95cf586217df6
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
