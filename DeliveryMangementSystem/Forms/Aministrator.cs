@@ -17,5 +17,10 @@ namespace DeliveryMangementSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void grid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
