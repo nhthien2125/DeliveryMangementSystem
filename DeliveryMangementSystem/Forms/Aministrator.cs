@@ -12,6 +12,7 @@ namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin: Form
     {
+        //Constructor
         public frmAdmin()
         {
             InitializeComponent();

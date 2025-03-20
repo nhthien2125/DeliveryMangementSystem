@@ -29,34 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DeliveryMangementSystem.Properties.Resources.fddd612f7c3d02901f783c99add46239;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(575, 527);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -71,70 +60,27 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 533F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1105, 533);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1133, 533);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 13.8F);
-            this.panel1.Location = new System.Drawing.Point(584, 3);
+            this.panel1.Location = new System.Drawing.Point(599, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 527);
+            this.panel1.Size = new System.Drawing.Size(531, 527);
             this.panel1.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSize = true;
-            this.btnExit.BackColor = System.Drawing.Color.Silver;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExit.Location = new System.Drawing.Point(247, 394);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 44);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.AutoSize = true;
-            this.btnLogin.BackColor = System.Drawing.Color.Silver;
-            this.btnLogin.Enabled = false;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLogin.Location = new System.Drawing.Point(59, 394);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(128, 44);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(59, 286);
+            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtPassword.Location = new System.Drawing.Point(47, 236);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(267, 34);
+            this.txtPassword.Size = new System.Drawing.Size(250, 34);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -144,7 +90,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(54, 248);
+            this.label3.Location = new System.Drawing.Point(42, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 26);
             this.label3.TabIndex = 3;
@@ -155,9 +101,9 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.txtUsername.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtUsername.Location = new System.Drawing.Point(59, 175);
+            this.txtUsername.Location = new System.Drawing.Point(47, 110);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(267, 34);
+            this.txtUsername.Size = new System.Drawing.Size(250, 34);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.Text = "Nhập tài khoản của bạn...";
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
@@ -170,26 +116,90 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F);
             this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(54, 136);
+            this.label2.Location = new System.Drawing.Point(46, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tài Khoản";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(53, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng Nhập";
-            // 
             // epUsername
             // 
             this.epUsername.ContainerControl = this;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupBox1.Controls.Add(this.btnExit);
+            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnLogin);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(93, 46);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(90, 3, 90, 40);
+            this.groupBox1.Size = new System.Drawing.Size(345, 435);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Đăng nhập";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DeliveryMangementSystem.Properties.Resources.fddd612f7c3d02901f783c99add46239;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(590, 527);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.BackColor = System.Drawing.Color.Silver;
+            this.btnLogin.Enabled = false;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLogin.Location = new System.Drawing.Point(29, 333);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(127, 44);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnExit.AutoSize = true;
+            this.btnExit.BackColor = System.Drawing.Color.Silver;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExit.Location = new System.Drawing.Point(205, 333);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 44);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmLogin
             // 
@@ -197,17 +207,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(1105, 533);
+            this.ClientSize = new System.Drawing.Size(1133, 533);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,14 +228,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider epUsername;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
