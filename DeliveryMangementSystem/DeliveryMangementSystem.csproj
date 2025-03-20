@@ -173,11 +173,41 @@
     <Compile Include="Forms\Aministrator.Designer.cs">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC_Branches.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_Branches.Designer.cs">
+      <DependentUpon>UC_Branches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC_Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_Customers.Designer.cs">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC_ManageUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_ManageUsers.Designer.cs">
+      <DependentUpon>UC_ManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Shipper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Shipper.Designer.cs">
       <DependentUpon>Shipper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC_Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_Orders.Designer.cs">
+      <DependentUpon>UC_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC_Shippers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC_Shippers.Designer.cs">
+      <DependentUpon>UC_Shippers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20250317174406_InitialCreate.cs" />
     <Compile Include="Migrations\20250317174406_InitialCreate.Designer.cs">
@@ -216,6 +246,9 @@
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC_ManageUsers.resx">
+      <DependentUpon>UC_ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -248,12 +281,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Reusable Control\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout-svgrepo-com.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fddd612f7c3d02901f783c99add462391.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
