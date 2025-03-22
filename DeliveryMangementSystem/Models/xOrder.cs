@@ -57,6 +57,9 @@ namespace DeliveryMangementSystem.Models
         [Column("Delivery_Date")]
         public System.DateTime? DeliveryDate { get; set; }
 
+        [Column("Total_Amount")]
+        public decimal TotalAmount { get; set; }
+
 
         [Required]
         [Column("Status")]

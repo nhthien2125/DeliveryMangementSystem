@@ -221,6 +221,14 @@
     <Compile Include="Migrations\20250318110417_Add-Migration RemoveForeignkey.Designer.cs">
       <DependentUpon>20250318110417_Add-Migration RemoveForeignkey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250322121513_AddAmount.cs" />
+    <Compile Include="Migrations\20250322121513_AddAmount.Designer.cs">
+      <DependentUpon>20250322121513_AddAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20250322124441_FKShipper.cs" />
+    <Compile Include="Migrations\20250322124441_FKShipper.Designer.cs">
+      <DependentUpon>20250322124441_FKShipper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
     <Compile Include="Models\ACCOUNT.cs" />
     <Compile Include="Models\BRANCH.cs" />

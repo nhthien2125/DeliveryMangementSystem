@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; //xóa mấy cái màu xám đi (giảm tải khi chạy)
 
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin: Form
     {
+        //Attributes
+        private readonly string Id; //thuộc tính lưu trữ tạm id truyền vào constructor phía dưới
+
         // Khai báo UserControl nhưng chưa khởi tạo ngay (tối ưu hiệu suất)
         private UC_ManageUsers ucManageUsers;
         private UC_Branches ucManageBranches;
@@ -19,10 +22,11 @@ namespace DeliveryMangementSystem.Forms
         private UC_Customers ucCustomers;
         private UC_Shippers ucShippers;
 
-        //Constructor
-        public frmAdmin()
+        //Constructor (truyền tham số id của admin)
+        public frmAdmin(string id)
         {
             InitializeComponent();
+            this.Id = id; //this.Id là thuộc tính của class, id là tham số truyền vào
         }
 
         private void grid_Paint(object sender, PaintEventArgs e)

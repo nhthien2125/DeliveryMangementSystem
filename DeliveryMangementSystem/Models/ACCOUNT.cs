@@ -28,6 +28,12 @@ namespace DeliveryMangementSystem.Models
         [Required]
         public UserRole Role { get; set; }
 
+        [StringLength(10)]
+        [Column("Shipper_ID")]
+        public string ShipperId { get; set; }
+        [ForeignKey("ShipperId")]
+        public virtual SHIPPER Shipper { get; set; }
+
     }
 }
 

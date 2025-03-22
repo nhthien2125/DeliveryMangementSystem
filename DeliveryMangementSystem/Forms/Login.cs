@@ -29,11 +29,11 @@ namespace DeliveryMangementSystem
                             && !string.IsNullOrWhiteSpace(txtUsername.Text) 
                             && !string.IsNullOrWhiteSpace(txtPassword.Text);
         }
-        private (bool success, UserRole role) CheckLogin()
+        private (bool success, UserRole role, string Account_id, string Shipper_id) CheckLogin()
         {
             var user = context.Accounts.FirstOrDefault(u => u.Username == txtUsername.Text.Trim() && u.Password == txtPassword.Text.Trim());
-            if (user != null) return (true, user.Role);
-            else return (false, 0);
+            if (user != null) return (true, user.Role, user.Id, user.ShipperId);
+            else return (false, 0, 0.ToString(), 0.ToString());
         }
 
 
@@ -51,10 +51,12 @@ namespace DeliveryMangementSystem
                 switch (CheckLogin().role)
                 {
                     case UserRole.Admin:
-                        new frmAdmin().ShowDialog();
+                        DialogResult result = MessageBox.Show("You are signing as admin! \nYour account id is: " + CheckLogin().Account_id, "Admin", MessageBoxButtons.OK);
+                        new frmAdmin(CheckLogin().Account_id).ShowDialog();
                         break;
                     case UserRole.Shipper:
-                        new frmShipper().ShowDialog();
+                        DialogResult result1 = MessageBox.Show("You are signing as shipper! \nYour account id is: " + CheckLogin().Account_id, "Shipper", MessageBoxButtons.OK);
+                        new frmShipper(CheckLogin().Account_id, CheckLogin().Shipper_id).ShowDialog();
                         break;
                 }
                 Show();

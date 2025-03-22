@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DeliveryMangementSystem.Migrations
 {
     [DbContext(typeof(myDbContext))]
-    partial class myDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250322121513_AddAmount")]
+    partial class AddAmount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,11 +36,6 @@ namespace DeliveryMangementSystem.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShipperId")
-                        .HasColumnName("Shipper_ID")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnName("Username")
@@ -46,8 +43,6 @@ namespace DeliveryMangementSystem.Migrations
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ShipperId");
 
                     b.ToTable("Account");
                 });
@@ -177,13 +172,6 @@ namespace DeliveryMangementSystem.Migrations
                     b.HasIndex("ShipperId");
 
                     b.ToTable("xORDER");
-                });
-
-            modelBuilder.Entity("DeliveryMangementSystem.Models.ACCOUNT", b =>
-                {
-                    b.HasOne("DeliveryMangementSystem.Models.SHIPPER", "Shipper")
-                        .WithMany()
-                        .HasForeignKey("ShipperId");
                 });
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.xORDER", b =>
