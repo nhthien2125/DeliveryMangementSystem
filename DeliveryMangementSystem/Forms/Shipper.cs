@@ -26,6 +26,7 @@ namespace DeliveryMangementSystem.Forms
                 var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id).ToList();
                 dgvOrders.DataSource = orders;
             }
+            FormatDataGridView();
         }
         private void FormatDataGridView()
         {
