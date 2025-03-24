@@ -151,7 +151,6 @@ namespace DeliveryMangementSystem.Forms
                 }
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dgvOrders.SelectedRows.Count ==1 )
@@ -167,14 +166,14 @@ namespace DeliveryMangementSystem.Forms
             else MessageBox.Show("Vui lòng chọn một đơn hàng để cập nhật trạng thái giao hàng!");
         }
 
-        private void label3_Click_1(object sender, EventArgs e)
+        private void btnChangePhone_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

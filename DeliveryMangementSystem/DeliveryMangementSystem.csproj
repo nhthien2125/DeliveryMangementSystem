@@ -173,6 +173,12 @@
     <Compile Include="Forms\Aministrator.Designer.cs">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reusable Control\ProfileChanger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Reusable Control\ProfileChanger.Designer.cs">
+      <DependentUpon>ProfileChanger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UC_Branches.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     <EmbeddedResource Include="Forms\Aministrator.resx">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reusable Control\ProfileChanger.resx">
+      <DependentUpon>ProfileChanger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Shipper.resx">
       <DependentUpon>Shipper.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,7 +297,6 @@
     <None Include="Resources\fddd612f7c3d02901f783c99add46239.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Reusable Control\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>

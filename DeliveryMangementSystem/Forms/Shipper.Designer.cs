@@ -36,9 +36,10 @@
             this.tctrlShipper = new System.Windows.Forms.TabControl();
             this.tpProfile = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnChangePhone = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tpOrderManagement = new System.Windows.Forms.TabPage();
@@ -47,10 +48,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,21 +82,25 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnProfile, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnOrderManagement, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnLogOut, 0, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 8);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 501);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnProfile
             // 
             this.btnProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProfile.Location = new System.Drawing.Point(40, 95);
+            this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Location = new System.Drawing.Point(23, 4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(108, 55);
+            this.btnProfile.Size = new System.Drawing.Size(142, 45);
             this.btnProfile.TabIndex = 1;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // 
             // btnOrderManagement
             // 
+            this.btnOrderManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOrderManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderManagement.Location = new System.Drawing.Point(3, 248);
+            this.btnOrderManagement.Location = new System.Drawing.Point(23, 68);
             this.btnOrderManagement.Name = "btnOrderManagement";
             this.btnOrderManagement.Size = new System.Drawing.Size(142, 45);
             this.btnOrderManagement.TabIndex = 0;
@@ -150,36 +156,25 @@
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.Info;
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.94891F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.05109F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.54967F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.45033F));
             this.tableLayoutPanel4.Controls.Add(this.lblID, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblName, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.lblPhone, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.btnChangePhone, 0, 3);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 29);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(755, 137);
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(755, 177);
             this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblID.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblID.Location = new System.Drawing.Point(200, 0);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(345, 45);
-            this.lblID.TabIndex = 1;
-            this.lblID.Text = "lblID";
             // 
             // label2
             // 
@@ -188,20 +183,40 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 45);
+            this.label2.Size = new System.Drawing.Size(165, 44);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã định danh: ";
             // 
-            // button1
+            // label3
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.button1.Location = new System.Drawing.Point(551, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thay đổi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3.Location = new System.Drawing.Point(3, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Họ Tên:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label4.Location = new System.Drawing.Point(3, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 29);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Số điện thoại:";
+            // 
+            // btnChangePhone
+            // 
+            this.btnChangePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnChangePhone.Location = new System.Drawing.Point(3, 135);
+            this.btnChangePhone.Name = "btnChangePhone";
+            this.btnChangePhone.Size = new System.Drawing.Size(192, 39);
+            this.btnChangePhone.TabIndex = 2;
+            this.btnChangePhone.Text = "Change your information";
+            this.btnChangePhone.UseVisualStyleBackColor = true;
+            this.btnChangePhone.Click += new System.EventHandler(this.btnChangePhone_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -298,46 +313,49 @@
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
-            // label3
+            // lblPhone
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3.Location = new System.Drawing.Point(3, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Họ Tên:";
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblPhone.Location = new System.Drawing.Point(211, 88);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(72, 29);
+            this.lblPhone.TabIndex = 6;
+            this.lblPhone.Text = "label5";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblName.Location = new System.Drawing.Point(200, 45);
+            this.lblName.Location = new System.Drawing.Point(211, 44);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(98, 29);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "lblName";
             // 
-            // label4
+            // lblID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(3, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 29);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Số điện thoại:";
+            this.lblID.AutoSize = true;
+            this.lblID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblID.Location = new System.Drawing.Point(211, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(541, 44);
+            this.lblID.TabIndex = 1;
+            this.lblID.Text = "lblID";
             // 
-            // lblPhone
+            // btnLogOut
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblPhone.Location = new System.Drawing.Point(200, 90);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(72, 29);
-            this.lblPhone.TabIndex = 6;
-            this.lblPhone.Text = "label5";
+            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Location = new System.Drawing.Point(23, 442);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(142, 45);
+            this.btnLogOut.TabIndex = 2;
+            this.btnLogOut.Text = "◀  Sign out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // frmShipper
             // 
@@ -385,11 +403,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChangePhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPhone;
     }
 }
