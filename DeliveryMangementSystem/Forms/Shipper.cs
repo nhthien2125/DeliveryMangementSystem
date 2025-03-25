@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DeliveryMangementSystem.Forms.Reusable_Control;
 using DeliveryMangementSystem.Models;
 
 namespace DeliveryMangementSystem.Forms
@@ -23,8 +24,18 @@ namespace DeliveryMangementSystem.Forms
             //load orders from database to datagridview
             using (var db = new myDbContext())
             {
-                var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id).ToList();
+                var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Delivered).ToList();
                 dgvOrders.DataSource = orders;
+            }
+            FormatDataGridView();
+        }
+        private void LoadCompletedOrders()
+        {
+            //load completed orders from database to datagridview
+            using (var db = new myDbContext())
+            {
+                var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).ToList();
+                dgvCompletedOrders.DataSource = orders;
             }
             FormatDataGridView();
         }
@@ -44,6 +55,60 @@ namespace DeliveryMangementSystem.Forms
             dgvOrders.AutoGenerateColumns = false;
             dgvOrders.Columns.Clear();
             dgvOrders.ReadOnly = true;
+
+            dgvCompletedOrders.AutoGenerateColumns = false;
+            dgvCompletedOrders.Columns.Clear();
+            dgvCompletedOrders.ReadOnly = true;
+
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Id",
+                DataPropertyName = "Id",
+                HeaderText = "Mã vận đơn",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "BranchId",
+                HeaderText = "Chi nhánh nhận đơn",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "CustomerId",
+                HeaderText = "Khách hàng",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "OrderDate",
+                HeaderText = "Ngày đặt",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "DeliveryDate",
+                HeaderText = "Ngày giao",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Status",
+                HeaderText = "Trạng thái giao hàng",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "PaymentMethod",
+                HeaderText = "Phương thức thanh toán",
+                Width = 100
+            });
+            dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "TotalAmount",
+                HeaderText = "Tổng tiền",
+                Width = 100
+            });
 
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -104,6 +169,7 @@ namespace DeliveryMangementSystem.Forms
             Account_Id = A_id;
             Shipper_Id = S_id;
             LoadOrdersByShipperID();
+            LoadCompletedOrders();
             LoadProfileByShipperID();
         }
         private void frmShipper_Load(object sender, EventArgs e)
@@ -165,12 +231,16 @@ namespace DeliveryMangementSystem.Forms
             }
             else MessageBox.Show("Vui lòng chọn một đơn hàng để cập nhật trạng thái giao hàng!");
         }
-
-        private void btnChangePhone_Click(object sender, EventArgs e)
+        private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            UC_ProfileChanger uc = new UC_ProfileChanger(Account_Id, "Shipper")
+            {
+                Dock = DockStyle.Fill
+            };
 
+            panel2.Controls.Add(uc);
+            uc.BringToFront();
         }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
