@@ -1,121 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms; //xóa mấy cái màu xám đi (giảm tải khi chạy)
 
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin: Form
     {
         //Attributes
-        private readonly string Id; //thuộc tính lưu trữ tạm id truyền vào constructor phía dưới
+        private readonly string Id;
 
-        // Khai báo UserControl nhưng chưa khởi tạo ngay (tối ưu hiệu suất)
-        private UC_ManageUsers ucManageUsers;
-        private UC_Branches ucManageBranches;
-        private UC_Orders ucOrders;
-        private UC_Customers ucCustomers;
-        private UC_Shippers ucShippers;
+        //Methods
+        private void LoadDataGridViewAccounts()
+        {
+            //Load ds tài khoản vào datagridview
+            using (var db = new myDbContext())
+            {
+                var accounts = db.Accounts.ToList();
+                dgvAccounts.DataSource = accounts;
+            }
+            FormatDataGridView();
+        }
+        private void FormatDataGridView()
+        {
+            dgvAccounts.AutoGenerateColumns = false;
+            dgvAccounts.Columns.Clear();
+            dgvAccounts.ReadOnly = true;
 
-        //Constructor (truyền tham số id của admin)
-        public frmAdmin(string id)
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "ID",
+                DataPropertyName = "Id",
+                HeaderText = "ID",
+                Width = 100
+            });
+        }
+
+
+        //Constructor
+        public frmAdmin(string id = "DefaultID")
         {
             InitializeComponent();
-            this.Id = id; //this.Id là thuộc tính của class, id là tham số truyền vào
+            this.Id = id;
+            LoadDataGridViewAccounts();
         }
-
-        private void grid_Paint(object sender, PaintEventArgs e)
+        private void frmAdmin_Load_1(object sender, EventArgs e)
         {
-
+            tabControlAdmin.Appearance = TabAppearance.FlatButtons;
+            tabControlAdmin.SizeMode = TabSizeMode.Fixed;
+            tabControlAdmin.ItemSize = new Size(0, 1); // Thu nhỏ tab để ẩn tiêu đề
+            tabControlAdmin.Multiline = true;
         }
+
 
         // Chuyển đổi giữa các tab
         private void titleAccount_Click(object sender, EventArgs e)
         {
-            tabControlAdmin.SelectedTab = AccountPage;
+            tabControlAdmin.SelectedTab = tpAccount;
         }
 
         private void titleBranch_Click(object sender, EventArgs e)
         {
-            tabControlAdmin.SelectedTab = BranchPage;
+            tabControlAdmin.SelectedTab = tpBranch;
         }
 
-        private void titleCustomer_Click(object sender, EventArgs e)
+        private void titleLogout_Click(object sender, EventArgs e)
         {
-            tabControlAdmin.SelectedTab = CustomerPage;
-        }
-
-        private void titleOrder_Click(object sender, EventArgs e)
-        {
-            tabControlAdmin.SelectedTab = OrderPage;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            tabControlAdmin.SelectedTab = ShipperPage;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
             this.Close();
         }
-        private void nameBrandM_Click(object sender, EventArgs e)
+
+        //event
+        private void AccountPage_Click(object sender, EventArgs e)
         {
-
+            
         }
+        
 
-        private void tabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Xóa UserControl cũ trước khi thêm cái mới (tránh bị đè lên)
-            tabControlAdmin.SelectedTab.Controls.Clear();
-
-            // Kiểm tra tab nào đang được chọn và tải UserControl tương ứng
-            switch (tabControlAdmin.SelectedIndex)
-            {
-                case 0: // Quản lý người dùng
-                    if (ucManageUsers == null)
-                        ucManageUsers = new UC_ManageUsers();
-                    tabControlAdmin.SelectedTab.Controls.Add(ucManageUsers);
-                    break;
-
-                case 1: // Quản lý chi nhánh
-                    if (ucManageBranches == null)
-                        ucManageBranches = new UC_Branches();
-                    tabControlAdmin.SelectedTab.Controls.Add(ucManageBranches);
-                    break;
-
-                case 2: // Quản lý đơn hàng
-                    if (ucOrders == null)
-                        ucOrders = new UC_Orders();
-                    tabControlAdmin.SelectedTab.Controls.Add(ucOrders);
-                    break;
-
-                case 3: // Quản lý khách hàng
-                    if (ucCustomers == null)
-                        ucCustomers = new UC_Customers();
-                    tabControlAdmin.SelectedTab.Controls.Add(ucCustomers);
-                    break;
-
-                case 4: // Quản lý Shippers
-                    if (ucShippers == null)
-                        ucShippers = new UC_Shippers();
-                    tabControlAdmin.SelectedTab.Controls.Add(ucShippers);
-                    break;
-            }
-
-            // Đảm bảo UserControl hiển thị đầy đủ trong tab
-            if (tabControlAdmin.SelectedTab.Controls.Count > 0)
-            {
-                tabControlAdmin.SelectedTab.Controls[0].Dock = DockStyle.Fill;
-            }
-        }
     }
 }

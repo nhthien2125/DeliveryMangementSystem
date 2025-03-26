@@ -31,48 +31,46 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.grid = new System.Windows.Forms.TableLayoutPanel();
             this.gridHeaderContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.iconBrand = new System.Windows.Forms.PictureBox();
             this.nameBrandM = new System.Windows.Forms.Label();
             this.gridNav = new System.Windows.Forms.TableLayoutPanel();
-            this.titleOrder = new System.Windows.Forms.Label();
-            this.titleCustomer = new System.Windows.Forms.Label();
+            this.titleLogout = new System.Windows.Forms.Label();
             this.titleBranch = new System.Windows.Forms.Label();
-            this.titleAccount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabControlAdmin = new System.Windows.Forms.TabControl();
-            this.HomePage = new System.Windows.Forms.TabPage();
-            this.AccountPage = new System.Windows.Forms.TabPage();
-            this.BranchPage = new System.Windows.Forms.TabPage();
-            this.CustomerPage = new System.Windows.Forms.TabPage();
-            this.OrderPage = new System.Windows.Forms.TabPage();
-            this.ShipperPage = new System.Windows.Forms.TabPage();
-            this.iconBrand = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picHRM = new System.Windows.Forms.PictureBox();
+            this.titleAccount = new System.Windows.Forms.Label();
             this.picRevenue = new System.Windows.Forms.PictureBox();
             this.picContact = new System.Windows.Forms.PictureBox();
             this.picHome = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelContainer = new System.Windows.Forms.Panel();
+            this.tabControlAdmin = new System.Windows.Forms.TabControl();
+            this.tpAccount = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.tpBranch = new System.Windows.Forms.TabPage();
+            this.tpProfile = new System.Windows.Forms.TabPage();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
-            this.gridNav.SuspendLayout();
-            this.tabControlAdmin.SuspendLayout();
-            this.HomePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gridNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControlAdmin.SuspendLayout();
+            this.tpAccount.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
             // 
             this.tlpMain.AutoSize = true;
-            this.tlpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tlpMain.BackColor = System.Drawing.Color.CadetBlue;
             this.tlpMain.ColumnCount = 2;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -83,7 +81,7 @@
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Size = new System.Drawing.Size(1212, 863);
+            this.tlpMain.Size = new System.Drawing.Size(1212, 507);
             this.tlpMain.TabIndex = 0;
             // 
             // grid
@@ -92,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.AutoSize = true;
-            this.grid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid.BackColor = System.Drawing.Color.CadetBlue;
             this.grid.ColumnCount = 2;
             this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 419F));
             this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -104,9 +102,8 @@
             this.grid.RowCount = 2;
             this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 686F));
-            this.grid.Size = new System.Drawing.Size(357, 859);
+            this.grid.Size = new System.Drawing.Size(357, 503);
             this.grid.TabIndex = 1;
-            this.grid.Paint += new System.Windows.Forms.PaintEventHandler(this.grid_Paint);
             // 
             // gridHeaderContainer
             // 
@@ -129,224 +126,6 @@
             this.gridHeaderContainer.Size = new System.Drawing.Size(397, 89);
             this.gridHeaderContainer.TabIndex = 4;
             // 
-            // nameBrandM
-            // 
-            this.nameBrandM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nameBrandM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nameBrandM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.nameBrandM.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.nameBrandM.Location = new System.Drawing.Point(135, 31);
-            this.nameBrandM.Name = "nameBrandM";
-            this.nameBrandM.Size = new System.Drawing.Size(259, 58);
-            this.nameBrandM.TabIndex = 1;
-            this.nameBrandM.Text = "TL Delivery";
-            this.nameBrandM.Click += new System.EventHandler(this.nameBrandM_Click);
-            // 
-            // gridNav
-            // 
-            this.gridNav.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridNav.ColumnCount = 2;
-            this.gridNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
-            this.gridNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
-            this.gridNav.Controls.Add(this.pictureBox2, 0, 5);
-            this.gridNav.Controls.Add(this.titleOrder, 1, 3);
-            this.gridNav.Controls.Add(this.titleCustomer, 1, 2);
-            this.gridNav.Controls.Add(this.titleBranch, 1, 1);
-            this.gridNav.Controls.Add(this.picHRM, 0, 1);
-            this.gridNav.Controls.Add(this.titleAccount, 1, 0);
-            this.gridNav.Controls.Add(this.picRevenue, 0, 2);
-            this.gridNav.Controls.Add(this.picContact, 0, 3);
-            this.gridNav.Controls.Add(this.picHome, 0, 0);
-            this.gridNav.Controls.Add(this.label1, 1, 4);
-            this.gridNav.Controls.Add(this.label2, 1, 5);
-            this.gridNav.Controls.Add(this.pictureBox1, 0, 4);
-            this.gridNav.Location = new System.Drawing.Point(11, 139);
-            this.gridNav.Margin = new System.Windows.Forms.Padding(11, 20, 11, 10);
-            this.gridNav.Name = "gridNav";
-            this.gridNav.RowCount = 6;
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.gridNav.Size = new System.Drawing.Size(397, 710);
-            this.gridNav.TabIndex = 5;
-            // 
-            // titleOrder
-            // 
-            this.titleOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.titleOrder.ForeColor = System.Drawing.Color.Black;
-            this.titleOrder.Location = new System.Drawing.Point(110, 363);
-            this.titleOrder.Name = "titleOrder";
-            this.titleOrder.Size = new System.Drawing.Size(285, 121);
-            this.titleOrder.TabIndex = 8;
-            this.titleOrder.Text = "Order Management";
-            this.titleOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.titleOrder.Click += new System.EventHandler(this.titleOrder_Click);
-            // 
-            // titleCustomer
-            // 
-            this.titleCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.titleCustomer.ForeColor = System.Drawing.Color.Black;
-            this.titleCustomer.Location = new System.Drawing.Point(110, 242);
-            this.titleCustomer.Name = "titleCustomer";
-            this.titleCustomer.Size = new System.Drawing.Size(285, 121);
-            this.titleCustomer.TabIndex = 7;
-            this.titleCustomer.Text = "Customer Management";
-            this.titleCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.titleCustomer.Click += new System.EventHandler(this.titleCustomer_Click);
-            // 
-            // titleBranch
-            // 
-            this.titleBranch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.titleBranch.ForeColor = System.Drawing.Color.Black;
-            this.titleBranch.Location = new System.Drawing.Point(110, 121);
-            this.titleBranch.Name = "titleBranch";
-            this.titleBranch.Size = new System.Drawing.Size(285, 121);
-            this.titleBranch.TabIndex = 6;
-            this.titleBranch.Text = "Branch Management";
-            this.titleBranch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.titleBranch.Click += new System.EventHandler(this.titleBranch_Click);
-            // 
-            // titleAccount
-            // 
-            this.titleAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.titleAccount.ForeColor = System.Drawing.Color.Black;
-            this.titleAccount.Location = new System.Drawing.Point(110, 0);
-            this.titleAccount.Name = "titleAccount";
-            this.titleAccount.Size = new System.Drawing.Size(285, 121);
-            this.titleAccount.TabIndex = 2;
-            this.titleAccount.Text = "Account Management";
-            this.titleAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.titleAccount.Click += new System.EventHandler(this.titleAccount_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(110, 484);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 121);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Shipper Management";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(110, 605);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 105);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Log Out";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // tabControlAdmin
-            // 
-            this.tabControlAdmin.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControlAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControlAdmin.CausesValidation = false;
-            this.tabControlAdmin.Controls.Add(this.HomePage);
-            this.tabControlAdmin.Controls.Add(this.AccountPage);
-            this.tabControlAdmin.Controls.Add(this.BranchPage);
-            this.tabControlAdmin.Controls.Add(this.CustomerPage);
-            this.tabControlAdmin.Controls.Add(this.OrderPage);
-            this.tabControlAdmin.Controls.Add(this.ShipperPage);
-            this.tabControlAdmin.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tabControlAdmin.ItemSize = new System.Drawing.Size(0, 1);
-            this.tabControlAdmin.Location = new System.Drawing.Point(374, 20);
-            this.tabControlAdmin.Margin = new System.Windows.Forms.Padding(11, 20, 11, 10);
-            this.tabControlAdmin.Name = "tabControlAdmin";
-            this.tabControlAdmin.SelectedIndex = 0;
-            this.tabControlAdmin.Size = new System.Drawing.Size(827, 833);
-            this.tabControlAdmin.TabIndex = 2;
-            // 
-            // HomePage
-            // 
-            this.HomePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.HomePage.Controls.Add(this.panelContainer);
-            this.HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.HomePage.Location = new System.Drawing.Point(4, 4);
-            this.HomePage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HomePage.Name = "HomePage";
-            this.HomePage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.HomePage.Size = new System.Drawing.Size(819, 824);
-            this.HomePage.TabIndex = 0;
-            this.HomePage.Text = "Home";
-            // 
-            // AccountPage
-            // 
-            this.AccountPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.AccountPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.AccountPage.Location = new System.Drawing.Point(4, 4);
-            this.AccountPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AccountPage.Name = "AccountPage";
-            this.AccountPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AccountPage.Size = new System.Drawing.Size(819, 824);
-            this.AccountPage.TabIndex = 1;
-            this.AccountPage.Text = "Account";
-            // 
-            // BranchPage
-            // 
-            this.BranchPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.BranchPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.BranchPage.Location = new System.Drawing.Point(4, 4);
-            this.BranchPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BranchPage.Name = "BranchPage";
-            this.BranchPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BranchPage.Size = new System.Drawing.Size(819, 824);
-            this.BranchPage.TabIndex = 2;
-            this.BranchPage.Text = "Branch";
-            // 
-            // CustomerPage
-            // 
-            this.CustomerPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.CustomerPage.Location = new System.Drawing.Point(4, 4);
-            this.CustomerPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerPage.Name = "CustomerPage";
-            this.CustomerPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerPage.Size = new System.Drawing.Size(819, 824);
-            this.CustomerPage.TabIndex = 3;
-            this.CustomerPage.Text = "Customer";
-            // 
-            // OrderPage
-            // 
-            this.OrderPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.OrderPage.Location = new System.Drawing.Point(4, 4);
-            this.OrderPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.OrderPage.Name = "OrderPage";
-            this.OrderPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.OrderPage.Size = new System.Drawing.Size(819, 824);
-            this.OrderPage.TabIndex = 4;
-            this.OrderPage.Text = "Order";
-            // 
-            // ShipperPage
-            // 
-            this.ShipperPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ShipperPage.Location = new System.Drawing.Point(4, 4);
-            this.ShipperPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ShipperPage.Name = "ShipperPage";
-            this.ShipperPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ShipperPage.Size = new System.Drawing.Size(819, 824);
-            this.ShipperPage.TabIndex = 5;
-            this.ShipperPage.Text = "Shipper";
-            // 
             // iconBrand
             // 
             this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -361,19 +140,72 @@
             this.iconBrand.TabIndex = 2;
             this.iconBrand.TabStop = false;
             // 
-            // pictureBox2
+            // nameBrandM
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.nameBrandM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.nameBrandM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameBrandM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.nameBrandM.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.nameBrandM.Location = new System.Drawing.Point(135, 31);
+            this.nameBrandM.Name = "nameBrandM";
+            this.nameBrandM.Size = new System.Drawing.Size(259, 58);
+            this.nameBrandM.TabIndex = 1;
+            this.nameBrandM.Text = "TL Delivery";
+            // 
+            // gridNav
+            // 
+            this.gridNav.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 635);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.gridNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridNav.ColumnCount = 2;
+            this.gridNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.gridNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.gridNav.Controls.Add(this.titleLogout, 1, 2);
+            this.gridNav.Controls.Add(this.titleBranch, 1, 1);
+            this.gridNav.Controls.Add(this.picHRM, 0, 1);
+            this.gridNav.Controls.Add(this.titleAccount, 1, 0);
+            this.gridNav.Controls.Add(this.picRevenue, 0, 2);
+            this.gridNav.Controls.Add(this.picContact, 0, 3);
+            this.gridNav.Controls.Add(this.picHome, 0, 0);
+            this.gridNav.Location = new System.Drawing.Point(11, 139);
+            this.gridNav.Margin = new System.Windows.Forms.Padding(11, 20, 11, 10);
+            this.gridNav.Name = "gridNav";
+            this.gridNav.RowCount = 6;
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.gridNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.gridNav.Size = new System.Drawing.Size(397, 656);
+            this.gridNav.TabIndex = 5;
+            // 
+            // titleLogout
+            // 
+            this.titleLogout.AutoSize = true;
+            this.titleLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.titleLogout.Location = new System.Drawing.Point(110, 242);
+            this.titleLogout.Name = "titleLogout";
+            this.titleLogout.Size = new System.Drawing.Size(285, 121);
+            this.titleLogout.TabIndex = 15;
+            this.titleLogout.Text = "Log Out";
+            this.titleLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleLogout.Click += new System.EventHandler(this.titleLogout_Click);
+            // 
+            // titleBranch
+            // 
+            this.titleBranch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.titleBranch.ForeColor = System.Drawing.Color.Black;
+            this.titleBranch.Location = new System.Drawing.Point(110, 121);
+            this.titleBranch.Name = "titleBranch";
+            this.titleBranch.Size = new System.Drawing.Size(285, 121);
+            this.titleBranch.TabIndex = 6;
+            this.titleBranch.Text = "Branch Management";
+            this.titleBranch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleBranch.Click += new System.EventHandler(this.titleBranch_Click);
             // 
             // picHRM
             // 
@@ -388,6 +220,19 @@
             this.picHRM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHRM.TabIndex = 3;
             this.picHRM.TabStop = false;
+            // 
+            // titleAccount
+            // 
+            this.titleAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.titleAccount.ForeColor = System.Drawing.Color.Black;
+            this.titleAccount.Location = new System.Drawing.Point(110, 0);
+            this.titleAccount.Name = "titleAccount";
+            this.titleAccount.Size = new System.Drawing.Size(285, 121);
+            this.titleAccount.TabIndex = 2;
+            this.titleAccount.Text = "Account Management";
+            this.titleAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleAccount.Click += new System.EventHandler(this.titleAccount_Click);
             // 
             // picRevenue
             // 
@@ -431,57 +276,154 @@
             this.picHome.TabIndex = 0;
             this.picHome.TabStop = false;
             // 
-            // pictureBox1
+            // tabControlAdmin
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControlAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 514);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.tabControlAdmin.CausesValidation = false;
+            this.tabControlAdmin.Controls.Add(this.tpAccount);
+            this.tabControlAdmin.Controls.Add(this.tpBranch);
+            this.tabControlAdmin.Controls.Add(this.tpProfile);
+            this.tabControlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tabControlAdmin.ItemSize = new System.Drawing.Size(0, 20);
+            this.tabControlAdmin.Location = new System.Drawing.Point(374, 20);
+            this.tabControlAdmin.Margin = new System.Windows.Forms.Padding(11, 20, 11, 10);
+            this.tabControlAdmin.Name = "tabControlAdmin";
+            this.tabControlAdmin.SelectedIndex = 0;
+            this.tabControlAdmin.Size = new System.Drawing.Size(827, 477);
+            this.tabControlAdmin.TabIndex = 2;
             // 
-            // panelContainer
+            // tpAccount
             // 
-            this.panelContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(3, 2);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(813, 820);
-            this.panelContainer.TabIndex = 0;
+            this.tpAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tpAccount.Controls.Add(this.tableLayoutPanel1);
+            this.tpAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tpAccount.Location = new System.Drawing.Point(4, 24);
+            this.tpAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpAccount.Name = "tpAccount";
+            this.tpAccount.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpAccount.Size = new System.Drawing.Size(819, 449);
+            this.tpAccount.TabIndex = 1;
+            this.tpAccount.Text = "Account";
+            this.tpAccount.Click += new System.EventHandler(this.AccountPage_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvAccounts, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(813, 445);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dgvAccounts
+            // 
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccounts.Location = new System.Drawing.Point(3, 225);
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.RowHeadersWidth = 51;
+            this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.Size = new System.Drawing.Size(807, 217);
+            this.dgvAccounts.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDetail);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 216);
+            this.panel1.TabIndex = 1;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Enabled = false;
+            this.btnDetail.Location = new System.Drawing.Point(3, 172);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(122, 39);
+            this.btnDetail.TabIndex = 2;
+            this.btnDetail.Text = "Detail";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(555, 169);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(120, 44);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(681, 169);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(123, 44);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // tpBranch
+            // 
+            this.tpBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tpBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tpBranch.Location = new System.Drawing.Point(4, 24);
+            this.tpBranch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpBranch.Name = "tpBranch";
+            this.tpBranch.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpBranch.Size = new System.Drawing.Size(819, 449);
+            this.tpBranch.TabIndex = 2;
+            this.tpBranch.Text = "Branch";
+            // 
+            // tpProfile
+            // 
+            this.tpProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tpProfile.Location = new System.Drawing.Point(4, 24);
+            this.tpProfile.Name = "tpProfile";
+            this.tpProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.tpProfile.Size = new System.Drawing.Size(819, 449);
+            this.tpProfile.TabIndex = 6;
+            this.tpProfile.Text = "Profile";
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1212, 863);
+            this.ClientSize = new System.Drawing.Size(1212, 507);
             this.Controls.Add(this.tlpMain);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmAdmin";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.frmAdmin_Load_1);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.grid.ResumeLayout(false);
             this.gridHeaderContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
             this.gridNav.ResumeLayout(false);
             this.gridNav.PerformLayout();
-            this.tabControlAdmin.ResumeLayout(false);
-            this.HomePage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHRM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControlAdmin.ResumeLayout(false);
+            this.tpAccount.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.tabControlAdmin.SelectedIndexChanged += new System.EventHandler(this.tabControlAdmin_SelectedIndexChanged);
 
         }
 
@@ -492,26 +434,23 @@
         private System.Windows.Forms.TableLayoutPanel gridHeaderContainer;
         private System.Windows.Forms.PictureBox iconBrand;
         private System.Windows.Forms.Label nameBrandM;
+        private System.Windows.Forms.TabControl tabControlAdmin;
+        private System.Windows.Forms.TabPage tpBranch;
         private System.Windows.Forms.TableLayoutPanel gridNav;
-        private System.Windows.Forms.Label titleOrder;
-        private System.Windows.Forms.Label titleCustomer;
         private System.Windows.Forms.Label titleBranch;
         private System.Windows.Forms.PictureBox picHRM;
         private System.Windows.Forms.Label titleAccount;
         private System.Windows.Forms.PictureBox picRevenue;
         private System.Windows.Forms.PictureBox picContact;
         private System.Windows.Forms.PictureBox picHome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TabControl tabControlAdmin;
-        private System.Windows.Forms.TabPage HomePage;
-        private System.Windows.Forms.TabPage AccountPage;
-        private System.Windows.Forms.TabPage BranchPage;
-        private System.Windows.Forms.TabPage CustomerPage;
-        private System.Windows.Forms.TabPage OrderPage;
-        private System.Windows.Forms.TabPage ShipperPage;
-        private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.TabPage tpProfile;
+        private System.Windows.Forms.Label titleLogout;
+        private System.Windows.Forms.TabPage tpAccount;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dgvAccounts;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

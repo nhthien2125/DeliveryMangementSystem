@@ -179,41 +179,11 @@
     <Compile Include="Forms\Reusable Control\UC_ProfileChanger.Designer.cs">
       <DependentUpon>UC_ProfileChanger.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UC_Branches.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\UC_Branches.Designer.cs">
-      <DependentUpon>UC_Branches.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UC_Customers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\UC_Customers.Designer.cs">
-      <DependentUpon>UC_Customers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UC_ManageUsers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\UC_ManageUsers.Designer.cs">
-      <DependentUpon>UC_ManageUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Shipper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Shipper.Designer.cs">
       <DependentUpon>Shipper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UC_Orders.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\UC_Orders.Designer.cs">
-      <DependentUpon>UC_Orders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UC_Shippers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\UC_Shippers.Designer.cs">
-      <DependentUpon>UC_Shippers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20250317174406_InitialCreate.cs" />
     <Compile Include="Migrations\20250317174406_InitialCreate.Designer.cs">
@@ -262,9 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UC_ManageUsers.resx">
-      <DependentUpon>UC_ManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
