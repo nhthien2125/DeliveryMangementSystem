@@ -51,8 +51,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tpBranch = new System.Windows.Forms.TabPage();
             this.tpProfile = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
@@ -67,7 +65,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -339,7 +336,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnDetail);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnDelete);
@@ -400,23 +396,6 @@
             this.tpProfile.TabIndex = 6;
             this.tpProfile.Text = "Profile";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(131, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(420, 209);
-            this.panel2.TabIndex = 4;
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,8 +423,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,7 +453,5 @@
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
     }
 }

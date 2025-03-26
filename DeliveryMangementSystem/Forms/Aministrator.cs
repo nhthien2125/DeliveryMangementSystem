@@ -32,70 +32,28 @@ namespace DeliveryMangementSystem.Forms
             {
                 Name = "ID",
                 DataPropertyName = "Id",
-                HeaderText = "ID",
+                HeaderText = "Mã tài khoản",
                 Width = 100
             });
             dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Username",
                 DataPropertyName = "Username",
-                HeaderText = "Username",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Password",
-                DataPropertyName = "Password",
-                HeaderText = "Password",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "FullName",
-                DataPropertyName = "FullName",
-                HeaderText = "FullName",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Email",
-                DataPropertyName = "Email",
-                HeaderText = "Email",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Phone",
-                DataPropertyName = "Phone",
-                HeaderText = "Phone",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "BranchId",
-                DataPropertyName = "BranchId",
-                HeaderText = "BranchId",
+                HeaderText = "Tên đăng nhập",
                 Width = 100
             });
             dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Role",
                 DataPropertyName = "Role",
-                HeaderText = "Role",
-                Width = 100
-            });
-            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "CreatedDate",
-                DataPropertyName = "CreatedDate",
-                HeaderText = "CreatedDate",
+                HeaderText = "Vai trò",
                 Width = 100
             });
         }
 
 
         //Constructor
-        public frmAdmin(string id = "DefaultID")
+        public frmAdmin(string id)
         {
             InitializeComponent();
             this.Id = id;
