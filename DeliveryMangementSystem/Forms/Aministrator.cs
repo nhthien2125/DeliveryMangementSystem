@@ -35,6 +35,62 @@ namespace DeliveryMangementSystem.Forms
                 HeaderText = "ID",
                 Width = 100
             });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Username",
+                DataPropertyName = "Username",
+                HeaderText = "Username",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Password",
+                DataPropertyName = "Password",
+                HeaderText = "Password",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "FullName",
+                DataPropertyName = "FullName",
+                HeaderText = "FullName",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Email",
+                DataPropertyName = "Email",
+                HeaderText = "Email",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Phone",
+                DataPropertyName = "Phone",
+                HeaderText = "Phone",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "BranchId",
+                DataPropertyName = "BranchId",
+                HeaderText = "BranchId",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Role",
+                DataPropertyName = "Role",
+                HeaderText = "Role",
+                Width = 100
+            });
+            dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "CreatedDate",
+                DataPropertyName = "CreatedDate",
+                HeaderText = "CreatedDate",
+                Width = 100
+            });
         }
 
 
@@ -75,7 +131,22 @@ namespace DeliveryMangementSystem.Forms
         {
             
         }
-        
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            if (dgvAccounts.SelectedRows.Count > 0)
+            {
+                using (var db = new myDbContext())
+                {
+                    string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
+                    var account = db.Accounts.Find(accountId);
+
+                    if (account != null)
+                    {
+                        
+                    }
+                }
+            }
+        }
     }
 }
