@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace DeliveryMangementSystem.Forms
 {
-    public partial class AccountDetail : Form
+    public partial class frmAccountDetail : Form
     {
-        public AccountDetail()
+        public frmAccountDetail(string id, string name, string phone, string email, string role)
         {
             InitializeComponent();
+
+            // Hiển thị dữ liệu lên Label
+            lblAccountID.Text = id;
+            lblAccountName.Text = name;
+            lblPhone.Text = phone;
+            lblEmail.Text = email;
+            lblRole.Text = role;
         }
     }
 }

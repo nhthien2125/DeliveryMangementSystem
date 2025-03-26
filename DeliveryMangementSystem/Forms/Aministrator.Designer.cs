@@ -347,7 +347,6 @@
             // 
             // btnDetail
             // 
-            this.btnDetail.Enabled = false;
             this.btnDetail.Location = new System.Drawing.Point(3, 172);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(122, 39);

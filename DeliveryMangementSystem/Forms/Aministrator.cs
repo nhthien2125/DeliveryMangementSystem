@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DeliveryMangementSystem.Forms
 {
-    public partial class frmAdmin: Form
+    public partial class frmAdmin : Form
     {
         //Attributes
         private readonly string Id;
@@ -87,23 +87,26 @@ namespace DeliveryMangementSystem.Forms
         //event
         private void AccountPage_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            if (dgvAccounts.SelectedRows.Count > 0)
+            if (dgvAccounts.SelectedRows.Count > 0)  // Kiểm tra nếu có dòng được chọn
             {
-                using (var db = new myDbContext())
-                {
-                    string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
-                    var account = db.Accounts.Find(accountId);
+                string id = dgvAccounts.SelectedRows[0].Cells["Id"].Value.ToString();
+                string name = dgvAccounts.SelectedRows[0].Cells["Name"].Value.ToString();
+                string phone = dgvAccounts.SelectedRows[0].Cells["Phone"].Value.ToString();
+                string email = dgvAccounts.SelectedRows[0].Cells["Email"].Value.ToString();
+                string role = dgvAccounts.SelectedRows[0].Cells["Role"].Value.ToString();
 
-                    if (account != null)
-                    {
-                        
-                    }
-                }
+                // Truyền dữ liệu vào constructor
+                frmAccountDetail detailForm = new frmAccountDetail(id, name, phone, email, role);
+                detailForm.ShowDialog(); // Hiển thị form chi tiết
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
