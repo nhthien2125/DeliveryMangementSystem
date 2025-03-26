@@ -3,7 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
 using System.Linq;
-
+using DeliveryMangementSystem.Models;
+using Microsoft.EntityFrameworkCore;
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin : Form
@@ -19,6 +20,7 @@ namespace DeliveryMangementSystem.Forms
             {
                 var accounts = db.Accounts.Where(o => o.Role != Models.UserRole.Admin).ToList();
                 dgvAccounts.DataSource = accounts;
+                
             }
             FormatDataGridView();
         }
@@ -33,21 +35,21 @@ namespace DeliveryMangementSystem.Forms
                 Name = "ID",
                 DataPropertyName = "Id",
                 HeaderText = "Mã tài khoản",
-                Width = 100
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
             dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Username",
                 DataPropertyName = "Username",
                 HeaderText = "Tên đăng nhập",
-                Width = 100
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
             dgvAccounts.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Role",
                 DataPropertyName = "Role",
                 HeaderText = "Vai trò",
-                Width = 100
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
         }
 
@@ -85,25 +87,29 @@ namespace DeliveryMangementSystem.Forms
         }
 
         //event
-        private void AccountPage_Click(object sender, EventArgs e)
+        private void btnDetails_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDetail_Click(object sender, EventArgs e)
-        {
-            if (dgvAccounts.SelectedRows.Count > 0) // Kiểm tra có dòng nào được chọn không
+            if (dgvAccounts.SelectedRows.Count == 1)
             {
-                string selectedId = dgvAccounts.SelectedRows[0].Cells["Id"].Value.ToString(); // Lấy ID từ DataGridView
-                string selectedUsername = dgvAccounts.SelectedRows[0].Cells["Username"].Value.ToString(); // Lấy Username từ DataGridView
-                string selectedRole = dgvAccounts.SelectedRows[0].Cells["Role"].Value.ToString(); // Lấy Role từ DataGridView
+                string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
 
-                frmAccountDetail detailForm = new frmAccountDetail(selectedId, selectedUsername, selectedRole, "", ""); // Truyền ID vào form mới
-                detailForm.ShowDialog(); // Hiển thị form
+                using (var db = new myDbContext())
+                {
+                    var account = db.Accounts.FirstOrDefault(a => a.Id == accountId);
+                    if (account != null && account.ShipperId != null)
+                    {
+                        var shipper = db.Shippers.Find(account.ShipperId);
+                        if (shipper != null)
+                        {
+                            var frm = new frmAccountDetail(shipper.Id);
+                            frm.ShowDialog();
+                        }
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một tài khoản để xem chi tiết!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn một tài khoản!");
             }
         }
     }

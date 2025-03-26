@@ -16,27 +16,23 @@ namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAccountDetail : Form
     {
-        private string AccountID;
-        public frmAccountDetail(string id, string name, string phone, string email, string role)
+        private readonly string ShipperID;
+        public frmAccountDetail(string S_Id)
         {
             InitializeComponent();
-            AccountID = id;
+            ShipperID = S_Id;
         }
-        private void frmAccountDetail_Load(object sender, EventArgs e)
+        private void frmAccountDetail_Load_1(object sender, EventArgs e)
         {
-            using (var db = new myDbContext()) // Kết nối database
+            using (var db = new myDbContext())
             {
-                var account = db.Accounts.FirstOrDefault(a => a.Id == AccountID);
-                if (account != null)
+                var shipper = db.Shippers.Find(ShipperID);
+                if (shipper != null)
                 {
-                    lblAccountID.Text = account.Id;
-                    lblAccountName.Text = account.Username;
-                    lblRole.Text = account.Role.ToString(); 
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close(); // Đóng form nếu không tìm thấy tài khoản
+                    lblUserId.Text = shipper.Id.ToString();
+                    lblName.Text = shipper.Name;
+                    lblRole.Text = shipper.Phone;
+                    
                 }
             }
         }

@@ -46,11 +46,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tpBranch = new System.Windows.Forms.TabPage();
             this.tpProfile = new System.Windows.Forms.TabPage();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
@@ -306,7 +306,6 @@
             this.tpAccount.Size = new System.Drawing.Size(819, 449);
             this.tpAccount.TabIndex = 1;
             this.tpAccount.Text = "Account";
-            this.tpAccount.Click += new System.EventHandler(this.AccountPage_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -336,7 +335,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnDetail);
+            this.panel1.Controls.Add(this.btnDetails);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -344,16 +343,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 216);
             this.panel1.TabIndex = 1;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Location = new System.Drawing.Point(3, 172);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(122, 39);
-            this.btnDetail.TabIndex = 2;
-            this.btnDetail.Text = "Detail";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnAdd
             // 
@@ -394,6 +383,16 @@
             this.tpProfile.Size = new System.Drawing.Size(819, 449);
             this.tpProfile.TabIndex = 6;
             this.tpProfile.Text = "Profile";
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Location = new System.Drawing.Point(3, 166);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(120, 44);
+            this.btnDetails.TabIndex = 2;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // frmAdmin
             // 
@@ -449,8 +448,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvAccounts;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDetails;
     }
 }
