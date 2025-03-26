@@ -14,10 +14,10 @@ namespace DeliveryMangementSystem.Forms
         //Methods
         private void LoadDataGridViewAccounts()
         {
-            //Load ds tài khoản vào datagridview
+            //Load ds tài khoản (trừ admin) vào datagridview
             using (var db = new myDbContext())
             {
-                var accounts = db.Accounts.ToList();
+                var accounts = db.Accounts.Where(o => o.Role != Models.UserRole.Admin).ToList();
                 dgvAccounts.DataSource = accounts;
             }
             FormatDataGridView();
@@ -92,21 +92,18 @@ namespace DeliveryMangementSystem.Forms
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            if (dgvAccounts.SelectedRows.Count > 0)  // Kiểm tra nếu có dòng được chọn
+            if (dgvAccounts.SelectedRows.Count > 0) // Kiểm tra có dòng nào được chọn không
             {
-                string id = dgvAccounts.SelectedRows[0].Cells["Id"].Value.ToString();
-                string name = dgvAccounts.SelectedRows[0].Cells["Name"].Value.ToString();
-                string phone = dgvAccounts.SelectedRows[0].Cells["Phone"].Value.ToString();
-                string email = dgvAccounts.SelectedRows[0].Cells["Email"].Value.ToString();
-                string role = dgvAccounts.SelectedRows[0].Cells["Role"].Value.ToString();
+                string selectedId = dgvAccounts.SelectedRows[0].Cells["Id"].Value.ToString(); // Lấy ID từ DataGridView
+                string selectedUsername = dgvAccounts.SelectedRows[0].Cells["Username"].Value.ToString(); // Lấy Username từ DataGridView
+                string selectedRole = dgvAccounts.SelectedRows[0].Cells["Role"].Value.ToString(); // Lấy Role từ DataGridView
 
-                // Truyền dữ liệu vào constructor
-                frmAccountDetail detailForm = new frmAccountDetail(id, name, phone, email, role);
-                detailForm.ShowDialog(); // Hiển thị form chi tiết
+                frmAccountDetail detailForm = new frmAccountDetail(selectedId, selectedUsername, selectedRole, "", ""); // Truyền ID vào form mới
+                detailForm.ShowDialog(); // Hiển thị form
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn một tài khoản để xem chi tiết!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
