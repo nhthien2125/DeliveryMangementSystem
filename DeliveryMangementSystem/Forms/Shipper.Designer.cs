@@ -92,9 +92,9 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 501);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -103,11 +103,12 @@
             this.btnProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(23, 4);
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnProfile.Location = new System.Drawing.Point(13, 10);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(142, 45);
+            this.btnProfile.Size = new System.Drawing.Size(162, 76);
             this.btnProfile.TabIndex = 1;
-            this.btnProfile.Text = "Profile";
+            this.btnProfile.Text = "👤 Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click_1);
             // 
@@ -116,11 +117,12 @@
             this.btnOrderManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOrderManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderManagement.Location = new System.Drawing.Point(23, 68);
+            this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnOrderManagement.Location = new System.Drawing.Point(13, 110);
             this.btnOrderManagement.Name = "btnOrderManagement";
-            this.btnOrderManagement.Size = new System.Drawing.Size(142, 45);
+            this.btnOrderManagement.Size = new System.Drawing.Size(162, 76);
             this.btnOrderManagement.TabIndex = 0;
-            this.btnOrderManagement.Text = "Order Management";
+            this.btnOrderManagement.Text = "📋 Order Management";
             this.btnOrderManagement.UseVisualStyleBackColor = true;
             this.btnOrderManagement.Click += new System.EventHandler(this.btnOrderManagement_Click);
             // 
@@ -129,9 +131,10 @@
             this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Location = new System.Drawing.Point(23, 442);
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnLogOut.Location = new System.Drawing.Point(13, 411);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(142, 45);
+            this.btnLogOut.Size = new System.Drawing.Size(162, 76);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "◀  Sign out";
             this.btnLogOut.UseVisualStyleBackColor = true;

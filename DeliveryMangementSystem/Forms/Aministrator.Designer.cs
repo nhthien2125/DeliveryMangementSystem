@@ -31,41 +31,41 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.grid = new System.Windows.Forms.TableLayoutPanel();
             this.gridHeaderContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.iconBrand = new System.Windows.Forms.PictureBox();
             this.nameBrandM = new System.Windows.Forms.Label();
             this.gridNav = new System.Windows.Forms.TableLayoutPanel();
             this.titleLogout = new System.Windows.Forms.Label();
             this.titleBranch = new System.Windows.Forms.Label();
-            this.titleAccount = new System.Windows.Forms.Label();
-            this.tabControlAdmin = new System.Windows.Forms.TabControl();
-            this.tpAccount = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tpBranch = new System.Windows.Forms.TabPage();
-            this.tpProfile = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDetails = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.iconBrand = new System.Windows.Forms.PictureBox();
             this.picHRM = new System.Windows.Forms.PictureBox();
+            this.titleAccount = new System.Windows.Forms.Label();
             this.picRevenue = new System.Windows.Forms.PictureBox();
             this.picContact = new System.Windows.Forms.PictureBox();
             this.picHome = new System.Windows.Forms.PictureBox();
+            this.tabControlAdmin = new System.Windows.Forms.TabControl();
+            this.tpAccount = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnDetails = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.tpBranch = new System.Windows.Forms.TabPage();
+            this.tpProfile = new System.Windows.Forms.TabPage();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
-            this.gridNav.SuspendLayout();
-            this.tabControlAdmin.SuspendLayout();
-            this.tpAccount.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).BeginInit();
+            this.gridNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
+            this.tabControlAdmin.SuspendLayout();
+            this.tpAccount.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +128,20 @@
             this.gridHeaderContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.gridHeaderContainer.Size = new System.Drawing.Size(397, 89);
             this.gridHeaderContainer.TabIndex = 4;
+            // 
+            // iconBrand
+            // 
+            this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconBrand.Location = new System.Drawing.Point(3, 17);
+            this.iconBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconBrand.Name = "iconBrand";
+            this.gridHeaderContainer.SetRowSpan(this.iconBrand, 2);
+            this.iconBrand.Size = new System.Drawing.Size(126, 55);
+            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconBrand.TabIndex = 2;
+            this.iconBrand.TabStop = false;
             // 
             // nameBrandM
             // 
@@ -196,6 +210,20 @@
             this.titleBranch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleBranch.Click += new System.EventHandler(this.titleBranch_Click);
             // 
+            // picHRM
+            // 
+            this.picHRM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picHRM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHRM.Location = new System.Drawing.Point(29, 151);
+            this.picHRM.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picHRM.Name = "picHRM";
+            this.picHRM.Size = new System.Drawing.Size(49, 61);
+            this.picHRM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHRM.TabIndex = 3;
+            this.picHRM.TabStop = false;
+            // 
             // titleAccount
             // 
             this.titleAccount.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -208,6 +236,48 @@
             this.titleAccount.Text = "Account Management";
             this.titleAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleAccount.Click += new System.EventHandler(this.titleAccount_Click);
+            // 
+            // picRevenue
+            // 
+            this.picRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picRevenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRevenue.Location = new System.Drawing.Point(29, 272);
+            this.picRevenue.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picRevenue.Name = "picRevenue";
+            this.picRevenue.Size = new System.Drawing.Size(49, 61);
+            this.picRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRevenue.TabIndex = 4;
+            this.picRevenue.TabStop = false;
+            // 
+            // picContact
+            // 
+            this.picContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picContact.Location = new System.Drawing.Point(29, 393);
+            this.picContact.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picContact.Name = "picContact";
+            this.picContact.Size = new System.Drawing.Size(49, 61);
+            this.picContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picContact.TabIndex = 5;
+            this.picContact.TabStop = false;
+            // 
+            // picHome
+            // 
+            this.picHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHome.Location = new System.Drawing.Point(30, 30);
+            this.picHome.Margin = new System.Windows.Forms.Padding(30);
+            this.picHome.Name = "picHome";
+            this.picHome.Size = new System.Drawing.Size(47, 61);
+            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHome.TabIndex = 0;
+            this.picHome.TabStop = false;
             // 
             // tabControlAdmin
             // 
@@ -255,6 +325,85 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(793, 511);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnChangePassword);
+            this.panel1.Controls.Add(this.btnDetails);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 437);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(787, 71);
+            this.panel1.TabIndex = 1;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChangePassword.Location = new System.Drawing.Point(18, 14);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(245, 38);
+            this.btnChangePassword.TabIndex = 9;
+            this.btnChangePassword.Text = "Change Your Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDetails.Location = new System.Drawing.Point(510, 14);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(87, 38);
+            this.btnDetails.TabIndex = 8;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click_1);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAdd.Location = new System.Drawing.Point(603, 14);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 38);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDelete.Location = new System.Drawing.Point(696, 14);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(87, 38);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvAccounts);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(787, 428);
+            this.panel2.TabIndex = 2;
+            // 
+            // dgvAccounts
+            // 
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccounts.Location = new System.Drawing.Point(0, 0);
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.RowHeadersWidth = 51;
+            this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.Size = new System.Drawing.Size(787, 428);
+            this.dgvAccounts.TabIndex = 1;
+            // 
             // tpBranch
             // 
             this.tpBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -277,154 +426,6 @@
             this.tpProfile.TabIndex = 6;
             this.tpProfile.Text = "Profile";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnChangePassword);
-            this.panel1.Controls.Add(this.btnDetails);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 437);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(787, 71);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDetails.Location = new System.Drawing.Point(510, 14);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(87, 38);
-            this.btnDetails.TabIndex = 8;
-            this.btnDetails.Text = "Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAdd.Location = new System.Drawing.Point(603, 14);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 38);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.Location = new System.Drawing.Point(696, 14);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 38);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // iconBrand
-            // 
-            this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconBrand.Location = new System.Drawing.Point(3, 17);
-            this.iconBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconBrand.Name = "iconBrand";
-            this.gridHeaderContainer.SetRowSpan(this.iconBrand, 2);
-            this.iconBrand.Size = new System.Drawing.Size(126, 55);
-            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconBrand.TabIndex = 2;
-            this.iconBrand.TabStop = false;
-            // 
-            // picHRM
-            // 
-            this.picHRM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picHRM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHRM.Location = new System.Drawing.Point(29, 151);
-            this.picHRM.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picHRM.Name = "picHRM";
-            this.picHRM.Size = new System.Drawing.Size(49, 61);
-            this.picHRM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHRM.TabIndex = 3;
-            this.picHRM.TabStop = false;
-            // 
-            // picRevenue
-            // 
-            this.picRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRevenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRevenue.Location = new System.Drawing.Point(29, 272);
-            this.picRevenue.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picRevenue.Name = "picRevenue";
-            this.picRevenue.Size = new System.Drawing.Size(49, 61);
-            this.picRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRevenue.TabIndex = 4;
-            this.picRevenue.TabStop = false;
-            // 
-            // picContact
-            // 
-            this.picContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picContact.Location = new System.Drawing.Point(29, 393);
-            this.picContact.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picContact.Name = "picContact";
-            this.picContact.Size = new System.Drawing.Size(49, 61);
-            this.picContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picContact.TabIndex = 5;
-            this.picContact.TabStop = false;
-            // 
-            // picHome
-            // 
-            this.picHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHome.Location = new System.Drawing.Point(30, 30);
-            this.picHome.Margin = new System.Windows.Forms.Padding(30);
-            this.picHome.Name = "picHome";
-            this.picHome.Size = new System.Drawing.Size(47, 61);
-            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHome.TabIndex = 0;
-            this.picHome.TabStop = false;
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChangePassword.Location = new System.Drawing.Point(18, 14);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(245, 38);
-            this.btnChangePassword.TabIndex = 9;
-            this.btnChangePassword.Text = "Change Your Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvAccounts);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(787, 428);
-            this.panel2.TabIndex = 2;
-            // 
-            // dgvAccounts
-            // 
-            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAccounts.Location = new System.Drawing.Point(0, 0);
-            this.dgvAccounts.Name = "dgvAccounts";
-            this.dgvAccounts.RowHeadersWidth = 51;
-            this.dgvAccounts.RowTemplate.Height = 24;
-            this.dgvAccounts.Size = new System.Drawing.Size(787, 428);
-            this.dgvAccounts.TabIndex = 1;
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,17 +441,17 @@
             this.tlpMain.PerformLayout();
             this.grid.ResumeLayout(false);
             this.gridHeaderContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
             this.gridNav.ResumeLayout(false);
             this.gridNav.PerformLayout();
-            this.tabControlAdmin.ResumeLayout(false);
-            this.tpAccount.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHRM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
+            this.tabControlAdmin.ResumeLayout(false);
+            this.tpAccount.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.ResumeLayout(false);

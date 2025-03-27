@@ -3,8 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
 using System.Linq;
-using DeliveryMangementSystem.Models;
-using Microsoft.EntityFrameworkCore;
 using DeliveryMangementSystem.Forms.Reusable_Control;
 namespace DeliveryMangementSystem.Forms
 {
@@ -87,7 +85,17 @@ namespace DeliveryMangementSystem.Forms
 
 
         //event
-        private void btnDetails_Click(object sender, EventArgs e)
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            
+            UC_ProfileChanger uC_ProfileChanger = new UC_ProfileChanger(Id, "Admin")
+            {
+                Dock = DockStyle.Fill
+            };
+            panel2.Controls.Add(uC_ProfileChanger);
+            uC_ProfileChanger.BringToFront();
+        }
+        private void btnDetails_Click_1(object sender, EventArgs e)
         {
             if (dgvAccounts.SelectedRows.Count == 1)
             {
@@ -112,22 +120,30 @@ namespace DeliveryMangementSystem.Forms
                 MessageBox.Show("Vui lòng chọn một tài khoản!");
             }
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (var db = new myDbContext())
+            if (dgvAccounts.SelectedRows.Count == 1)
             {
-                
+                string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
+                using (var db = new myDbContext())
+                {
+                    var account = db.Accounts.Find(accountId);
+                    if (account != null)
+                    {
+                        DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản {accountId}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            db.Accounts.Remove(account);
+                            db.SaveChanges();
+                            LoadDataGridViewAccounts();
+                        }
+                    }
+                }
             }
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            UC_ProfileChanger uC_ProfileChanger = new UC_ProfileChanger(Id, "Admin")
+            else
             {
-                Dock = DockStyle.Fill
-            };
-            panel2.Controls.Add(uC_ProfileChanger);
-            uC_ProfileChanger.BringToFront();
+                MessageBox.Show("Vui lòng chọn một tài khoản!");
+            }
         }
     }
 }
