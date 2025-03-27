@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chbShowPassword = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.Teal;
+            this.groupBox1.Controls.Add(this.chbShowPassword);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label3);
@@ -151,7 +153,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(42, 195);
+            this.label3.Location = new System.Drawing.Point(43, 172);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 22);
             this.label3.TabIndex = 3;
@@ -196,7 +198,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.txtPassword.Location = new System.Drawing.Point(47, 236);
+            this.txtPassword.Location = new System.Drawing.Point(48, 213);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 34);
             this.txtPassword.TabIndex = 4;
@@ -205,6 +207,19 @@
             // epUsername
             // 
             this.epUsername.ContainerControl = this;
+            // 
+            // chbShowPassword
+            // 
+            this.chbShowPassword.AutoSize = true;
+            this.chbShowPassword.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.chbShowPassword.ForeColor = System.Drawing.Color.White;
+            this.chbShowPassword.Location = new System.Drawing.Point(82, 269);
+            this.chbShowPassword.Name = "chbShowPassword";
+            this.chbShowPassword.Size = new System.Drawing.Size(189, 29);
+            this.chbShowPassword.TabIndex = 7;
+            this.chbShowPassword.Text = "Hiển thị mật khẩu";
+            this.chbShowPassword.UseVisualStyleBackColor = true;
+            this.chbShowPassword.CheckedChanged += new System.EventHandler(this.chbShowPassword_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -241,6 +256,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckBox chbShowPassword;
     }
 }
 

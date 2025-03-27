@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using DeliveryMangementSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using DeliveryMangementSystem.Forms.Reusable_Control;
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin : Form
@@ -75,16 +76,15 @@ namespace DeliveryMangementSystem.Forms
         {
             tabControlAdmin.SelectedTab = tpAccount;
         }
-
         private void titleBranch_Click(object sender, EventArgs e)
         {
             tabControlAdmin.SelectedTab = tpBranch;
         }
-
         private void titleLogout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         //event
         private void btnDetails_Click(object sender, EventArgs e)
@@ -111,6 +111,23 @@ namespace DeliveryMangementSystem.Forms
             {
                 MessageBox.Show("Vui lòng chọn một tài khoản!");
             }
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (var db = new myDbContext())
+            {
+                
+            }
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            UC_ProfileChanger uC_ProfileChanger = new UC_ProfileChanger(Id, "Admin")
+            {
+                Dock = DockStyle.Fill
+            };
+            panel2.Controls.Add(uC_ProfileChanger);
+            uC_ProfileChanger.BringToFront();
         }
     }
 }

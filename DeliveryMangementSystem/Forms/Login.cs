@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using DeliveryMangementSystem.Forms;
 using DeliveryMangementSystem.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace DeliveryMangementSystem
 {
@@ -13,6 +12,7 @@ namespace DeliveryMangementSystem
         //Variables
         private const string placeholderText = "Nhập tài khoản của bạn...";
         private readonly myDbContext context;
+        bool flagPass = false;
 
         //Methods
         public frmLogin()
@@ -95,6 +95,19 @@ namespace DeliveryMangementSystem
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             CheckLoginButton();
+        }
+        private void chbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!flagPass)
+            {
+                txtPassword.PasswordChar = '\0';
+                flagPass = true;
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                flagPass = false;
+            }
         }
     }
 }

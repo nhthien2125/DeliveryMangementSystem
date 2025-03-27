@@ -88,5 +88,10 @@ namespace DeliveryMangementSystem.Forms.Reusable_Control
             txtPassword.PasswordChar = '*';
             txtNewPassword.PasswordChar = '*';
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
     }
 }

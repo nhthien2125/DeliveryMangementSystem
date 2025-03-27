@@ -179,6 +179,12 @@
     <Compile Include="Forms\Aministrator.Designer.cs">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reusable Control\UC_ProfileAdder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Reusable Control\UC_ProfileAdder.Designer.cs">
+      <DependentUpon>UC_ProfileAdder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reusable Control\UC_ProfileChanger.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Aministrator.resx">
       <DependentUpon>Aministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reusable Control\UC_ProfileAdder.resx">
+      <DependentUpon>UC_ProfileAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reusable Control\UC_ProfileChanger.resx">
       <DependentUpon>UC_ProfileChanger.cs</DependentUpon>

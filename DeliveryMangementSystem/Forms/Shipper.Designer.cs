@@ -36,6 +36,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tctrlShipper = new System.Windows.Forms.TabControl();
             this.tpProfile = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvCompletedOrders = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,30 +49,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.btnChangePhone = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpOrderManagement = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSave = new System.Windows.Forms.Button();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgvCompletedOrders = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tctrlShipper.SuspendLayout();
             this.tpProfile.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tpOrderManagement.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -142,7 +142,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.tctrlShipper);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(198, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 513);
             this.panel2.TabIndex = 1;
@@ -169,6 +169,72 @@
             this.tpProfile.Size = new System.Drawing.Size(761, 484);
             this.tpProfile.TabIndex = 4;
             this.tpProfile.Text = "pro5";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 256);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(758, 225);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label5.Location = new System.Drawing.Point(3, 1);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 23);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Đơn hàng đã hoàn thành:";
+            // 
+            // dgvCompletedOrders
+            // 
+            this.dgvCompletedOrders.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvCompletedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompletedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompletedOrders.Location = new System.Drawing.Point(3, 28);
+            this.dgvCompletedOrders.Name = "dgvCompletedOrders";
+            this.dgvCompletedOrders.RowHeadersWidth = 51;
+            this.dgvCompletedOrders.RowTemplate.Height = 24;
+            this.dgvCompletedOrders.Size = new System.Drawing.Size(752, 194);
+            this.dgvCompletedOrders.TabIndex = 2;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.898305F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.10169F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(758, 236);
+            this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thông tin cá nhân:";
             // 
             // tableLayoutPanel4
             // 
@@ -267,17 +333,6 @@
             this.btnChangePhone.UseVisualStyleBackColor = true;
             this.btnChangePhone.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thông tin cá nhân:";
-            // 
             // tpOrderManagement
             // 
             this.tpOrderManagement.Controls.Add(this.tableLayoutPanel1);
@@ -321,6 +376,15 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(187, 472);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // cbbStatus
+            // 
+            this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbbStatus.FormattingEnabled = true;
+            this.cbbStatus.Location = new System.Drawing.Point(22, 6);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(143, 24);
+            this.cbbStatus.TabIndex = 1;
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -331,15 +395,6 @@
             this.btnSave.Text = "Update Status";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbbStatus
-            // 
-            this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(22, 6);
-            this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(143, 24);
-            this.cbbStatus.TabIndex = 1;
             // 
             // dgvOrders
             // 
@@ -354,66 +409,11 @@
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label5.Location = new System.Drawing.Point(3, 1);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Đơn hàng đã hoàn thành:";
-            // 
-            // dgvCompletedOrders
-            // 
-            this.dgvCompletedOrders.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dgvCompletedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompletedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCompletedOrders.Location = new System.Drawing.Point(3, 28);
-            this.dgvCompletedOrders.Name = "dgvCompletedOrders";
-            this.dgvCompletedOrders.RowHeadersWidth = 51;
-            this.dgvCompletedOrders.RowTemplate.Height = 24;
-            this.dgvCompletedOrders.Size = new System.Drawing.Size(752, 194);
-            this.dgvCompletedOrders.TabIndex = 2;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.898305F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.10169F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(758, 236);
-            this.tableLayoutPanel5.TabIndex = 3;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 256);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(758, 225);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
             // frmShipper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 513);
+            this.ClientSize = new System.Drawing.Size(967, 513);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmShipper";
@@ -425,17 +425,17 @@
             this.panel2.ResumeLayout(false);
             this.tctrlShipper.ResumeLayout(false);
             this.tpProfile.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tpOrderManagement.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

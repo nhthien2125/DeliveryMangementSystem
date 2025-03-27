@@ -22,6 +22,7 @@ namespace DeliveryMangementSystem.Forms
             InitializeComponent();
             ShipperID = S_Id;
         }
+
         private void frmAccountDetail_Load_1(object sender, EventArgs e)
         {
             using (var db = new myDbContext())
@@ -31,8 +32,7 @@ namespace DeliveryMangementSystem.Forms
                 {
                     lblUserId.Text = shipper.Id.ToString();
                     lblName.Text = shipper.Name;
-                    lblRole.Text = shipper.Phone;
-                    
+                    lblPhone.Text = shipper.Phone;
                 }
             }
         }

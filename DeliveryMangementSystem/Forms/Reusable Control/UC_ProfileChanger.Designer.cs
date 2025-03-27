@@ -35,6 +35,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
@@ -96,10 +97,21 @@
             this.txtNewPassword.Size = new System.Drawing.Size(181, 22);
             this.txtNewPassword.TabIndex = 6;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(30, 151);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(130, 42);
+            this.btnBack.TabIndex = 7;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UC_ProfileChanger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.Button btnBack;
     }
 }

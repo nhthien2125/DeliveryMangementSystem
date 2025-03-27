@@ -30,7 +30,7 @@
         {
             this.grbDetail = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRole = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitleRole = new System.Windows.Forms.Label();
             this.lblTitleName = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.7347F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.2653F));
-            this.tableLayoutPanel1.Controls.Add(this.lblRole, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblPhone, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTitleRole, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblTitleName, 0, 1);
@@ -77,15 +77,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 174);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblRole
+            // lblPhone
             // 
-            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(153, 131);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(59, 20);
-            this.lblRole.TabIndex = 11;
-            this.lblRole.Text = "label1";
+            this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(153, 131);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(59, 20);
+            this.lblPhone.TabIndex = 11;
+            this.lblPhone.Text = "label1";
             // 
             // lblName
             // 
@@ -106,9 +106,9 @@
             this.lblTitleRole.Location = new System.Drawing.Point(9, 123);
             this.lblTitleRole.Name = "lblTitleRole";
             this.lblTitleRole.Padding = new System.Windows.Forms.Padding(5);
-            this.lblTitleRole.Size = new System.Drawing.Size(67, 35);
+            this.lblTitleRole.Size = new System.Drawing.Size(85, 35);
             this.lblTitleRole.TabIndex = 8;
-            this.lblTitleRole.Text = "Role:";
+            this.lblTitleRole.Text = "Phone:";
             this.lblTitleRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitleName
@@ -173,7 +173,7 @@
         private System.Windows.Forms.Label lblTitleID;
         private System.Windows.Forms.Label lblTitleRole;
         private System.Windows.Forms.Label lblTitleName;
-        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblUserId;
     }
