@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeliveryMangementSystem.Forms.Reusable_Control;
 using DeliveryMangementSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeliveryMangementSystem.Forms
 {
@@ -20,14 +21,17 @@ namespace DeliveryMangementSystem.Forms
         private readonly myDbContext db = new myDbContext();
         private ToolStripDropDown dropDown;
         private CheckedListBox clbStatusFilter;
-
+        private CheckedListBox clbPaymentFilter;
+        private List<OrderStatus> selectedStatuses = new List<OrderStatus>();
+        private List<PaymentMethod> selectedPaymentMethods = new List<PaymentMethod>();
+        private Action RefreshDgv;
 
 
         //Methods
         private void LoadOrdersByShipperID()
         {
             //load orders from database to datagridview
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Delivered).ToList();
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id).AsNoTracking().ToList();
             dgvOrders.DataSource = orders;
 
             FormatDataGridView();
@@ -179,16 +183,32 @@ namespace DeliveryMangementSystem.Forms
             // Host
             ToolStripControlHost host = new ToolStripControlHost(clbStatusFilter);
             dropDown.Items.Add(host);
-
-            // Button to Apply
-            ToolStripMenuItem btnApplyStatus = new ToolStripMenuItem("Apply Status");
-            btnApplyStatus.Click += btnApplyStatus_Click;
-            dropDown.Items.Add(btnApplyStatus);
+            clbStatusFilter.ItemCheck += clbStatusFilter_ItemCheck;
 
             tsbStatusFilter.DropDown = dropDown;
-            tsbStatusFilter.Dock = DockStyle.Fill;
         }
+        private void CustomizrdMenuPaymentFilter()
+        {
+            // DropDown
+            dropDown = new ToolStripDropDown();
 
+            // CheckedListBox
+            clbPaymentFilter = new CheckedListBox()
+            {
+                CheckOnClick = true,
+            };
+
+            // Get Enum values
+            clbPaymentFilter.Items.AddRange(Enum.GetValues(typeof(PaymentMethod)).Cast<object>().ToArray());
+
+            // Host
+            ToolStripControlHost host = new ToolStripControlHost(clbPaymentFilter);
+            dropDown.Items.Add(host);
+            clbPaymentFilter.ItemCheck += clbPaymentFilter_ItemCheck;
+
+            tsbPaymentFilter.DropDown = dropDown;
+            
+        }
         //constructor
         public frmShipper(string A_id, string S_id)
         {
@@ -219,6 +239,7 @@ namespace DeliveryMangementSystem.Forms
             tctrlShipper.Multiline = true;
 
             CustomizedMenuStatusFilter();
+            CustomizrdMenuPaymentFilter();
         }
 
 
@@ -246,6 +267,30 @@ namespace DeliveryMangementSystem.Forms
 
 
         //Events
+        private void clbPaymentFilter_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var checkedItem = (PaymentMethod)clbPaymentFilter.Items[e.Index];
+            if (e.NewValue == CheckState.Checked)
+            {
+                selectedPaymentMethods.Add(checkedItem);
+            }
+            else
+            {
+                selectedPaymentMethods.Remove(checkedItem);
+            }
+        }
+        private void clbStatusFilter_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var checkedItem = (OrderStatus)clbStatusFilter.Items[e.Index];
+            if (e.NewValue == CheckState.Checked)
+            {
+                selectedStatuses.Add(checkedItem);
+            }
+            else
+            {
+                selectedStatuses.Remove(checkedItem);
+            }
+        }
         private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >=0)
@@ -266,10 +311,14 @@ namespace DeliveryMangementSystem.Forms
                 {
                     var order = db.Orders.Find(dgvOrders.SelectedRows[0].Cells[0].Value);
                     order.Status = (OrderStatus)cbbStatus.SelectedValue;
+                    
                     if (order.Status == OrderStatus.Delivered) order.DeliveryDate = DateTime.Now;
                     else order.DeliveryDate = null;
                     db.SaveChanges();
+
                     LoadOrdersByShipperID();
+                    LoadCompletedOrders();
+                    MessageBox.Show("Cập nhật trạng thái đơn hàng thành công!");
                 }
             }
             else MessageBox.Show("Vui lòng chọn một đơn hàng để cập nhật trạng thái giao hàng!");
@@ -280,16 +329,24 @@ namespace DeliveryMangementSystem.Forms
             if (result == DialogResult.Yes)
                 this.Close();
         }
-        private void btnApplyStatus_Click(object sender, EventArgs e)
+        private void btnApply_Click_1(object sender, EventArgs e)
         {
-            var query = db.Orders.Where(o => o.ShipperId == Shipper_Id);
-            var selectedStatus = clbStatusFilter.CheckedItems.Cast<OrderStatus>().ToList();
-            if (selectedStatus.Count > 0)
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id);
+
+            if (selectedStatuses.Any())
             {
-                query = query.Where(o => selectedStatus.Contains(o.Status));
+                orders = orders.Where(o => selectedStatuses.Contains(o.Status));
             }
-            dgvOrders.DataSource = query.ToList();
-            dropDown.Close();
+            if (selectedPaymentMethods.Any())
+            {
+                orders = orders.Where(o => selectedPaymentMethods.Contains(o.PaymentMethod));
+            }
+            dgvOrders.DataSource = orders.ToList();
+        }
+
+        private void btnResetFilter_Click(object sender, EventArgs e)
+        {
+            LoadOrdersByShipperID();
         }
     }
 }

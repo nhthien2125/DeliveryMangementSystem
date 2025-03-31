@@ -59,11 +59,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbStatusFilter = new System.Windows.Forms.ToolStripDropDownButton();
             this.tpChangePass = new System.Windows.Forms.TabPage();
             this.pnlChange = new System.Windows.Forms.Panel();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.tsbPaymentFilter = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbStatusFilter = new System.Windows.Forms.ToolStripDropDownButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.btnResetFilter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,9 +82,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.tpChangePass.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -426,8 +431,10 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel4, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 340);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -467,35 +474,6 @@
             this.cbbStatus.Size = new System.Drawing.Size(143, 24);
             this.cbbStatus.TabIndex = 1;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.toolStrip1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(181, 129);
-            this.panel3.TabIndex = 8;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbStatusFilter});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(181, 27);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbStatusFilter
-            // 
-            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
-            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbStatusFilter.Name = "tsbStatusFilter";
-            this.tsbStatusFilter.Size = new System.Drawing.Size(100, 24);
-            this.tsbStatusFilter.Text = "Status Filter";
-            // 
             // tpChangePass
             // 
             this.tpChangePass.Controls.Add(this.pnlChange);
@@ -514,6 +492,78 @@
             this.pnlChange.Name = "pnlChange";
             this.pnlChange.Size = new System.Drawing.Size(755, 478);
             this.pnlChange.TabIndex = 0;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbPaymentFilter});
+            this.toolStrip2.Location = new System.Drawing.Point(187, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(187, 27);
+            this.toolStrip2.TabIndex = 9;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // tsbPaymentFilter
+            // 
+            this.tsbPaymentFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbPaymentFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaymentFilter.Image")));
+            this.tsbPaymentFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPaymentFilter.Name = "tsbPaymentFilter";
+            this.tsbPaymentFilter.Size = new System.Drawing.Size(137, 24);
+            this.tsbPaymentFilter.Text = "💳Payment Filter";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbStatusFilter});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(187, 27);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbStatusFilter
+            // 
+            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
+            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbStatusFilter.Name = "tsbStatusFilter";
+            this.tsbStatusFilter.Size = new System.Drawing.Size(121, 24);
+            this.tsbStatusFilter.Text = "📶Status Filter";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnResetFilter);
+            this.panel3.Controls.Add(this.btnApply);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(377, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(181, 129);
+            this.panel3.TabIndex = 11;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnApply.Location = new System.Drawing.Point(19, 68);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(142, 45);
+            this.btnApply.TabIndex = 2;
+            this.btnApply.Text = "Áp dụng lọc";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click_1);
+            // 
+            // btnResetFilter
+            // 
+            this.btnResetFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnResetFilter.Location = new System.Drawing.Point(19, 14);
+            this.btnResetFilter.Name = "btnResetFilter";
+            this.btnResetFilter.Size = new System.Drawing.Size(142, 45);
+            this.btnResetFilter.TabIndex = 3;
+            this.btnResetFilter.Text = "Xóa bộ lọc";
+            this.btnResetFilter.UseVisualStyleBackColor = true;
+            this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
             // 
             // frmShipper
             // 
@@ -542,12 +592,14 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.tpChangePass.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tpChangePass.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -586,8 +638,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbbStatus;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripDropDownButton tsbPaymentFilter;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton tsbStatusFilter;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnResetFilter;
+        private System.Windows.Forms.Button btnApply;
     }
 }
