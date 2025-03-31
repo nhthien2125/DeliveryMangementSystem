@@ -31,16 +31,11 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.grid = new System.Windows.Forms.TableLayoutPanel();
             this.gridHeaderContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.iconBrand = new System.Windows.Forms.PictureBox();
             this.nameBrandM = new System.Windows.Forms.Label();
             this.gridNav = new System.Windows.Forms.TableLayoutPanel();
             this.titleLogout = new System.Windows.Forms.Label();
             this.titleBranch = new System.Windows.Forms.Label();
-            this.picHRM = new System.Windows.Forms.PictureBox();
             this.titleAccount = new System.Windows.Forms.Label();
-            this.picRevenue = new System.Windows.Forms.PictureBox();
-            this.picContact = new System.Windows.Forms.PictureBox();
-            this.picHome = new System.Windows.Forms.PictureBox();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,21 +48,26 @@
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
             this.tpBranch = new System.Windows.Forms.TabPage();
             this.tpProfile = new System.Windows.Forms.TabPage();
+            this.iconBrand = new System.Windows.Forms.PictureBox();
+            this.picHRM = new System.Windows.Forms.PictureBox();
+            this.picRevenue = new System.Windows.Forms.PictureBox();
+            this.picContact = new System.Windows.Forms.PictureBox();
+            this.picHome = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).BeginInit();
             this.gridNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHRM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picContact)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
             this.tabControlAdmin.SuspendLayout();
             this.tpAccount.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHRM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -128,20 +128,6 @@
             this.gridHeaderContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.gridHeaderContainer.Size = new System.Drawing.Size(397, 89);
             this.gridHeaderContainer.TabIndex = 4;
-            // 
-            // iconBrand
-            // 
-            this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconBrand.Location = new System.Drawing.Point(3, 17);
-            this.iconBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconBrand.Name = "iconBrand";
-            this.gridHeaderContainer.SetRowSpan(this.iconBrand, 2);
-            this.iconBrand.Size = new System.Drawing.Size(126, 55);
-            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconBrand.TabIndex = 2;
-            this.iconBrand.TabStop = false;
             // 
             // nameBrandM
             // 
@@ -210,20 +196,6 @@
             this.titleBranch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleBranch.Click += new System.EventHandler(this.titleBranch_Click);
             // 
-            // picHRM
-            // 
-            this.picHRM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picHRM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHRM.Location = new System.Drawing.Point(29, 151);
-            this.picHRM.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picHRM.Name = "picHRM";
-            this.picHRM.Size = new System.Drawing.Size(49, 61);
-            this.picHRM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHRM.TabIndex = 3;
-            this.picHRM.TabStop = false;
-            // 
             // titleAccount
             // 
             this.titleAccount.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -236,48 +208,6 @@
             this.titleAccount.Text = "Account Management";
             this.titleAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleAccount.Click += new System.EventHandler(this.titleAccount_Click);
-            // 
-            // picRevenue
-            // 
-            this.picRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRevenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRevenue.Location = new System.Drawing.Point(29, 272);
-            this.picRevenue.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picRevenue.Name = "picRevenue";
-            this.picRevenue.Size = new System.Drawing.Size(49, 61);
-            this.picRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRevenue.TabIndex = 4;
-            this.picRevenue.TabStop = false;
-            // 
-            // picContact
-            // 
-            this.picContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picContact.Location = new System.Drawing.Point(29, 393);
-            this.picContact.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
-            this.picContact.Name = "picContact";
-            this.picContact.Size = new System.Drawing.Size(49, 61);
-            this.picContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picContact.TabIndex = 5;
-            this.picContact.TabStop = false;
-            // 
-            // picHome
-            // 
-            this.picHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHome.Location = new System.Drawing.Point(30, 30);
-            this.picHome.Margin = new System.Windows.Forms.Padding(30);
-            this.picHome.Name = "picHome";
-            this.picHome.Size = new System.Drawing.Size(47, 61);
-            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHome.TabIndex = 0;
-            this.picHome.TabStop = false;
             // 
             // tabControlAdmin
             // 
@@ -426,6 +356,79 @@
             this.tpProfile.TabIndex = 6;
             this.tpProfile.Text = "Profile";
             // 
+            // iconBrand
+            // 
+            this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconBrand.Location = new System.Drawing.Point(3, 17);
+            this.iconBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconBrand.Name = "iconBrand";
+            this.gridHeaderContainer.SetRowSpan(this.iconBrand, 2);
+            this.iconBrand.Size = new System.Drawing.Size(126, 55);
+            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconBrand.TabIndex = 2;
+            this.iconBrand.TabStop = false;
+            // 
+            // picHRM
+            // 
+            this.picHRM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picHRM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHRM.Image = global::DeliveryMangementSystem.Properties.Resources.icon_default_branch;
+            this.picHRM.Location = new System.Drawing.Point(29, 151);
+            this.picHRM.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picHRM.Name = "picHRM";
+            this.picHRM.Size = new System.Drawing.Size(49, 61);
+            this.picHRM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHRM.TabIndex = 3;
+            this.picHRM.TabStop = false;
+            // 
+            // picRevenue
+            // 
+            this.picRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picRevenue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRevenue.Image = global::DeliveryMangementSystem.Properties.Resources.icon_default_logout;
+            this.picRevenue.Location = new System.Drawing.Point(29, 272);
+            this.picRevenue.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picRevenue.Name = "picRevenue";
+            this.picRevenue.Size = new System.Drawing.Size(49, 61);
+            this.picRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRevenue.TabIndex = 4;
+            this.picRevenue.TabStop = false;
+            // 
+            // picContact
+            // 
+            this.picContact.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picContact.Location = new System.Drawing.Point(29, 393);
+            this.picContact.Margin = new System.Windows.Forms.Padding(29, 30, 29, 30);
+            this.picContact.Name = "picContact";
+            this.picContact.Size = new System.Drawing.Size(49, 61);
+            this.picContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picContact.TabIndex = 5;
+            this.picContact.TabStop = false;
+            // 
+            // picHome
+            // 
+            this.picHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHome.Image = global::DeliveryMangementSystem.Properties.Resources.icon_default_account;
+            this.picHome.Location = new System.Drawing.Point(30, 30);
+            this.picHome.Margin = new System.Windows.Forms.Padding(30);
+            this.picHome.Name = "picHome";
+            this.picHome.Size = new System.Drawing.Size(47, 61);
+            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHome.TabIndex = 0;
+            this.picHome.TabStop = false;
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -441,19 +444,19 @@
             this.tlpMain.PerformLayout();
             this.grid.ResumeLayout(false);
             this.gridHeaderContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
             this.gridNav.ResumeLayout(false);
             this.gridNav.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHRM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picContact)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
             this.tabControlAdmin.ResumeLayout(false);
             this.tpAccount.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHRM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
