@@ -17,34 +17,31 @@ namespace DeliveryMangementSystem.Forms
         //Attributes
         private readonly string Account_Id;
         private readonly string Shipper_Id;
+        private readonly myDbContext db = new myDbContext();
 
         //Methods
         private void LoadOrdersByShipperID()
         {
             //load orders from database to datagridview
-            using (var db = new myDbContext())
-            {
-                var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Delivered).ToList();
-                dgvOrders.DataSource = orders;
-            }
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Delivered).ToList();
+            dgvOrders.DataSource = orders;
+
             FormatDataGridView();
         }
         private void LoadCompletedOrders()
         {
             //load completed orders from database to datagridview
-            using (var db = new myDbContext())
-            {
-                var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).ToList();
-                dgvCompletedOrders.DataSource = orders;
-            }
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).ToList();
+            dgvCompletedOrders.DataSource = orders;
+
             FormatDataGridView();
         }
         private void LoadProfileByShipperID()
         {
-            //load profile from database to textboxes
-            using (var db = new myDbContext())
+            //load profile from database to labels
+            var shipper = db.Shippers.Find(Shipper_Id);
+            if (shipper != null)
             {
-                var shipper = db.Shippers.Find(Shipper_Id);
                 lblID.Text = shipper.Id;
                 lblName.Text = shipper.Name;
                 lblPhone.Text = shipper.Phone;
@@ -87,6 +84,7 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "DeliveryDate",
                 DataPropertyName = "DeliveryDate",
                 HeaderText = "Ngày giao",
                 Width = 100
@@ -174,26 +172,27 @@ namespace DeliveryMangementSystem.Forms
         }
         private void frmShipper_Load(object sender, EventArgs e)
         {
-            // Lấy danh sách giá trị từ enum OrderStatus
+            // Get values from enum OrderStatus for cbbStatus
             var statusList = Enum.GetValues(typeof(OrderStatus))
                                  .Cast<OrderStatus>()
                                  .Select(s => new { Value = s, Text = s.ToString() })
                                  .ToList();
 
             cbbStatus.DataSource = statusList;
-            cbbStatus.ValueMember = "Value";  // Lưu Enum vào ValueMember
-            cbbStatus.DisplayMember = "Text"; // Hiển thị tên Enum
-            cbbStatus.SelectedIndex = 0;
+            cbbStatus.ValueMember = "Value";  // Set ValueMember with enum value
+            cbbStatus.DisplayMember = "Text"; // Show enum name
+            cbbStatus.SelectedIndex = -1;      // Set Default to null
 
+            // hiding tab headers
             tctrlShipper.Appearance = TabAppearance.FlatButtons;
             tctrlShipper.SizeMode = TabSizeMode.Fixed;
-            tctrlShipper.ItemSize = new Size(0, 1); // Ẩn tab
+            tctrlShipper.ItemSize = new Size(0, 1); 
             tctrlShipper.Multiline = true;
         }
 
 
 
-        //Tabpage Switching by clicking buttons
+        //Tabpage Switching
         private void btnOrderManagement_Click(object sender, EventArgs e)
         {
             tctrlShipper.SelectedTab = tpOrderManagement;
@@ -201,6 +200,17 @@ namespace DeliveryMangementSystem.Forms
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
             tctrlShipper.SelectedTab = tpProfile;
+        }
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            tctrlShipper.SelectedTab = tpChangePass;
+            UC_ProfileChanger uc = new UC_ProfileChanger(Account_Id, "Shipper")
+            {
+                Dock = DockStyle.Fill
+            };
+
+            pnlChange.Controls.Add(uc);
+            uc.BringToFront();
         }
 
 
@@ -216,7 +226,7 @@ namespace DeliveryMangementSystem.Forms
                     cbbStatus.SelectedValue = order.Status;
                 }
             }
-        }
+        } 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dgvOrders.SelectedRows.Count ==1 )
@@ -225,25 +235,20 @@ namespace DeliveryMangementSystem.Forms
                 {
                     var order = db.Orders.Find(dgvOrders.SelectedRows[0].Cells[0].Value);
                     order.Status = (OrderStatus)cbbStatus.SelectedValue;
+                    if (order.Status == OrderStatus.Delivered) order.DeliveryDate = DateTime.Now;
+                    else order.DeliveryDate = null;
                     db.SaveChanges();
                     LoadOrdersByShipperID();
                 }
             }
             else MessageBox.Show("Vui lòng chọn một đơn hàng để cập nhật trạng thái giao hàng!");
-        }
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            UC_ProfileChanger uc = new UC_ProfileChanger(Account_Id, "Shipper")
-            {
-                Dock = DockStyle.Fill
-            };
-
-            panel2.Controls.Add(uc);
-            uc.BringToFront();
-        }
+        } // Update order status
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn đăng xuất tài khoản hiện tại?", "Đăng xuất", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+                this.Close();
         }
+
     }
 }

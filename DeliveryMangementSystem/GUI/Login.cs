@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DeliveryMangementSystem.Forms;
+using DeliveryMangementSystem.GUI;
 using DeliveryMangementSystem.Models;
 
 namespace DeliveryMangementSystem
@@ -59,6 +60,7 @@ namespace DeliveryMangementSystem
                         new frmShipper(CheckLogin().Account_id, CheckLogin().Shipper_id).ShowDialog();
                         break;
                 }
+                txtPassword.Clear();
                 Show();
             }
             else
@@ -108,6 +110,14 @@ namespace DeliveryMangementSystem
                 txtPassword.PasswordChar = '*';
                 flagPass = false;
             }
+        }
+
+        private void llblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            new frmSignUp().ShowDialog();
+            this.Show();
+            txtPassword.Clear();
         }
     }
 }

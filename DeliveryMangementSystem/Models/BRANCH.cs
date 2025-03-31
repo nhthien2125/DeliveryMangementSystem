@@ -20,6 +20,6 @@ namespace DeliveryMangementSystem.Models
         [Column("Address")]
         public string Address { get; set; }
 
-        public virtual ICollection<xORDER> Orders { get; set; }
+        public virtual ICollection<xORDER> Orders { get; set; } = new List<xORDER>();
     }
 }

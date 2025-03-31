@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DeliveryMangementSystem.Migrations
 {
     [DbContext(typeof(myDbContext))]
-    partial class myDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250331134420_v1_0_1")]
+    partial class v1_0_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

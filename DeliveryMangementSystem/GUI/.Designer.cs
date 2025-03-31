@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chbShowPassword = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,12 +40,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chbShowPassword = new System.Windows.Forms.CheckBox();
+            this.llblSignUp = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,18 +65,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1133, 533);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DeliveryMangementSystem.Properties.Resources.fddd612f7c3d02901f783c99add46239;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(590, 527);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
@@ -91,6 +80,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.Teal;
+            this.groupBox1.Controls.Add(this.llblSignUp);
             this.groupBox1.Controls.Add(this.chbShowPassword);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.txtUsername);
@@ -110,6 +100,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng nhập";
             // 
+            // chbShowPassword
+            // 
+            this.chbShowPassword.AutoSize = true;
+            this.chbShowPassword.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.chbShowPassword.ForeColor = System.Drawing.Color.White;
+            this.chbShowPassword.Location = new System.Drawing.Point(82, 269);
+            this.chbShowPassword.Name = "chbShowPassword";
+            this.chbShowPassword.Size = new System.Drawing.Size(189, 29);
+            this.chbShowPassword.TabIndex = 7;
+            this.chbShowPassword.Text = "Hiển thị mật khẩu";
+            this.chbShowPassword.UseVisualStyleBackColor = true;
+            this.chbShowPassword.CheckedChanged += new System.EventHandler(this.chbShowPassword_CheckedChanged);
+            // 
             // btnExit
             // 
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -124,7 +127,7 @@
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExit.Location = new System.Drawing.Point(194, 341);
+            this.btnExit.Location = new System.Drawing.Point(194, 316);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(115, 39);
             this.btnExit.TabIndex = 6;
@@ -173,7 +176,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLogin.Location = new System.Drawing.Point(35, 341);
+            this.btnLogin.Location = new System.Drawing.Point(35, 316);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(115, 39);
             this.btnLogin.TabIndex = 5;
@@ -189,9 +192,9 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(46, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 22);
+            this.label2.Size = new System.Drawing.Size(133, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tài Khoản";
+            this.label2.Text = "Tên Đăng Nhập";
             // 
             // txtPassword
             // 
@@ -208,18 +211,31 @@
             // 
             this.epUsername.ContainerControl = this;
             // 
-            // chbShowPassword
+            // llblSignUp
             // 
-            this.chbShowPassword.AutoSize = true;
-            this.chbShowPassword.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.chbShowPassword.ForeColor = System.Drawing.Color.White;
-            this.chbShowPassword.Location = new System.Drawing.Point(82, 269);
-            this.chbShowPassword.Name = "chbShowPassword";
-            this.chbShowPassword.Size = new System.Drawing.Size(189, 29);
-            this.chbShowPassword.TabIndex = 7;
-            this.chbShowPassword.Text = "Hiển thị mật khẩu";
-            this.chbShowPassword.UseVisualStyleBackColor = true;
-            this.chbShowPassword.CheckedChanged += new System.EventHandler(this.chbShowPassword_CheckedChanged);
+            this.llblSignUp.ActiveLinkColor = System.Drawing.Color.SlateBlue;
+            this.llblSignUp.AutoSize = true;
+            this.llblSignUp.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.llblSignUp.LinkColor = System.Drawing.Color.Thistle;
+            this.llblSignUp.Location = new System.Drawing.Point(80, 370);
+            this.llblSignUp.Name = "llblSignUp";
+            this.llblSignUp.Size = new System.Drawing.Size(182, 25);
+            this.llblSignUp.TabIndex = 8;
+            this.llblSignUp.TabStop = true;
+            this.llblSignUp.Text = "Chưa có tài khoản?";
+            this.llblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSignUp_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DeliveryMangementSystem.Properties.Resources.fddd612f7c3d02901f783c99add46239;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(590, 527);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmLogin
             // 
@@ -234,11 +250,11 @@
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +273,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chbShowPassword;
+        private System.Windows.Forms.LinkLabel llblSignUp;
     }
 }
 

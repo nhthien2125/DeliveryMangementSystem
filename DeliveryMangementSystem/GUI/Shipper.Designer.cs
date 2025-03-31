@@ -33,6 +33,7 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnOrderManagement = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnChangePhone = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tctrlShipper = new System.Windows.Forms.TabControl();
             this.tpProfile = new System.Windows.Forms.TabPage();
@@ -42,19 +43,26 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.btnChangePhone = new System.Windows.Forms.Button();
             this.tpOrderManagement = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.tpChangePass = new System.Windows.Forms.TabPage();
+            this.pnlChange = new System.Windows.Forms.Panel();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,8 +74,12 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tpOrderManagement.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            this.tpChangePass.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.toolStripContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,27 +96,29 @@
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.btnProfile, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnOrderManagement, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnLogOut, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.btnChangePhone, 0, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 8);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 198F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 501);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnProfile
             // 
             this.btnProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnProfile.Location = new System.Drawing.Point(13, 10);
+            this.btnProfile.Location = new System.Drawing.Point(13, 24);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(162, 76);
             this.btnProfile.TabIndex = 1;
@@ -115,10 +129,11 @@
             // btnOrderManagement
             // 
             this.btnOrderManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOrderManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.btnOrderManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnOrderManagement.Location = new System.Drawing.Point(13, 110);
+            this.btnOrderManagement.Location = new System.Drawing.Point(13, 149);
             this.btnOrderManagement.Name = "btnOrderManagement";
             this.btnOrderManagement.Size = new System.Drawing.Size(162, 76);
             this.btnOrderManagement.TabIndex = 0;
@@ -129,16 +144,32 @@
             // btnLogOut
             // 
             this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnLogOut.Location = new System.Drawing.Point(13, 411);
+            this.btnLogOut.Location = new System.Drawing.Point(13, 400);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(162, 76);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "◀  Sign out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // btnChangePhone
+            // 
+            this.btnChangePhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangePhone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.btnChangePhone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnChangePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnChangePhone.Location = new System.Drawing.Point(13, 274);
+            this.btnChangePhone.Name = "btnChangePhone";
+            this.btnChangePhone.Size = new System.Drawing.Size(162, 76);
+            this.btnChangePhone.TabIndex = 2;
+            this.btnChangePhone.Text = "🗝️ Đổi mật khẩu";
+            this.btnChangePhone.UseVisualStyleBackColor = true;
+            this.btnChangePhone.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // panel2
             // 
@@ -154,6 +185,7 @@
             // 
             this.tctrlShipper.Controls.Add(this.tpProfile);
             this.tctrlShipper.Controls.Add(this.tpOrderManagement);
+            this.tctrlShipper.Controls.Add(this.tpChangePass);
             this.tctrlShipper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tctrlShipper.Location = new System.Drawing.Point(0, 0);
             this.tctrlShipper.Name = "tctrlShipper";
@@ -245,13 +277,14 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.54967F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.45033F));
+            this.tableLayoutPanel4.Controls.Add(this.lblMail, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.lblID, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblName, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.lblPhone, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btnChangePhone, 0, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -262,6 +295,26 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(752, 209);
             this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lblMail.Location = new System.Drawing.Point(210, 156);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(72, 29);
+            this.lblMail.TabIndex = 8;
+            this.lblMail.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label6.Location = new System.Drawing.Point(3, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 29);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Email:";
             // 
             // lblID
             // 
@@ -325,17 +378,6 @@
             this.lblPhone.TabIndex = 6;
             this.lblPhone.Text = "label5";
             // 
-            // btnChangePhone
-            // 
-            this.btnChangePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnChangePhone.Location = new System.Drawing.Point(3, 159);
-            this.btnChangePhone.Name = "btnChangePhone";
-            this.btnChangePhone.Size = new System.Drawing.Size(192, 39);
-            this.btnChangePhone.TabIndex = 2;
-            this.btnChangePhone.Text = "Change your password";
-            this.btnChangePhone.UseVisualStyleBackColor = true;
-            this.btnChangePhone.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
             // tpOrderManagement
             // 
             this.tpOrderManagement.Controls.Add(this.tableLayoutPanel1);
@@ -349,41 +391,25 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.53754F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.46246F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvOrders, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 478);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.cbbStatus, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSave, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(565, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.29787F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.70213F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 377F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(187, 472);
-            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // cbbStatus
             // 
             this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(22, 6);
+            this.cbbStatus.Location = new System.Drawing.Point(22, 25);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(143, 24);
             this.cbbStatus.TabIndex = 1;
@@ -391,7 +417,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(22, 42);
+            this.btnSave.Location = new System.Drawing.Point(22, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(142, 45);
             this.btnSave.TabIndex = 1;
@@ -408,9 +434,91 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(556, 472);
+            this.dgvOrders.Size = new System.Drawing.Size(749, 331);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
+            // 
+            // tpChangePass
+            // 
+            this.tpChangePass.Controls.Add(this.pnlChange);
+            this.tpChangePass.Location = new System.Drawing.Point(4, 25);
+            this.tpChangePass.Name = "tpChangePass";
+            this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
+            this.tpChangePass.Size = new System.Drawing.Size(761, 484);
+            this.tpChangePass.TabIndex = 5;
+            this.tpChangePass.Text = "Change";
+            this.tpChangePass.UseVisualStyleBackColor = true;
+            // 
+            // pnlChange
+            // 
+            this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChange.Location = new System.Drawing.Point(3, 3);
+            this.pnlChange.Name = "pnlChange";
+            this.pnlChange.Size = new System.Drawing.Size(755, 478);
+            this.pnlChange.TabIndex = 0;
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(181, 104);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(190, 3);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(181, 129);
+            this.toolStripContainer1.TabIndex = 2;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 4;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.Controls.Add(this.toolStripContainer2, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.toolStripContainer1, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel4, 3, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 340);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(749, 135);
+            this.tableLayoutPanel7.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Controls.Add(this.cbbStatus);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(181, 129);
+            this.panel3.TabIndex = 3;
+            // 
+            // toolStripContainer2
+            // 
+            // 
+            // toolStripContainer2.ContentPanel
+            // 
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(181, 104);
+            this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer2.Location = new System.Drawing.Point(377, 3);
+            this.toolStripContainer2.Name = "toolStripContainer2";
+            this.toolStripContainer2.Size = new System.Drawing.Size(181, 129);
+            this.toolStripContainer2.TabIndex = 4;
+            this.toolStripContainer2.Text = "toolStripContainer2";
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(564, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(182, 129);
+            this.panel4.TabIndex = 5;
             // 
             // frmShipper
             // 
@@ -437,8 +545,14 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tpOrderManagement.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            this.tpChangePass.ResumeLayout(false);
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.toolStripContainer2.ResumeLayout(false);
+            this.toolStripContainer2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +567,6 @@
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox cbbStatus;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnProfile;
@@ -472,5 +585,14 @@
         private System.Windows.Forms.DataGridView dgvCompletedOrders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TabPage tpChangePass;
+        private System.Windows.Forms.Panel pnlChange;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

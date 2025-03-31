@@ -19,6 +19,10 @@ namespace DeliveryMangementSystem.Models
         [StringLength (100)]
         [Column ("Name")]
         public string Name { get; set; }
+
+        [StringLength (100)]
+        [Column("Email")]
+        public string Email { get; set; }
         public virtual ICollection<xORDER> Orders { get; set; } = new List<xORDER>();
     }
 }
