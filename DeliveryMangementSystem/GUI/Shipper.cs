@@ -18,6 +18,10 @@ namespace DeliveryMangementSystem.Forms
         private readonly string Account_Id;
         private readonly string Shipper_Id;
         private readonly myDbContext db = new myDbContext();
+        private ToolStripDropDown dropDown;
+        private CheckedListBox clbStatusFilter;
+
+
 
         //Methods
         private void LoadOrdersByShipperID()
@@ -158,7 +162,32 @@ namespace DeliveryMangementSystem.Forms
                 Width = 100
             });
         }
+        private void CustomizedMenuStatusFilter()
+        {
+            // DropDown
+            dropDown = new ToolStripDropDown();
 
+            // CheckedListBox
+            clbStatusFilter = new CheckedListBox()
+            {
+                CheckOnClick = true,
+            };
+
+            // Get Enum values
+            clbStatusFilter.Items.AddRange(Enum.GetValues(typeof(OrderStatus)).Cast<object>().ToArray());
+
+            // Host
+            ToolStripControlHost host = new ToolStripControlHost(clbStatusFilter);
+            dropDown.Items.Add(host);
+
+            // Button to Apply
+            ToolStripMenuItem btnApplyStatus = new ToolStripMenuItem("Apply Status");
+            btnApplyStatus.Click += btnApplyStatus_Click;
+            dropDown.Items.Add(btnApplyStatus);
+
+            tsbStatusFilter.DropDown = dropDown;
+            tsbStatusFilter.Dock = DockStyle.Fill;
+        }
 
         //constructor
         public frmShipper(string A_id, string S_id)
@@ -188,6 +217,8 @@ namespace DeliveryMangementSystem.Forms
             tctrlShipper.SizeMode = TabSizeMode.Fixed;
             tctrlShipper.ItemSize = new Size(0, 1); 
             tctrlShipper.Multiline = true;
+
+            CustomizedMenuStatusFilter();
         }
 
 
@@ -249,6 +280,16 @@ namespace DeliveryMangementSystem.Forms
             if (result == DialogResult.Yes)
                 this.Close();
         }
-
+        private void btnApplyStatus_Click(object sender, EventArgs e)
+        {
+            var query = db.Orders.Where(o => o.ShipperId == Shipper_Id);
+            var selectedStatus = clbStatusFilter.CheckedItems.Cast<OrderStatus>().ToList();
+            if (selectedStatus.Count > 0)
+            {
+                query = query.Where(o => selectedStatus.Contains(o.Status));
+            }
+            dgvOrders.DataSource = query.ToList();
+            dropDown.Close();
+        }
     }
 }
