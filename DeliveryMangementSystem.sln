@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryMangementSystem", "DeliveryMangementSystem\DeliveryMangementSystem.csproj", "{23CE0BAD-E2B1-4E33-9BA1-7344F71E630B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. GUI", "DeliveryMangementSystem\1. GUI.csproj", "{23CE0BAD-E2B1-4E33-9BA1-7344F71E630B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. DAL", "DAL\3. DAL.csproj", "{98CBB37F-2683-41A5-B39B-AF2073A9F06B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. BUS", "BUS\2. BUS.csproj", "{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{23CE0BAD-E2B1-4E33-9BA1-7344F71E630B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23CE0BAD-E2B1-4E33-9BA1-7344F71E630B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23CE0BAD-E2B1-4E33-9BA1-7344F71E630B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BD3C604-A3A6-4A87-9C6D-20282116D337}
 	EndGlobalSection
 EndGlobal

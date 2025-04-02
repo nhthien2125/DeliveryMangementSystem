@@ -24,7 +24,6 @@ namespace DeliveryMangementSystem.Forms
         private CheckedListBox clbPaymentFilter;
         private List<OrderStatus> selectedStatuses = new List<OrderStatus>();
         private List<PaymentMethod> selectedPaymentMethods = new List<PaymentMethod>();
-        private Action RefreshDgv;
 
 
         //Methods
@@ -39,7 +38,7 @@ namespace DeliveryMangementSystem.Forms
         private void LoadCompletedOrders()
         {
             //load completed orders from database to datagridview
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).ToList();
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).AsNoTracking().ToList();
             dgvCompletedOrders.DataSource = orders;
 
             FormatDataGridView();
