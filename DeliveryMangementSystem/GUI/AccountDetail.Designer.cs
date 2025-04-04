@@ -36,6 +36,8 @@
             this.lblTitleName = new System.Windows.Forms.Label();
             this.lblTitleID = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
             this.grbDetail.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +62,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.7347F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.2653F));
+            this.tableLayoutPanel1.Controls.Add(this.lblMail, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblPhone, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTitleRole, 0, 2);
@@ -69,19 +73,19 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 174);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 218);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblPhone
             // 
             this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(153, 131);
+            this.lblPhone.Location = new System.Drawing.Point(153, 123);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(59, 20);
             this.lblPhone.TabIndex = 11;
@@ -91,7 +95,7 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(153, 76);
+            this.lblName.Location = new System.Drawing.Point(153, 72);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(59, 20);
             this.lblName.TabIndex = 10;
@@ -103,7 +107,7 @@
             this.lblTitleRole.AutoSize = true;
             this.lblTitleRole.BackColor = System.Drawing.Color.White;
             this.lblTitleRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTitleRole.Location = new System.Drawing.Point(9, 123);
+            this.lblTitleRole.Location = new System.Drawing.Point(9, 115);
             this.lblTitleRole.Name = "lblTitleRole";
             this.lblTitleRole.Padding = new System.Windows.Forms.Padding(5);
             this.lblTitleRole.Size = new System.Drawing.Size(85, 35);
@@ -117,7 +121,7 @@
             this.lblTitleName.AutoSize = true;
             this.lblTitleName.BackColor = System.Drawing.Color.White;
             this.lblTitleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTitleName.Location = new System.Drawing.Point(9, 69);
+            this.lblTitleName.Location = new System.Drawing.Point(9, 64);
             this.lblTitleName.Name = "lblTitleName";
             this.lblTitleName.Padding = new System.Windows.Forms.Padding(5);
             this.lblTitleName.Size = new System.Drawing.Size(80, 35);
@@ -131,7 +135,7 @@
             this.lblTitleID.AutoSize = true;
             this.lblTitleID.BackColor = System.Drawing.Color.White;
             this.lblTitleID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTitleID.Location = new System.Drawing.Point(9, 15);
+            this.lblTitleID.Location = new System.Drawing.Point(9, 13);
             this.lblTitleID.Name = "lblTitleID";
             this.lblTitleID.Padding = new System.Windows.Forms.Padding(5);
             this.lblTitleID.Size = new System.Drawing.Size(93, 35);
@@ -143,11 +147,35 @@
             // 
             this.lblUserId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(153, 22);
+            this.lblUserId.Location = new System.Drawing.Point(153, 21);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(59, 20);
             this.lblUserId.TabIndex = 9;
             this.lblUserId.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(9, 168);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(76, 35);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Email:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMail
+            // 
+            this.lblMail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(153, 175);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(59, 20);
+            this.lblMail.TabIndex = 13;
+            this.lblMail.Text = "label1";
             // 
             // frmAccountDetail
             // 
@@ -176,5 +204,7 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblUserId;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMail;
     }
 }

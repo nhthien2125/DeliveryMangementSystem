@@ -8,33 +8,44 @@ namespace DeliveryMangementSystem.Models
         Admin,
         Shipper
     }
+    public enum UserStatus
+    {
+        Active,
+        Inactive
+    }
 
     [Table ("Account")]
     public class ACCOUNT
     {
         [Key]
         [StringLength (10)]
-        [Column ("Account_ID")]
-        public string Id { get; set; }
+        [Column ("Account_ID")]public string Id { get; set; }
+        
 
         [StringLength (50)]
-        [Column ("Username")]
         [Required]
-        public string Username { get; set; }
+        [Column ("Username")]public string Username { get; set; }
+        
 
         [StringLength (50)]
-        [Column ("Password")]
         [Required]
-        public string Password { get; set; }
+        [Column ("Password")]public string Password { get; set; }
+        
+
         [Required]
-        public UserRole Role { get; set; }
+        [Column("Role")]public UserRole Role { get; set; }
+        
+
+        [Required]
+        [Column("Status")]public UserStatus Status { get; set; }
+        
 
         [StringLength(10)]
-        [Column("Shipper_ID")]
-        public string ShipperId { get; set; }
+        [Column("Shipper_ID")]public string ShipperId { get; set; }
         [ForeignKey("ShipperId")]
-        public virtual SHIPPER Shipper { get; set; }
 
+
+        public virtual SHIPPER Shipper { get; set; }
     }
 }
 

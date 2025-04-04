@@ -56,18 +56,18 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbStatusFilter = new System.Windows.Forms.ToolStripDropDownButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
-            this.tpChangePass = new System.Windows.Forms.TabPage();
-            this.pnlChange = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tsbPaymentFilter = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbStatusFilter = new System.Windows.Forms.ToolStripDropDownButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnApply = new System.Windows.Forms.Button();
             this.btnResetFilter = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.tpChangePass = new System.Windows.Forms.TabPage();
+            this.pnlChange = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,11 +81,11 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tpChangePass.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tpChangePass.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,11 +95,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 513);
+            this.panel1.Size = new System.Drawing.Size(194, 511);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -114,7 +116,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 501);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 496);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnProfile
@@ -139,7 +141,7 @@
             this.btnOrderManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnOrderManagement.Location = new System.Drawing.Point(13, 149);
+            this.btnOrderManagement.Location = new System.Drawing.Point(13, 148);
             this.btnOrderManagement.Name = "btnOrderManagement";
             this.btnOrderManagement.Size = new System.Drawing.Size(162, 76);
             this.btnOrderManagement.TabIndex = 0;
@@ -154,7 +156,7 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnLogOut.Location = new System.Drawing.Point(13, 400);
+            this.btnLogOut.Location = new System.Drawing.Point(13, 396);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(162, 76);
             this.btnLogOut.TabIndex = 2;
@@ -169,7 +171,7 @@
             this.btnChangePhone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnChangePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnChangePhone.Location = new System.Drawing.Point(13, 274);
+            this.btnChangePhone.Location = new System.Drawing.Point(13, 272);
             this.btnChangePhone.Name = "btnChangePhone";
             this.btnChangePhone.Size = new System.Drawing.Size(162, 76);
             this.btnChangePhone.TabIndex = 2;
@@ -182,9 +184,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.tctrlShipper);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(198, 0);
+            this.panel2.Location = new System.Drawing.Point(196, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(769, 513);
+            this.panel2.Size = new System.Drawing.Size(769, 511);
             this.panel2.TabIndex = 1;
             // 
             // tctrlShipper
@@ -196,7 +198,7 @@
             this.tctrlShipper.Location = new System.Drawing.Point(0, 0);
             this.tctrlShipper.Name = "tctrlShipper";
             this.tctrlShipper.SelectedIndex = 0;
-            this.tctrlShipper.Size = new System.Drawing.Size(769, 513);
+            this.tctrlShipper.Size = new System.Drawing.Size(769, 511);
             this.tctrlShipper.TabIndex = 0;
             // 
             // tpProfile
@@ -207,7 +209,7 @@
             this.tpProfile.Location = new System.Drawing.Point(4, 25);
             this.tpProfile.Name = "tpProfile";
             this.tpProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfile.Size = new System.Drawing.Size(761, 484);
+            this.tpProfile.Size = new System.Drawing.Size(761, 482);
             this.tpProfile.TabIndex = 4;
             this.tpProfile.Text = "pro5";
             // 
@@ -219,7 +221,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 256);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 254);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
@@ -390,7 +392,7 @@
             this.tpOrderManagement.Location = new System.Drawing.Point(4, 25);
             this.tpOrderManagement.Name = "tpOrderManagement";
             this.tpOrderManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOrderManagement.Size = new System.Drawing.Size(761, 484);
+            this.tpOrderManagement.Size = new System.Drawing.Size(761, 529);
             this.tpOrderManagement.TabIndex = 3;
             this.tpOrderManagement.Text = "Orrder";
             this.tpOrderManagement.UseVisualStyleBackColor = true;
@@ -408,7 +410,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 478);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 523);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvOrders
@@ -420,7 +422,7 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(749, 331);
+            this.dgvOrders.Size = new System.Drawing.Size(749, 376);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
@@ -436,13 +438,33 @@
             this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 340);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 385);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(749, 135);
             this.tableLayoutPanel7.TabIndex = 2;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbStatusFilter});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(187, 27);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbStatusFilter
+            // 
+            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
+            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbStatusFilter.Name = "tsbStatusFilter";
+            this.tsbStatusFilter.Size = new System.Drawing.Size(121, 24);
+            this.tsbStatusFilter.Text = "📶Status Filter";
             // 
             // panel4
             // 
@@ -474,25 +496,6 @@
             this.cbbStatus.Size = new System.Drawing.Size(143, 24);
             this.cbbStatus.TabIndex = 1;
             // 
-            // tpChangePass
-            // 
-            this.tpChangePass.Controls.Add(this.pnlChange);
-            this.tpChangePass.Location = new System.Drawing.Point(4, 25);
-            this.tpChangePass.Name = "tpChangePass";
-            this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChangePass.Size = new System.Drawing.Size(761, 484);
-            this.tpChangePass.TabIndex = 5;
-            this.tpChangePass.Text = "Change";
-            this.tpChangePass.UseVisualStyleBackColor = true;
-            // 
-            // pnlChange
-            // 
-            this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChange.Location = new System.Drawing.Point(3, 3);
-            this.pnlChange.Name = "pnlChange";
-            this.pnlChange.Size = new System.Drawing.Size(755, 478);
-            this.pnlChange.TabIndex = 0;
-            // 
             // toolStrip2
             // 
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -513,26 +516,6 @@
             this.tsbPaymentFilter.Size = new System.Drawing.Size(137, 24);
             this.tsbPaymentFilter.Text = "💳Payment Filter";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbStatusFilter});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(187, 27);
-            this.toolStrip1.TabIndex = 10;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbStatusFilter
-            // 
-            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
-            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbStatusFilter.Name = "tsbStatusFilter";
-            this.tsbStatusFilter.Size = new System.Drawing.Size(121, 24);
-            this.tsbStatusFilter.Text = "📶Status Filter";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnResetFilter);
@@ -542,17 +525,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(181, 129);
             this.panel3.TabIndex = 11;
-            // 
-            // btnApply
-            // 
-            this.btnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnApply.Location = new System.Drawing.Point(19, 68);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(142, 45);
-            this.btnApply.TabIndex = 2;
-            this.btnApply.Text = "Áp dụng lọc";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click_1);
             // 
             // btnResetFilter
             // 
@@ -565,11 +537,41 @@
             this.btnResetFilter.UseVisualStyleBackColor = true;
             this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
             // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnApply.Location = new System.Drawing.Point(19, 68);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(142, 45);
+            this.btnApply.TabIndex = 2;
+            this.btnApply.Text = "Áp dụng lọc";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click_1);
+            // 
+            // tpChangePass
+            // 
+            this.tpChangePass.Controls.Add(this.pnlChange);
+            this.tpChangePass.Location = new System.Drawing.Point(4, 25);
+            this.tpChangePass.Name = "tpChangePass";
+            this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
+            this.tpChangePass.Size = new System.Drawing.Size(761, 529);
+            this.tpChangePass.TabIndex = 5;
+            this.tpChangePass.Text = "Change";
+            this.tpChangePass.UseVisualStyleBackColor = true;
+            // 
+            // pnlChange
+            // 
+            this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChange.Location = new System.Drawing.Point(3, 3);
+            this.pnlChange.Name = "pnlChange";
+            this.pnlChange.Size = new System.Drawing.Size(755, 523);
+            this.pnlChange.TabIndex = 0;
+            // 
             // frmShipper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 513);
+            this.ClientSize = new System.Drawing.Size(965, 511);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmShipper";
@@ -593,13 +595,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.tpChangePass.ResumeLayout(false);
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.tpChangePass.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

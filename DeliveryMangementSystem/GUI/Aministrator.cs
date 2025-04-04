@@ -69,25 +69,19 @@ namespace DeliveryMangementSystem.Forms
         }
 
 
-        // Chuyển đổi giữa các tab
-        private void titleAccount_Click(object sender, EventArgs e)
+        // Tab Switching btns
+        private void btnAccountManagement_Click(object sender, EventArgs e)
         {
             tabControlAdmin.SelectedTab = tpAccount;
         }
-        private void titleBranch_Click(object sender, EventArgs e)
+
+        private void btnBranchManagement_Click(object sender, EventArgs e)
         {
             tabControlAdmin.SelectedTab = tpBranch;
         }
-        private void titleLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-
-        //event
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void btnChange_Click(object sender, EventArgs e)
         {
-            
             UC_ProfileChanger uC_ProfileChanger = new UC_ProfileChanger(Id, "Admin")
             {
                 Dock = DockStyle.Fill
@@ -95,6 +89,15 @@ namespace DeliveryMangementSystem.Forms
             panel2.Controls.Add(uC_ProfileChanger);
             uC_ProfileChanger.BringToFront();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes) this.Close();
+        }
+        
+
+        //event
         private void btnDetails_Click_1(object sender, EventArgs e)
         {
             if (dgvAccounts.SelectedRows.Count == 1)

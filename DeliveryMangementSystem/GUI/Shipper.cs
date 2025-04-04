@@ -30,7 +30,7 @@ namespace DeliveryMangementSystem.Forms
         private void LoadOrdersByShipperID()
         {
             //load orders from database to datagridview
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id).AsNoTracking().ToList();
+            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Pending).AsNoTracking().ToList();
             dgvOrders.DataSource = orders;
 
             FormatDataGridView();
@@ -52,6 +52,7 @@ namespace DeliveryMangementSystem.Forms
                 lblID.Text = shipper.Id;
                 lblName.Text = shipper.Name;
                 lblPhone.Text = shipper.Phone;
+                lblMail.Text = shipper.Email;
             }
         }
         private void FormatDataGridView()

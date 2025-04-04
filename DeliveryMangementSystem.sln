@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. GUI", "DeliveryMangement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. DAL", "DAL\3. DAL.csproj", "{98CBB37F-2683-41A5-B39B-AF2073A9F06B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. BUS", "BUS\2. BUS.csproj", "{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98CBB37F-2683-41A5-B39B-AF2073A9F06B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F5D1CCC-4921-49F8-9522-6E55B3B886D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

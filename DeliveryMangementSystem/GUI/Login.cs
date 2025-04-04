@@ -10,10 +10,11 @@ namespace DeliveryMangementSystem
 {
     public partial class frmLogin : Form
     {
-        //Variables
+        //Attributes
         private const string placeholderText = "Nhập tài khoản của bạn...";
         private readonly myDbContext context;
         bool flagPass = false;
+
 
         //Methods
         public frmLogin()
@@ -117,6 +118,7 @@ namespace DeliveryMangementSystem
             this.Hide();
             new frmSignUp().ShowDialog();
             this.Show();
+
             txtPassword.Clear();
         }
     }

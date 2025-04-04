@@ -33,6 +33,7 @@ namespace DeliveryMangementSystem.Forms
                     lblUserId.Text = shipper.Id.ToString();
                     lblName.Text = shipper.Name;
                     lblPhone.Text = shipper.Phone;
+                    lblMail.Text = shipper.Email;
                 }
             }
         }
