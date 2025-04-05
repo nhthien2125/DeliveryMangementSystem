@@ -68,6 +68,9 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tpChangePass = new System.Windows.Forms.TabPage();
             this.pnlChange = new System.Windows.Forms.Panel();
+            this.pnlChangePassword = new System.Windows.Forms.Panel();
+            this.pnlDelAcc = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,6 +89,7 @@
             this.toolStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tpChangePass.SuspendLayout();
+            this.pnlDelAcc.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,7 +99,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 511);
+            this.panel1.Size = new System.Drawing.Size(194, 505);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -116,7 +120,8 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 496);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 490);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnProfile
@@ -126,7 +131,7 @@
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnProfile.Location = new System.Drawing.Point(13, 24);
+            this.btnProfile.Location = new System.Drawing.Point(13, 23);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(162, 76);
             this.btnProfile.TabIndex = 1;
@@ -141,7 +146,7 @@
             this.btnOrderManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnOrderManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnOrderManagement.Location = new System.Drawing.Point(13, 148);
+            this.btnOrderManagement.Location = new System.Drawing.Point(13, 145);
             this.btnOrderManagement.Name = "btnOrderManagement";
             this.btnOrderManagement.Size = new System.Drawing.Size(162, 76);
             this.btnOrderManagement.TabIndex = 0;
@@ -156,7 +161,7 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnLogOut.Location = new System.Drawing.Point(13, 396);
+            this.btnLogOut.Location = new System.Drawing.Point(13, 390);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(162, 76);
             this.btnLogOut.TabIndex = 2;
@@ -171,11 +176,11 @@
             this.btnChangePhone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnChangePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnChangePhone.Location = new System.Drawing.Point(13, 272);
+            this.btnChangePhone.Location = new System.Drawing.Point(13, 267);
             this.btnChangePhone.Name = "btnChangePhone";
             this.btnChangePhone.Size = new System.Drawing.Size(162, 76);
             this.btnChangePhone.TabIndex = 2;
-            this.btnChangePhone.Text = "🗝️ Đổi mật khẩu";
+            this.btnChangePhone.Text = "🗝️ Quản lý tài khoản";
             this.btnChangePhone.UseVisualStyleBackColor = true;
             this.btnChangePhone.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
@@ -183,10 +188,10 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.tctrlShipper);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(196, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(194, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(769, 511);
+            this.panel2.Size = new System.Drawing.Size(757, 505);
             this.panel2.TabIndex = 1;
             // 
             // tctrlShipper
@@ -198,7 +203,7 @@
             this.tctrlShipper.Location = new System.Drawing.Point(0, 0);
             this.tctrlShipper.Name = "tctrlShipper";
             this.tctrlShipper.SelectedIndex = 0;
-            this.tctrlShipper.Size = new System.Drawing.Size(769, 511);
+            this.tctrlShipper.Size = new System.Drawing.Size(757, 505);
             this.tctrlShipper.TabIndex = 0;
             // 
             // tpProfile
@@ -209,7 +214,7 @@
             this.tpProfile.Location = new System.Drawing.Point(4, 25);
             this.tpProfile.Name = "tpProfile";
             this.tpProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfile.Size = new System.Drawing.Size(761, 482);
+            this.tpProfile.Size = new System.Drawing.Size(749, 476);
             this.tpProfile.TabIndex = 4;
             this.tpProfile.Text = "pro5";
             // 
@@ -221,12 +226,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 254);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 248);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(758, 225);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(746, 225);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // label5
@@ -249,7 +254,7 @@
             this.dgvCompletedOrders.Name = "dgvCompletedOrders";
             this.dgvCompletedOrders.RowHeadersWidth = 51;
             this.dgvCompletedOrders.RowTemplate.Height = 24;
-            this.dgvCompletedOrders.Size = new System.Drawing.Size(752, 194);
+            this.dgvCompletedOrders.Size = new System.Drawing.Size(740, 194);
             this.dgvCompletedOrders.TabIndex = 2;
             // 
             // tableLayoutPanel5
@@ -265,7 +270,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.898305F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.10169F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(758, 236);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(746, 236);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // label1
@@ -301,14 +306,14 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(752, 209);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(740, 209);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblMail
             // 
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblMail.Location = new System.Drawing.Point(210, 156);
+            this.lblMail.Location = new System.Drawing.Point(206, 156);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(72, 29);
             this.lblMail.TabIndex = 8;
@@ -329,9 +334,9 @@
             this.lblID.AutoSize = true;
             this.lblID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblID.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblID.Location = new System.Drawing.Point(210, 0);
+            this.lblID.Location = new System.Drawing.Point(206, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(539, 52);
+            this.lblID.Size = new System.Drawing.Size(531, 52);
             this.lblID.TabIndex = 1;
             this.lblID.Text = "lblID";
             // 
@@ -360,7 +365,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblName.Location = new System.Drawing.Point(210, 52);
+            this.lblName.Location = new System.Drawing.Point(206, 52);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(98, 29);
             this.lblName.TabIndex = 4;
@@ -380,7 +385,7 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lblPhone.Location = new System.Drawing.Point(210, 104);
+            this.lblPhone.Location = new System.Drawing.Point(206, 104);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(72, 29);
             this.lblPhone.TabIndex = 6;
@@ -392,7 +397,7 @@
             this.tpOrderManagement.Location = new System.Drawing.Point(4, 25);
             this.tpOrderManagement.Name = "tpOrderManagement";
             this.tpOrderManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOrderManagement.Size = new System.Drawing.Size(761, 482);
+            this.tpOrderManagement.Size = new System.Drawing.Size(763, 553);
             this.tpOrderManagement.TabIndex = 3;
             this.tpOrderManagement.Text = "Orrder";
             this.tpOrderManagement.UseVisualStyleBackColor = true;
@@ -410,7 +415,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 476);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(757, 547);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvOrders
@@ -422,7 +427,7 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(749, 329);
+            this.dgvOrders.Size = new System.Drawing.Size(751, 400);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
@@ -438,12 +443,12 @@
             this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 338);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 409);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(749, 135);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(751, 135);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // toolStrip1
@@ -473,13 +478,13 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(564, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(182, 129);
+            this.panel4.Size = new System.Drawing.Size(184, 129);
             this.panel4.TabIndex = 5;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(22, 56);
+            this.btnSave.Location = new System.Drawing.Point(23, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(142, 45);
             this.btnSave.TabIndex = 1;
@@ -491,7 +496,7 @@
             // 
             this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(22, 25);
+            this.cbbStatus.Location = new System.Drawing.Point(23, 25);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(143, 24);
             this.cbbStatus.TabIndex = 1;
@@ -550,11 +555,13 @@
             // 
             // tpChangePass
             // 
+            this.tpChangePass.Controls.Add(this.pnlDelAcc);
+            this.tpChangePass.Controls.Add(this.pnlChangePassword);
             this.tpChangePass.Controls.Add(this.pnlChange);
             this.tpChangePass.Location = new System.Drawing.Point(4, 25);
             this.tpChangePass.Name = "tpChangePass";
             this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChangePass.Size = new System.Drawing.Size(761, 482);
+            this.tpChangePass.Size = new System.Drawing.Size(749, 476);
             this.tpChangePass.TabIndex = 5;
             this.tpChangePass.Text = "Change";
             this.tpChangePass.UseVisualStyleBackColor = true;
@@ -564,14 +571,47 @@
             this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChange.Location = new System.Drawing.Point(3, 3);
             this.pnlChange.Name = "pnlChange";
-            this.pnlChange.Size = new System.Drawing.Size(755, 476);
+            this.pnlChange.Size = new System.Drawing.Size(743, 470);
             this.pnlChange.TabIndex = 0;
+            // 
+            // pnlChangePassword
+            // 
+            this.pnlChangePassword.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlChangePassword.Location = new System.Drawing.Point(3, 3);
+            this.pnlChangePassword.Name = "pnlChangePassword";
+            this.pnlChangePassword.Size = new System.Drawing.Size(743, 339);
+            this.pnlChangePassword.TabIndex = 1;
+            // 
+            // pnlDelAcc
+            // 
+            this.pnlDelAcc.BackColor = System.Drawing.Color.White;
+            this.pnlDelAcc.Controls.Add(this.btnDelete);
+            this.pnlDelAcc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDelAcc.Location = new System.Drawing.Point(3, 339);
+            this.pnlDelAcc.Name = "pnlDelAcc";
+            this.pnlDelAcc.Size = new System.Drawing.Size(743, 134);
+            this.pnlDelAcc.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnDelete.Location = new System.Drawing.Point(258, 29);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(226, 76);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "☢️ Xóa Tài Khoản ☢️";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmShipper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 511);
+            this.ClientSize = new System.Drawing.Size(951, 505);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmShipper";
@@ -602,6 +642,7 @@
             this.toolStrip2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tpChangePass.ResumeLayout(false);
+            this.pnlDelAcc.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -647,5 +688,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnResetFilter;
         private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Panel pnlChangePassword;
+        private System.Windows.Forms.Panel pnlDelAcc;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

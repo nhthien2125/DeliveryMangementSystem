@@ -30,7 +30,7 @@ namespace DeliveryMangementSystem.Forms
         private void LoadOrdersByShipperID()
         {
             //load orders from database to datagridview
-            var orders = db.Orders.Where(o => o.Shipper_ID == Shipper_Id && o.Status != OrderStatus.Pending).AsNoTracking().ToList();
+            var orders = db.Orders.Where(o => o.Shipper_ID == Shipper_Id && o.Status != OrderStatus.Pending && o.Status != OrderStatus.Delivered).AsNoTracking().ToList();
             dgvOrders.DataSource = orders;
 
             FormatDataGridView();
@@ -68,19 +68,19 @@ namespace DeliveryMangementSystem.Forms
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Id",
-                DataPropertyName = "Id",
+                DataPropertyName = "Order_ID",
                 HeaderText = "Mã vận đơn",
                 Width = 100
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "BranchId",
+                DataPropertyName = "Branch_ID",
                 HeaderText = "Chi nhánh nhận đơn",
                 Width = 100
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "CustomerId",
+                DataPropertyName = "Customer_ID",
                 HeaderText = "Khách hàng",
                 Width = 100
             });
@@ -93,7 +93,7 @@ namespace DeliveryMangementSystem.Forms
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "DeliveryDate",
-                DataPropertyName = "DeliveryDate",
+                DataPropertyName = "Delivery_Date",
                 HeaderText = "Ngày giao",
                 Width = 100
             });
@@ -105,13 +105,13 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "PaymentMethod",
+                DataPropertyName = "Payment_Method",
                 HeaderText = "Phương thức thanh toán",
                 Width = 100
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "TotalAmount",
+                DataPropertyName = "Total_Amount",
                 HeaderText = "Tổng tiền",
                 Width = 100
             });
@@ -119,19 +119,19 @@ namespace DeliveryMangementSystem.Forms
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Id",
-                DataPropertyName = "Id",
+                DataPropertyName = "Order_ID",
                 HeaderText = "Mã vận đơn",
                 Width = 100
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "BranchId",
+                DataPropertyName = "Branch_ID",
                 HeaderText = "Chi nhánh nhận đơn",
                 Width = 100
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "CustomerId",
+                DataPropertyName = "Customer_ID",
                 HeaderText = "Khách hàng",
                 Width = 100
             });
@@ -143,7 +143,7 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "DeliveryDate",
+                DataPropertyName = "Delivery_Date",
                 HeaderText = "Ngày giao",
                 Width = 100
             });
@@ -155,13 +155,13 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "PaymentMethod",
+                DataPropertyName = "Payment_Method",
                 HeaderText = "Phương thức thanh toán",
                 Width = 100
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "TotalAmount",
+                DataPropertyName = "Total_Amount",
                 HeaderText = "Tổng tiền",
                 Width = 100
             });
@@ -263,7 +263,7 @@ namespace DeliveryMangementSystem.Forms
                 Dock = DockStyle.Fill
             };
 
-            pnlChange.Controls.Add(uc);
+            pnlChangePassword.Controls.Add(uc);
             uc.BringToFront();
         }
 
@@ -350,5 +350,38 @@ namespace DeliveryMangementSystem.Forms
         {
             LoadOrdersByShipperID();
         }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Bạn có chắc muốn xóa taì khoản này không?", "Cảnh báo", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                //Enter Password to confirm
+                string password = Microsoft.VisualBasic.Interaction.InputBox("Nhập mật khẩu để xác nhận xóa tài khoản", "Xác nhận xóa tài khoản", "", -1, -1);
+                //Check password
+                var account = db.Accounts.Find(Account_Id);
+                if (account.Password == password)
+                {
+                    var orders = db.Orders.Where(o => o.Shipper_ID == account.S_ID).ToList();
+                    foreach (var order in orders)
+                    {
+                        order.Status = OrderStatus.Pending;
+                        order.Shipper_ID = null;
+                    }
+                    db.Accounts.Remove(account);
+
+                    var shipper = db.Shippers.Find(account.S_ID);
+                    if (shipper != null)
+                    {
+                        db.Shippers.Remove(shipper);
+                    }
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu không đúng, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }  
     }
 }

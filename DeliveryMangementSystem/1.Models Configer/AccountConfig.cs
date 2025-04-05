@@ -24,7 +24,7 @@ namespace DeliveryMangementSystem._1.Models_Configer
             builder.HasOne(x => x.Shipper)
                    .WithOne()
                    .HasForeignKey<ACCOUNT>(x => x.S_ID)
-                   .OnDelete(DeleteBehavior.SetNull);
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
