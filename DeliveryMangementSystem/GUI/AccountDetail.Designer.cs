@@ -30,14 +30,14 @@
         {
             this.grbDetail = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitleRole = new System.Windows.Forms.Label();
             this.lblTitleName = new System.Windows.Forms.Label();
             this.lblTitleID = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblMail = new System.Windows.Forms.Label();
             this.grbDetail.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.grbDetail.Location = new System.Drawing.Point(0, 0);
             this.grbDetail.Name = "grbDetail";
             this.grbDetail.Padding = new System.Windows.Forms.Padding(10);
-            this.grbDetail.Size = new System.Drawing.Size(423, 320);
+            this.grbDetail.Size = new System.Drawing.Size(423, 286);
             this.grbDetail.TabIndex = 0;
             this.grbDetail.TabStop = false;
             this.grbDetail.Text = "Users Detail";
@@ -80,6 +80,30 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 218);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblMail
+            // 
+            this.lblMail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(153, 175);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(59, 20);
+            this.lblMail.TabIndex = 13;
+            this.lblMail.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(9, 168);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(76, 35);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Email:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPhone
             // 
@@ -153,35 +177,11 @@
             this.lblUserId.TabIndex = 9;
             this.lblUserId.Text = "label1";
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(9, 168);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(76, 35);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Email:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMail
-            // 
-            this.lblMail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(153, 175);
-            this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(59, 20);
-            this.lblMail.TabIndex = 13;
-            this.lblMail.Text = "label1";
-            // 
             // frmAccountDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 320);
+            this.ClientSize = new System.Drawing.Size(423, 286);
             this.Controls.Add(this.grbDetail);
             this.Name = "frmAccountDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

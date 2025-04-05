@@ -30,7 +30,7 @@ namespace DeliveryMangementSystem.Forms
                 var shipper = db.Shippers.Find(ShipperID);
                 if (shipper != null)
                 {
-                    lblUserId.Text = shipper.Id.ToString();
+                    lblUserId.Text = shipper.Shipper_ID.ToString();
                     lblName.Text = shipper.Name;
                     lblPhone.Text = shipper.Phone;
                     lblMail.Text = shipper.Email;

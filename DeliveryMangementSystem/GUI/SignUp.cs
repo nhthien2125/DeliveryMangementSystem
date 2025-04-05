@@ -64,14 +64,14 @@ namespace DeliveryMangementSystem.GUI
                         {
                             var newAccount = new ACCOUNT
                             {
-                                Id = _context.GenerateNewId(_context.Accounts, a => a.Id, "SHP"),
+                                Account_ID = _context.GenerateNewId(_context.Accounts, a => a.Account_ID, "SHP"),
                                 Username = txtUsername.Text.Trim(),
                                 Password = txtPassword.Text.Trim(),
                                 Role = UserRole.Shipper
                             };
                             var newShipper = new SHIPPER
                             {
-                                Id = _context.GenerateNewId(_context.Shippers, s => s.Id, "SHIPPER"),
+                                Shipper_ID = _context.GenerateNewId(_context.Shippers, s => s.Shipper_ID, "SHIPPER"),
                                 Name = txtName.Text.Trim(),
                                 Phone = txtPhone.Text.Trim(),
                                 Email = txtMail.Text.Trim()
@@ -82,8 +82,8 @@ namespace DeliveryMangementSystem.GUI
                             _context.SaveChanges();
                             MessageBox.Show("Đăng ký thành công!");
                             this.DialogResult = DialogResult.OK;
-                            var newFID = _context.GenerateNewId(_context.Accounts, a => a.ShipperId, "SHIPPER");
-                            newAccount.ShipperId = newFID;
+                            var newFID = _context.GenerateNewId(_context.Accounts, a => a.S_ID, "SHIPPER");
+                            newAccount.S_ID = newFID;
                             _context.SaveChanges();
                         }
                     }

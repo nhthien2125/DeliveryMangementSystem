@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DAL.Migrations
+namespace DeliveryMangementSystem.Migrations
 {
     [DbContext(typeof(myDbContext))]
-    partial class myDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250404094839_v2_0_0")]
+    partial class v2_0_0
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,7 +20,7 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Account", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ACCOUNT", b =>
                 {
                     b.Property<string>("Account_ID")
                         .HasColumnType("nvarchar(10)")
@@ -32,8 +34,12 @@ namespace DAL.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<string>("Shipper_Id")
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<string>("Shipper_ID")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -42,24 +48,26 @@ namespace DAL.Migrations
 
                     b.HasKey("Account_ID");
 
-                    b.HasIndex("Shipper_Id")
+                    b.HasIndex("Shipper_ID")
                         .IsUnique()
-                        .HasFilter("[Shipper_Id] IS NOT NULL");
+                        .HasFilter("[Shipper_ID] IS NOT NULL");
 
                     b.ToTable("ACCOUNT");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Branch", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.BRANCH", b =>
                 {
                     b.Property<string>("Branch_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -68,21 +76,24 @@ namespace DAL.Migrations
                     b.ToTable("BRANCH");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Customer", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.CUSTOMER", b =>
                 {
                     b.Property<string>("Customer_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
@@ -91,29 +102,33 @@ namespace DAL.Migrations
                     b.ToTable("CUSTOMER");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Order", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ORDER", b =>
                 {
                     b.Property<string>("Order_ID")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Branch_ID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Customer_ID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<DateTime?>("Delivery_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Order_Date")
+                    b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Payment_Method")
                         .HasColumnType("int");
 
                     b.Property<string>("Shipper_ID")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
@@ -134,21 +149,24 @@ namespace DAL.Migrations
                     b.ToTable("xORDER");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Shipper", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.SHIPPER", b =>
                 {
                     b.Property<string>("Shipper_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
@@ -157,27 +175,33 @@ namespace DAL.Migrations
                     b.ToTable("SHIPPER");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Account", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ACCOUNT", b =>
                 {
-                    b.HasOne("DeliveryMangementSystem.Models.Shipper", "Shipper")
+                    b.HasOne("DeliveryMangementSystem.Models.SHIPPER", "Shipper")
                         .WithOne("Account")
-                        .HasForeignKey("DeliveryMangementSystem.Models.Account", "Shipper_Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DeliveryMangementSystem.Models.ACCOUNT", "Shipper_ID")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.Order", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ORDER", b =>
                 {
-                    b.HasOne("DeliveryMangementSystem.Models.Branch", "Branch")
+                    b.HasOne("DeliveryMangementSystem.Models.BRANCH", "Branch")
                         .WithMany("Orders")
-                        .HasForeignKey("Branch_ID");
+                        .HasForeignKey("Branch_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("DeliveryMangementSystem.Models.Customer", "Customer")
+                    b.HasOne("DeliveryMangementSystem.Models.CUSTOMER", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("Customer_ID");
+                        .HasForeignKey("Customer_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("DeliveryMangementSystem.Models.Shipper", "Shipper")
+                    b.HasOne("DeliveryMangementSystem.Models.SHIPPER", "Shipper")
                         .WithMany("Orders")
-                        .HasForeignKey("Shipper_ID");
+                        .HasForeignKey("Shipper_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -166,22 +166,6 @@
     <Compile Include="1. Configurations\OrderConfig.cs" />
     <Compile Include="1. Configurations\ShipperConfig.cs" />
     <Compile Include="1. Context\myDbContext.cs" />
-    <Compile Include="1. Models\Account.cs" />
-    <Compile Include="1. Models\Branch.cs" />
-    <Compile Include="1. Models\Customer.cs" />
-    <Compile Include="1. Models\Shipper.cs" />
-    <Compile Include="1. Models\Order.cs" />
-    <Compile Include="2. IRepo\IAccountRepo.cs" />
-    <Compile Include="2. IRepo\IBranchRepo.cs" />
-    <Compile Include="2. IRepo\ICustomerRepo.cs" />
-    <Compile Include="2. IRepo\IOrderRepo.cs" />
-    <Compile Include="2. IRepo\IShipperRepo.cs" />
-    <Compile Include="2. Repo\AccountRepo.cs" />
-    <Compile Include="Migrations\20250402101409_InitialCreate.cs" />
-    <Compile Include="Migrations\20250402101409_InitialCreate.Designer.cs">
-      <DependentUpon>20250402101409_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -20,194 +20,184 @@ namespace DeliveryMangementSystem.Migrations
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.ACCOUNT", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnName("Account_ID")
+                    b.Property<string>("Account_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnName("Password")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShipperId")
-                        .HasColumnName("Shipper_ID")
+                    b.Property<string>("S_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnName("Username")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("Id");
+                    b.HasKey("Account_ID");
 
-                    b.HasIndex("ShipperId");
+                    b.HasIndex("S_ID")
+                        .IsUnique()
+                        .HasFilter("[S_ID] IS NOT NULL");
 
-                    b.ToTable("Account");
+                    b.ToTable("ACCOUNT");
                 });
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.BRANCH", b =>
                 {
-                    b.Property<string>("ID")
-                        .HasColumnName("Branch_ID")
+                    b.Property<string>("Branch_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Address")
-                        .HasColumnName("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnName("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.HasKey("ID");
+                    b.HasKey("Branch_ID");
 
                     b.ToTable("BRANCH");
                 });
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.CUSTOMER", b =>
                 {
-                    b.Property<string>("ID")
-                        .HasColumnName("Customer_ID")
+                    b.Property<string>("Customer_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<string>("Address")
-                        .HasColumnName("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnName("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<string>("Phone")
-                        .HasColumnName("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.HasKey("ID");
+                    b.HasKey("Customer_ID");
 
                     b.ToTable("CUSTOMER");
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.SHIPPER", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ORDER", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnName("Shipper_ID")
+                    b.Property<string>("Order_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("Email")
-                        .HasColumnName("Email")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Phone")
-                        .HasColumnName("Phone")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SHIPPER");
-                });
-
-            modelBuilder.Entity("DeliveryMangementSystem.Models.xORDER", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnName("Order_ID")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("BranchId")
+                    b.Property<string>("Branch_ID")
                         .IsRequired()
-                        .HasColumnName("Branch_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("CustomerId")
+                    b.Property<string>("Customer_ID")
                         .IsRequired()
-                        .HasColumnName("Customer_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<DateTime?>("DeliveryDate")
-                        .HasColumnName("Delivery_Date")
+                    b.Property<DateTime?>("Delivery_Date")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnName("Order_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PaymentMethod")
-                        .HasColumnName("Payment_Method")
+                    b.Property<int>("Payment_Method")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShipperId")
+                    b.Property<string>("Shipper_ID")
                         .IsRequired()
-                        .HasColumnName("Shipper_ID")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
                     b.Property<int>("Status")
-                        .HasColumnName("Status")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TotalAmount")
-                        .HasColumnName("Total_Amount")
+                    b.Property<decimal>("Total_Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Order_ID");
 
-                    b.HasIndex("BranchId");
+                    b.HasIndex("Branch_ID");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("Customer_ID");
 
-                    b.HasIndex("ShipperId");
+                    b.HasIndex("Shipper_ID");
 
                     b.ToTable("xORDER");
+                });
+
+            modelBuilder.Entity("DeliveryMangementSystem.Models.SHIPPER", b =>
+                {
+                    b.Property<string>("Shipper_ID")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.HasKey("Shipper_ID");
+
+                    b.ToTable("SHIPPER");
                 });
 
             modelBuilder.Entity("DeliveryMangementSystem.Models.ACCOUNT", b =>
                 {
                     b.HasOne("DeliveryMangementSystem.Models.SHIPPER", "Shipper")
-                        .WithMany()
-                        .HasForeignKey("ShipperId");
+                        .WithOne("Account")
+                        .HasForeignKey("DeliveryMangementSystem.Models.ACCOUNT", "S_ID")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
-            modelBuilder.Entity("DeliveryMangementSystem.Models.xORDER", b =>
+            modelBuilder.Entity("DeliveryMangementSystem.Models.ORDER", b =>
                 {
                     b.HasOne("DeliveryMangementSystem.Models.BRANCH", "Branch")
                         .WithMany("Orders")
-                        .HasForeignKey("BranchId")
+                        .HasForeignKey("Branch_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DeliveryMangementSystem.Models.CUSTOMER", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
+                        .HasForeignKey("Customer_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DeliveryMangementSystem.Models.SHIPPER", "Shipper")
                         .WithMany("Orders")
-                        .HasForeignKey("ShipperId")
+                        .HasForeignKey("Shipper_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -33,6 +33,11 @@
             this.gridHeaderContainer = new System.Windows.Forms.TableLayoutPanel();
             this.iconBrand = new System.Windows.Forms.PictureBox();
             this.nameBrandM = new System.Windows.Forms.Label();
+            this.tlpNav = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnBranchManagement = new System.Windows.Forms.Button();
+            this.btnAccountManagement = new System.Windows.Forms.Button();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,22 +49,17 @@
             this.tpBranch = new System.Windows.Forms.TabPage();
             this.tpProfile = new System.Windows.Forms.TabPage();
             this.tpChangePassword = new System.Windows.Forms.TabPage();
-            this.tlpNav = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAccountManagement = new System.Windows.Forms.Button();
-            this.btnBranchManagement = new System.Windows.Forms.Button();
-            this.btnChange = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).BeginInit();
+            this.tlpNav.SuspendLayout();
             this.tabControlAdmin.SuspendLayout();
             this.tpAccount.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
-            this.tlpNav.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -147,6 +147,88 @@
             this.nameBrandM.TabIndex = 1;
             this.nameBrandM.Text = "TL Delivery";
             // 
+            // tlpNav
+            // 
+            this.tlpNav.ColumnCount = 1;
+            this.tlpNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpNav.Controls.Add(this.btnLogOut, 0, 3);
+            this.tlpNav.Controls.Add(this.btnChange, 0, 2);
+            this.tlpNav.Controls.Add(this.btnBranchManagement, 0, 1);
+            this.tlpNav.Controls.Add(this.btnAccountManagement, 0, 0);
+            this.tlpNav.Location = new System.Drawing.Point(3, 122);
+            this.tlpNav.Name = "tlpNav";
+            this.tlpNav.RowCount = 4;
+            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpNav.Size = new System.Drawing.Size(286, 506);
+            this.tlpNav.TabIndex = 5;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogOut.BackColor = System.Drawing.Color.White;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnLogOut.Location = new System.Drawing.Point(48, 406);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(190, 71);
+            this.btnLogOut.TabIndex = 3;
+            this.btnLogOut.Text = "↩ Sign Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // btnChange
+            // 
+            this.btnChange.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChange.BackColor = System.Drawing.Color.White;
+            this.btnChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnChange.Location = new System.Drawing.Point(48, 279);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(190, 71);
+            this.btnChange.TabIndex = 2;
+            this.btnChange.Text = "🔐 Change Password";
+            this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // btnBranchManagement
+            // 
+            this.btnBranchManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBranchManagement.BackColor = System.Drawing.Color.White;
+            this.btnBranchManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnBranchManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnBranchManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBranchManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnBranchManagement.Location = new System.Drawing.Point(48, 153);
+            this.btnBranchManagement.Name = "btnBranchManagement";
+            this.btnBranchManagement.Size = new System.Drawing.Size(190, 71);
+            this.btnBranchManagement.TabIndex = 1;
+            this.btnBranchManagement.Text = "🏢 Branches";
+            this.btnBranchManagement.UseVisualStyleBackColor = false;
+            this.btnBranchManagement.Click += new System.EventHandler(this.btnBranchManagement_Click);
+            // 
+            // btnAccountManagement
+            // 
+            this.btnAccountManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAccountManagement.BackColor = System.Drawing.Color.White;
+            this.btnAccountManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnAccountManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnAccountManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccountManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnAccountManagement.Location = new System.Drawing.Point(48, 27);
+            this.btnAccountManagement.Name = "btnAccountManagement";
+            this.btnAccountManagement.Size = new System.Drawing.Size(190, 71);
+            this.btnAccountManagement.TabIndex = 0;
+            this.btnAccountManagement.Text = "📋 Accounts";
+            this.btnAccountManagement.UseVisualStyleBackColor = false;
+            this.btnAccountManagement.Click += new System.EventHandler(this.btnAccountManagement_Click);
+            // 
             // tabControlAdmin
             // 
             this.tabControlAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -189,8 +271,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.12111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.87889F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 578);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -199,9 +281,9 @@
             this.panel1.Controls.Add(this.btnDetails);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 494);
+            this.panel1.Location = new System.Drawing.Point(3, 495);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 81);
+            this.panel1.Size = new System.Drawing.Size(818, 80);
             this.panel1.TabIndex = 1;
             // 
             // btnDetails
@@ -210,7 +292,7 @@
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDetails.Location = new System.Drawing.Point(526, 14);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(87, 38);
+            this.btnDetails.Size = new System.Drawing.Size(119, 47);
             this.btnDetails.TabIndex = 8;
             this.btnDetails.Text = "Details";
             this.btnDetails.UseVisualStyleBackColor = true;
@@ -220,9 +302,9 @@
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.Location = new System.Drawing.Point(712, 14);
+            this.btnDelete.Location = new System.Drawing.Point(674, 14);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 38);
+            this.btnDelete.Size = new System.Drawing.Size(119, 47);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -234,7 +316,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(818, 485);
+            this.panel2.Size = new System.Drawing.Size(818, 486);
             this.panel2.TabIndex = 2;
             // 
             // dgvAccounts
@@ -245,7 +327,7 @@
             this.dgvAccounts.Name = "dgvAccounts";
             this.dgvAccounts.RowHeadersWidth = 51;
             this.dgvAccounts.RowTemplate.Height = 24;
-            this.dgvAccounts.Size = new System.Drawing.Size(818, 485);
+            this.dgvAccounts.Size = new System.Drawing.Size(818, 486);
             this.dgvAccounts.TabIndex = 1;
             // 
             // tpBranch
@@ -280,88 +362,6 @@
             this.tpChangePassword.Text = "change";
             this.tpChangePassword.UseVisualStyleBackColor = true;
             // 
-            // tlpNav
-            // 
-            this.tlpNav.ColumnCount = 1;
-            this.tlpNav.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNav.Controls.Add(this.btnLogOut, 0, 3);
-            this.tlpNav.Controls.Add(this.btnChange, 0, 2);
-            this.tlpNav.Controls.Add(this.btnBranchManagement, 0, 1);
-            this.tlpNav.Controls.Add(this.btnAccountManagement, 0, 0);
-            this.tlpNav.Location = new System.Drawing.Point(3, 122);
-            this.tlpNav.Name = "tlpNav";
-            this.tlpNav.RowCount = 4;
-            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpNav.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpNav.Size = new System.Drawing.Size(286, 506);
-            this.tlpNav.TabIndex = 5;
-            // 
-            // btnAccountManagement
-            // 
-            this.btnAccountManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAccountManagement.BackColor = System.Drawing.Color.White;
-            this.btnAccountManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnAccountManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnAccountManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnAccountManagement.Location = new System.Drawing.Point(48, 27);
-            this.btnAccountManagement.Name = "btnAccountManagement";
-            this.btnAccountManagement.Size = new System.Drawing.Size(190, 71);
-            this.btnAccountManagement.TabIndex = 0;
-            this.btnAccountManagement.Text = "📋 Accounts";
-            this.btnAccountManagement.UseVisualStyleBackColor = false;
-            this.btnAccountManagement.Click += new System.EventHandler(this.btnAccountManagement_Click);
-            // 
-            // btnBranchManagement
-            // 
-            this.btnBranchManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBranchManagement.BackColor = System.Drawing.Color.White;
-            this.btnBranchManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnBranchManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnBranchManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBranchManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnBranchManagement.Location = new System.Drawing.Point(48, 153);
-            this.btnBranchManagement.Name = "btnBranchManagement";
-            this.btnBranchManagement.Size = new System.Drawing.Size(190, 71);
-            this.btnBranchManagement.TabIndex = 1;
-            this.btnBranchManagement.Text = "🏢 Branches";
-            this.btnBranchManagement.UseVisualStyleBackColor = false;
-            this.btnBranchManagement.Click += new System.EventHandler(this.btnBranchManagement_Click);
-            // 
-            // btnChange
-            // 
-            this.btnChange.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChange.BackColor = System.Drawing.Color.White;
-            this.btnChange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnChange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnChange.Location = new System.Drawing.Point(48, 279);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(190, 71);
-            this.btnChange.TabIndex = 2;
-            this.btnChange.Text = "🔐 Change Password";
-            this.btnChange.UseVisualStyleBackColor = false;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLogOut.BackColor = System.Drawing.Color.White;
-            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnLogOut.Location = new System.Drawing.Point(48, 406);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(190, 71);
-            this.btnLogOut.TabIndex = 3;
-            this.btnLogOut.Text = "↩ Sign Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,13 +378,13 @@
             this.grid.ResumeLayout(false);
             this.gridHeaderContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
+            this.tlpNav.ResumeLayout(false);
             this.tabControlAdmin.ResumeLayout(false);
             this.tpAccount.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
-            this.tlpNav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

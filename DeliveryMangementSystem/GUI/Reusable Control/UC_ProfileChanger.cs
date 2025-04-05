@@ -34,12 +34,12 @@ namespace DeliveryMangementSystem.Forms.Reusable_Control
                 if (role == "Admin")
                 {
                     var admin = db.Accounts.Find(userID);
-                    txtAccountId.Text = admin.Id;
+                    txtAccountId.Text = admin.Account_ID;
                 }
                 else if (role == "Shipper")
                 {
                     var shipper = db.Accounts.Find(userID);
-                    txtAccountId.Text = shipper.Id;
+                    txtAccountId.Text = shipper.Account_ID;
                 }
             }
         }

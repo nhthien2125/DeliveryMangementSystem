@@ -30,7 +30,7 @@ namespace DeliveryMangementSystem.Forms
         private void LoadOrdersByShipperID()
         {
             //load orders from database to datagridview
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status != OrderStatus.Pending).AsNoTracking().ToList();
+            var orders = db.Orders.Where(o => o.Shipper_ID == Shipper_Id && o.Status != OrderStatus.Pending).AsNoTracking().ToList();
             dgvOrders.DataSource = orders;
 
             FormatDataGridView();
@@ -38,7 +38,7 @@ namespace DeliveryMangementSystem.Forms
         private void LoadCompletedOrders()
         {
             //load completed orders from database to datagridview
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id && o.Status == OrderStatus.Delivered).AsNoTracking().ToList();
+            var orders = db.Orders.Where(o => o.Shipper_ID == Shipper_Id && o.Status == OrderStatus.Delivered).AsNoTracking().ToList();
             dgvCompletedOrders.DataSource = orders;
 
             FormatDataGridView();
@@ -49,7 +49,7 @@ namespace DeliveryMangementSystem.Forms
             var shipper = db.Shippers.Find(Shipper_Id);
             if (shipper != null)
             {
-                lblID.Text = shipper.Id;
+                lblID.Text = shipper.Shipper_ID;
                 lblName.Text = shipper.Name;
                 lblPhone.Text = shipper.Phone;
                 lblMail.Text = shipper.Email;
@@ -171,6 +171,7 @@ namespace DeliveryMangementSystem.Forms
             // DropDown
             dropDown = new ToolStripDropDown();
 
+
             // CheckedListBox
             clbStatusFilter = new CheckedListBox()
             {
@@ -179,6 +180,7 @@ namespace DeliveryMangementSystem.Forms
 
             // Get Enum values
             clbStatusFilter.Items.AddRange(Enum.GetValues(typeof(OrderStatus)).Cast<object>().ToArray());
+
 
             // Host
             ToolStripControlHost host = new ToolStripControlHost(clbStatusFilter);
@@ -312,8 +314,8 @@ namespace DeliveryMangementSystem.Forms
                     var order = db.Orders.Find(dgvOrders.SelectedRows[0].Cells[0].Value);
                     order.Status = (OrderStatus)cbbStatus.SelectedValue;
                     
-                    if (order.Status == OrderStatus.Delivered) order.DeliveryDate = DateTime.Now;
-                    else order.DeliveryDate = null;
+                    if (order.Status == OrderStatus.Delivered) order.Delivery_Date = DateTime.Now;
+                    else order.Delivery_Date = null;
                     db.SaveChanges();
 
                     LoadOrdersByShipperID();
@@ -331,7 +333,7 @@ namespace DeliveryMangementSystem.Forms
         }
         private void btnApply_Click_1(object sender, EventArgs e)
         {
-            var orders = db.Orders.Where(o => o.ShipperId == Shipper_Id);
+            var orders = db.Orders.Where(o => o.Shipper_ID == Shipper_Id);
 
             if (selectedStatuses.Any())
             {
@@ -339,7 +341,7 @@ namespace DeliveryMangementSystem.Forms
             }
             if (selectedPaymentMethods.Any())
             {
-                orders = orders.Where(o => selectedPaymentMethods.Contains(o.PaymentMethod));
+                orders = orders.Where(o => selectedPaymentMethods.Contains(o.Payment_Method));
             }
             dgvOrders.DataSource = orders.ToList();
         }

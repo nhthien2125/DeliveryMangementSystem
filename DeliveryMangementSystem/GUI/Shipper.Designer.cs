@@ -392,7 +392,7 @@
             this.tpOrderManagement.Location = new System.Drawing.Point(4, 25);
             this.tpOrderManagement.Name = "tpOrderManagement";
             this.tpOrderManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOrderManagement.Size = new System.Drawing.Size(761, 529);
+            this.tpOrderManagement.Size = new System.Drawing.Size(761, 482);
             this.tpOrderManagement.TabIndex = 3;
             this.tpOrderManagement.Text = "Orrder";
             this.tpOrderManagement.UseVisualStyleBackColor = true;
@@ -410,7 +410,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 523);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 476);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvOrders
@@ -422,7 +422,7 @@
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
             this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(749, 376);
+            this.dgvOrders.Size = new System.Drawing.Size(749, 329);
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
@@ -438,7 +438,7 @@
             this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 385);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 338);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -554,7 +554,7 @@
             this.tpChangePass.Location = new System.Drawing.Point(4, 25);
             this.tpChangePass.Name = "tpChangePass";
             this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChangePass.Size = new System.Drawing.Size(761, 529);
+            this.tpChangePass.Size = new System.Drawing.Size(761, 482);
             this.tpChangePass.TabIndex = 5;
             this.tpChangePass.Text = "Change";
             this.tpChangePass.UseVisualStyleBackColor = true;
@@ -564,7 +564,7 @@
             this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChange.Location = new System.Drawing.Point(3, 3);
             this.pnlChange.Name = "pnlChange";
-            this.pnlChange.Size = new System.Drawing.Size(755, 523);
+            this.pnlChange.Size = new System.Drawing.Size(755, 476);
             this.pnlChange.TabIndex = 0;
             // 
             // frmShipper

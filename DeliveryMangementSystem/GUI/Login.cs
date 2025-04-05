@@ -31,11 +31,11 @@ namespace DeliveryMangementSystem
                             && !string.IsNullOrWhiteSpace(txtUsername.Text) 
                             && !string.IsNullOrWhiteSpace(txtPassword.Text);
         }
-        private (bool success, UserRole role, string Account_id, string Shipper_id) CheckLogin()
+        private (bool success, UserRole role, UserStatus status,string Account_id, string Shipper_id) CheckLogin()
         {
             var user = context.Accounts.FirstOrDefault(u => u.Username == txtUsername.Text.Trim() && u.Password == txtPassword.Text.Trim());
-            if (user != null) return (true, user.Role, user.Id, user.ShipperId);
-            else return (false, 0, 0.ToString(), 0.ToString());
+            if (user != null) return (true, user.Role, user.Status, user.Account_ID, user.S_ID);
+            else return (false, 0, 0, 0.ToString(), 0.ToString());
         }
 
 
@@ -49,20 +49,28 @@ namespace DeliveryMangementSystem
         {
             if (CheckLogin().success)
             {
-                Hide();
-                switch (CheckLogin().role)
+                if (CheckLogin().status == UserStatus.Inactive)
                 {
-                    case UserRole.Admin:
-                        DialogResult result = MessageBox.Show("You are signing as admin! \nYour account id is: " + CheckLogin().Account_id, "Admin", MessageBoxButtons.OK);
-                        new frmAdmin(CheckLogin().Account_id).ShowDialog();
-                        break;
-                    case UserRole.Shipper:
-                        DialogResult result1 = MessageBox.Show("You are signing as shipper! \nYour account id is: " + CheckLogin().Account_id, "Shipper", MessageBoxButtons.OK);
-                        new frmShipper(CheckLogin().Account_id, CheckLogin().Shipper_id).ShowDialog();
-                        break;
+                    MessageBox.Show("Tài khoản của bạn đã bị khóa", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                txtPassword.Clear();
-                Show();
+                else
+                {
+                    Hide();
+                    switch (CheckLogin().role)
+                    {
+                        case UserRole.Admin:
+                            DialogResult result = MessageBox.Show("You are signing as admin! \nYour account id is: " + CheckLogin().Account_id, "Admin", MessageBoxButtons.OK);
+                            new frmAdmin(CheckLogin().Account_id).ShowDialog();
+                            break;
+                        case UserRole.Shipper:
+                            DialogResult result1 = MessageBox.Show("You are signing as shipper! \nYour account id is: " + CheckLogin().Account_id, "Shipper", MessageBoxButtons.OK);
+                            new frmShipper(CheckLogin().Account_id, CheckLogin().Shipper_id).ShowDialog();
+                            break;
+                    }
+                    txtPassword.Clear();
+                    Show();
+                }
             }
             else
             {

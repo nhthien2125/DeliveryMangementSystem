@@ -163,7 +163,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\myDbContext.cs" />
+    <Compile Include="1.Models Configer\AccountConfig.cs" />
+    <Compile Include="1.Models Configer\BranchConfig.cs" />
+    <Compile Include="1.Models Configer\CustomerConfig.cs" />
+    <Compile Include="1.Models Configer\OrderConfig.cs" />
+    <Compile Include="1.Models Configer\ShipperConfig.cs" />
+    <Compile Include="Context\myDbContext.cs" />
     <Compile Include="GUI\AccountDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,12 +227,20 @@
     <Compile Include="Migrations\20250331134420_v1_0_1.Designer.cs">
       <DependentUpon>20250331134420_v1_0_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250404094839_v2_0_0.cs" />
+    <Compile Include="Migrations\20250404094839_v2_0_0.Designer.cs">
+      <DependentUpon>20250404094839_v2_0_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20250405061651_v2_0_1.cs" />
+    <Compile Include="Migrations\20250405061651_v2_0_1.Designer.cs">
+      <DependentUpon>20250405061651_v2_0_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
-    <Compile Include="Models\ACCOUNT.cs" />
-    <Compile Include="Models\BRANCH.cs" />
-    <Compile Include="Models\CUSTOMER.cs" />
-    <Compile Include="Models\SHIPPER.cs" />
-    <Compile Include="Models\xORDER.cs" />
+    <Compile Include="1.Models\ACCOUNT.cs" />
+    <Compile Include="1.Models\BRANCH.cs" />
+    <Compile Include="1.Models\CUSTOMER.cs" />
+    <Compile Include="1.Models\SHIPPER.cs" />
+    <Compile Include="1.Models\ORDER.cs" />
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
