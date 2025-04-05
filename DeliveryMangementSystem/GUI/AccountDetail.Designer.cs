@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountDetail));
             this.grbDetail = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMail = new System.Windows.Forms.Label();
@@ -38,20 +39,23 @@
             this.lblTitleName = new System.Windows.Forms.Label();
             this.lblTitleID = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbDetail.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbDetail
             // 
             this.grbDetail.BackColor = System.Drawing.Color.White;
+            this.grbDetail.Controls.Add(this.pictureBox1);
             this.grbDetail.Controls.Add(this.tableLayoutPanel1);
             this.grbDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbDetail.Location = new System.Drawing.Point(0, 0);
             this.grbDetail.Name = "grbDetail";
             this.grbDetail.Padding = new System.Windows.Forms.Padding(10);
-            this.grbDetail.Size = new System.Drawing.Size(423, 286);
+            this.grbDetail.Size = new System.Drawing.Size(660, 267);
             this.grbDetail.TabIndex = 0;
             this.grbDetail.TabStop = false;
             this.grbDetail.Text = "Users Detail";
@@ -70,7 +74,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblTitleName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTitleID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblUserId, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(242, 33);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.RowCount = 4;
@@ -177,11 +181,21 @@
             this.lblUserId.TabIndex = 9;
             this.lblUserId.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(223, 218);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAccountDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 286);
+            this.ClientSize = new System.Drawing.Size(660, 267);
             this.Controls.Add(this.grbDetail);
             this.Name = "frmAccountDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -190,6 +204,7 @@
             this.grbDetail.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +221,6 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
