@@ -49,6 +49,8 @@
             this.tpBranch = new System.Windows.Forms.TabPage();
             this.tpProfile = new System.Windows.Forms.TabPage();
             this.tpChangePassword = new System.Windows.Forms.TabPage();
+            this.btnActive = new System.Windows.Forms.Button();
+            this.btnDeactivate = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.grid.SuspendLayout();
             this.gridHeaderContainer.SuspendLayout();
@@ -278,6 +280,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDeactivate);
+            this.panel1.Controls.Add(this.btnActive);
             this.panel1.Controls.Add(this.btnDetails);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -362,6 +366,30 @@
             this.tpChangePassword.Text = "change";
             this.tpChangePassword.UseVisualStyleBackColor = true;
             // 
+            // btnActive
+            // 
+            this.btnActive.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnActive.Location = new System.Drawing.Point(166, 17);
+            this.btnActive.Name = "btnActive";
+            this.btnActive.Size = new System.Drawing.Size(119, 47);
+            this.btnActive.TabIndex = 9;
+            this.btnActive.Text = "Active";
+            this.btnActive.UseVisualStyleBackColor = true;
+            this.btnActive.Click += new System.EventHandler(this.btnActive_Click);
+            // 
+            // btnDeactivate
+            // 
+            this.btnDeactivate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeactivate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDeactivate.Location = new System.Drawing.Point(31, 17);
+            this.btnDeactivate.Name = "btnDeactivate";
+            this.btnDeactivate.Size = new System.Drawing.Size(119, 47);
+            this.btnDeactivate.TabIndex = 10;
+            this.btnDeactivate.Text = "Restrict";
+            this.btnDeactivate.UseVisualStyleBackColor = true;
+            this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,5 +441,7 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnBranchManagement;
         private System.Windows.Forms.Button btnAccountManagement;
+        private System.Windows.Forms.Button btnDeactivate;
+        private System.Windows.Forms.Button btnActive;
     }
 }

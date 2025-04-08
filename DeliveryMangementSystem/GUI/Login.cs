@@ -51,7 +51,7 @@ namespace DeliveryMangementSystem
             {
                 if (CheckLogin().status == UserStatus.Inactive)
                 {
-                    MessageBox.Show("Tài khoản của bạn đã bị khóa", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else

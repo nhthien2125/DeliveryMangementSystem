@@ -21,10 +21,6 @@ namespace DeliveryMangementSystem._1.Models_Configer
             builder.Property(s => s.Email).IsRequired().HasMaxLength(100);
             builder.Property(s => s.Phone).IsRequired().HasMaxLength(10);
 
-            builder.HasMany(s => s.Orders)
-                .WithOne(o => o.Shipper)
-                .HasForeignKey(o => o.Shipper_ID)
-                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

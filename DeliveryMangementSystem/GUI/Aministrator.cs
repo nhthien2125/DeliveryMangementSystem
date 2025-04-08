@@ -13,6 +13,7 @@ namespace DeliveryMangementSystem.Forms
         //Attributes
         private readonly string Id;
 
+
         //Methods
         private void LoadDataGridViewAccounts()
         {
@@ -90,7 +91,6 @@ namespace DeliveryMangementSystem.Forms
         {
             tabControlAdmin.SelectedTab = tpAccount;
         }
-
         private void btnBranchManagement_Click(object sender, EventArgs e)
         {
             tabControlAdmin.SelectedTab = tpBranch;
@@ -105,7 +105,6 @@ namespace DeliveryMangementSystem.Forms
             tpChangePassword.Controls.Add(uC_ProfileChanger);
             uC_ProfileChanger.BringToFront();
         }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -169,6 +168,72 @@ namespace DeliveryMangementSystem.Forms
             else
             {
                 MessageBox.Show("Vui lòng chọn một tài khoản!");
+            }
+        }
+        private void btnDeactivate_Click(object sender, EventArgs e)
+        {
+            using (var db = new myDbContext())
+            {
+                if (dgvAccounts.SelectedRows.Count == 1)
+                {
+                    string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
+                    var account = db.Accounts.Find(accountId);
+                    if (account != null)
+                    {
+                        DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn vô hiệu hóa tài khoản {accountId}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            if (account.Status == UserStatus.Inactive)
+                            {
+                                MessageBox.Show("Tài khoản đã bị vô hiệu hóa!");
+                            }
+                            else
+                            {
+                                account.Status = UserStatus.Inactive;
+                                db.SaveChanges();
+                                LoadDataGridViewAccounts();
+                            }
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một tài khoản!");
+                }
+            }
+        }
+        private void btnActive_Click(object sender, EventArgs e)
+        {
+            using (var db = new myDbContext())
+            {
+                if (dgvAccounts.SelectedRows.Count == 1)
+                {
+                    string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
+                    var account = db.Accounts.Find(accountId);
+                    if (account != null)
+                    {
+                        DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn kích hoạt tài khoản {accountId}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            if (account.Status == UserStatus.Active)
+                            {
+                                MessageBox.Show("Tài khoản đã được kích hoạt!");
+                            }
+                            else
+                            {
+                                account.Status = UserStatus.Active;
+                                db.SaveChanges();
+                                LoadDataGridViewAccounts();
+                            }
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một tài khoản!");
+                }
             }
         }
     }

@@ -64,7 +64,7 @@ namespace DeliveryMangementSystem.GUI
                         {
                             var newAccount = new ACCOUNT
                             {
-                                Account_ID = _context.GenerateNewId(_context.Accounts, a => a.Account_ID, "SHP"),
+                                Account_ID = _context.GenerateNewId(_context.Accounts, a => a.Account_ID, "ACC"),
                                 Username = txtUsername.Text.Trim(),
                                 Password = txtPassword.Text.Trim(),
                                 Role = UserRole.Shipper

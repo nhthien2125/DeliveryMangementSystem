@@ -30,10 +30,12 @@ namespace DeliveryMangementSystem._1.Models_Configer
                 .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.Customer_ID)
                 .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasOne(o => o.Shipper)
                 .WithMany(s => s.Orders)
                 .HasForeignKey(o => o.Shipper_ID)
                 .OnDelete(DeleteBehavior.SetNull);
+
             builder.HasOne(o => o.Branch)
                 .WithMany(b => b.Orders)
                 .HasForeignKey(o => o.Branch_ID)

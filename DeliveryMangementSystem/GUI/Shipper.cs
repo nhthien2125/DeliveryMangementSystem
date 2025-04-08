@@ -375,7 +375,7 @@ namespace DeliveryMangementSystem.Forms
                     {
                         db.Shippers.Remove(shipper);
                     }
-
+                    this.Close();
                     db.SaveChanges();
                 }
                 else
