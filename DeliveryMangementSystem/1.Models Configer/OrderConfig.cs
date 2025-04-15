@@ -19,7 +19,7 @@ namespace DeliveryMangementSystem._1.Models_Configer
             builder.Property(o => o.Order_ID).HasMaxLength(10);
             builder.Property(o => o.Customer_ID).IsRequired().HasMaxLength(10);
             builder.Property(o => o.Shipper_ID).IsRequired(false).HasMaxLength(10);
-            builder.Property(o => o.Branch_ID).IsRequired().HasMaxLength(10);
+            builder.Property(o => o.Branch_ID).IsRequired(false).HasMaxLength(10);
             builder.Property(o => o.Status).IsRequired();
             builder.Property(o => o.Payment_Method).IsRequired();
             builder.Property(o => o.OrderDate).IsRequired();

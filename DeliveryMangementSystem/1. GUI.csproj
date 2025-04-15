@@ -176,11 +176,23 @@
     <Compile Include="GUI\AccountDetail.Designer.cs">
       <DependentUpon>AccountDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AddBranches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddBranches.Designer.cs">
+      <DependentUpon>AddBranches.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Aministrator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Aministrator.Designer.cs">
       <DependentUpon>Aministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditBranches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditBranches.Designer.cs">
+      <DependentUpon>EditBranches.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Reusable Control\UC_ProfileChanger.cs">
       <SubType>UserControl</SubType>
@@ -244,6 +256,10 @@
     <Compile Include="Migrations\20250405094243_v203.Designer.cs">
       <DependentUpon>20250405094243_v203.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250415134531_v204.cs" />
+    <Compile Include="Migrations\20250415134531_v204.Designer.cs">
+      <DependentUpon>20250415134531_v204.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\myDbContextModelSnapshot.cs" />
     <Compile Include="1.Models\ACCOUNT.cs" />
     <Compile Include="1.Models\BRANCH.cs" />
@@ -263,8 +279,14 @@
     <EmbeddedResource Include="GUI\AccountDetail.resx">
       <DependentUpon>AccountDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddBranches.resx">
+      <DependentUpon>AddBranches.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Aministrator.resx">
       <DependentUpon>Aministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditBranches.resx">
+      <DependentUpon>EditBranches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reusable Control\UC_ProfileChanger.resx">
       <DependentUpon>UC_ProfileChanger.cs</DependentUpon>

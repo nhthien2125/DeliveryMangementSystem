@@ -6,15 +6,37 @@ using System.Linq;
 using DeliveryMangementSystem.Forms.Reusable_Control;
 using Microsoft.EntityFrameworkCore;
 using DeliveryMangementSystem.Models;
+using DeliveryMangementSystem.GUI;
+using System.Drawing.Drawing2D;
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin : Form
     {
-        //Attributes
+        //Varriables
         private readonly string Id;
-
+        private ToolStripDropDown dropDown;
+        private Button btnAdd;
+        private Button btnEdit;
 
         //Methods
+        private void LoadDataGridViewBranches()
+        {
+            //Load ds chi nhánh vào datagridview
+            using (var db = new myDbContext())
+            {
+                var branches = db.Branches.Include(o => o.Orders).Select(b => new
+                {
+                    b.Branch_ID,
+                    b.Name,
+                    b.Address,
+                    NumberOfOrders = b.Orders.Count(),
+                    PendingOrders = b.Orders.Where(o => o.Status == OrderStatus.Pending).Count(),
+                    TotalAmount = b.Orders.Where(o => o.Status  == OrderStatus.Delivered).Sum(o => o.Total_Amount),
+                }).ToList();
+                dgvBranches.DataSource = branches;
+            }
+            FormatDataGridViewB();
+        }
         private void LoadDataGridViewAccounts()
         {
             //Load ds tài khoản vào datagridview
@@ -31,9 +53,9 @@ namespace DeliveryMangementSystem.Forms
                 dgvAccounts.DataSource = accounts;
          
             }
-            FormatDataGridView();
+            FormatDataGridViewA();
         }
-        private void FormatDataGridView()
+        private void FormatDataGridViewA()
         {
             dgvAccounts.AutoGenerateColumns = false;
             dgvAccounts.Columns.Clear();
@@ -67,6 +89,101 @@ namespace DeliveryMangementSystem.Forms
                 HeaderText = "Trạng thái tài khoản",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
+            dgvBranches.Font = new Font("Arial", 8);
+        } //for dgvAccounts
+        private void FormatDataGridViewB()
+        {
+            dgvBranches.AutoGenerateColumns = false;
+            dgvBranches.Columns.Clear();
+            dgvBranches.ReadOnly = true;
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Branch_ID",
+                DataPropertyName = "Branch_ID",
+                HeaderText = "Mã chi nhánh",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Name",
+                DataPropertyName = "Name",
+                HeaderText = "Tên chi nhánh",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Address",
+                DataPropertyName = "Address",
+                HeaderText = "Địa chỉ",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "NumberOfOrders",
+                DataPropertyName = "NumberOfOrders",
+                HeaderText = "Tổng số đơn hàng",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "PendingOrders",
+                DataPropertyName = "PendingOrders",
+                HeaderText = "Số đơn hàng đang chờ xử lý",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TotalAmount",
+                DataPropertyName = "TotalAmount",
+                HeaderText = "Tổng doanh thu",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+            });
+            dgvBranches.Font = new Font("Arial", 8);
+        } //for dgvBranches
+        private void CustomizedMenuManager()
+        {
+            //Dropdown 
+            dropDown = new ToolStripDropDown();
+
+            btnAdd = new Button
+            {
+                Text = "Thêm",
+                Dock = DockStyle.Top,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.Black
+            };
+            btnAdd.Click += (s, e) =>
+            {
+                var frm = new frmAddBranches();
+                frm.ShowDialog();
+                LoadDataGridViewBranches();
+            };
+            dropDown.Items.Add(new ToolStripControlHost(btnAdd));
+
+            btnEdit = new Button
+            {
+                Text = "Sửa",
+                Dock = DockStyle.Top,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.Black
+            };
+            btnEdit.Click += (s, e) =>
+            {
+                if (dgvBranches.SelectedRows.Count == 1)
+                {
+                    string branchId = dgvBranches.SelectedRows[0].Cells["Branch_ID"].Value.ToString();
+                    var frm = new frmEditBranches(branchId);
+                    frm.ShowDialog();
+                    LoadDataGridViewBranches();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một chi nhánh!");
+                }
+            };
+            dropDown.Items.Add(new ToolStripControlHost(btnEdit));
+
+            tsbMenuManager.DropDown = dropDown;
         }
 
 
@@ -76,6 +193,7 @@ namespace DeliveryMangementSystem.Forms
             InitializeComponent();
             this.Id = id;
             LoadDataGridViewAccounts();
+            LoadDataGridViewBranches();
         }
         private void frmAdmin_Load_1(object sender, EventArgs e)
         {
@@ -83,6 +201,8 @@ namespace DeliveryMangementSystem.Forms
             tabControlAdmin.SizeMode = TabSizeMode.Fixed;
             tabControlAdmin.ItemSize = new Size(0, 1); // Thu nhỏ tab để ẩn tiêu đề
             tabControlAdmin.Multiline = true;
+
+            CustomizedMenuManager();
         }
 
 
@@ -145,7 +265,9 @@ namespace DeliveryMangementSystem.Forms
                 string accountId = dgvAccounts.SelectedRows[0].Cells["ID"].Value.ToString();
                 using (var db = new myDbContext())
                 {
-                    var account = db.Accounts.Find(accountId);
+                    var account = db.Accounts
+                        .Include(a => a.Shipper)
+                        .FirstOrDefault(a => a.Account_ID == accountId);
                     if (account != null)
                     {
                         DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản {accountId}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -157,6 +279,14 @@ namespace DeliveryMangementSystem.Forms
                             }
                             else
                             {
+                                var orders = db.Orders.Where(o => o.Shipper_ID == account.S_ID).ToList();
+                                foreach (var order in orders)
+                                {
+                                    order.Status = OrderStatus.Pending;
+                                    order.Shipper_ID = null;
+                                }
+
+                                db.Shippers.Remove(account.Shipper);
                                 db.Accounts.Remove(account);
                                 db.SaveChanges();
                                 LoadDataGridViewAccounts();
@@ -234,6 +364,90 @@ namespace DeliveryMangementSystem.Forms
                 {
                     MessageBox.Show("Vui lòng chọn một tài khoản!");
                 }
+            }
+        }
+        private void dgvBranches_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (var db = new myDbContext())
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex <= 1)
+                {
+                    var detailsOrder = db.Orders
+                        .Include(o => o.Shipper)
+                        .Include(o => o.Customer)
+                        .Where(o => o.Branch_ID == dgvBranches.Rows[e.RowIndex].Cells["Branch_ID"].Value.ToString())
+                        .OrderByDescending(o => o.Status)
+                        .Select(o => new
+                        {
+                            o.Order_ID,
+                            o.Customer.Name,
+                            Shipper = o.Shipper_ID != null ? o.Shipper.Name : "Chưa phân công",
+                            o.OrderDate,
+                            o.Delivery_Date,
+                            o.Total_Amount,
+                            o.Status
+                        }).ToList();
+
+
+                    dgvDetails.DataSource = detailsOrder;
+                    lblDetails.Text = "Chi tiết đơn hàng của " + dgvBranches.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+                }
+
+                //Format 
+                dgvDetails.AutoGenerateColumns = false;
+                dgvDetails.Columns.Clear();
+                dgvDetails.ReadOnly = true;
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Order_ID",
+                    DataPropertyName = "Order_ID",
+                    HeaderText = "Mã đơn hàng",
+                    Width = 80
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Name",
+                    DataPropertyName = "Name",
+                    HeaderText = "Tên khách hàng",
+                    Width = 80
+
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Shipper",
+                    DataPropertyName = "Shipper",
+                    HeaderText = "Shipper",
+                    Width = 80
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "OrderDate",
+                    DataPropertyName = "OrderDate",
+                    HeaderText = "Ngày đặt hàng",
+                    Width = 80
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Delivery_Date",
+                    DataPropertyName = "Delivery_Date",
+                    HeaderText = "Ngày giao hàng",
+                    Width = 80
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Total_Amount",
+                    DataPropertyName = "Total_Amount",
+                    HeaderText = "Tổng tiền",
+                    Width = 80
+                });
+                dgvDetails.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    Name = "Status",
+                    DataPropertyName = "Status",
+                    HeaderText = "Trạng thái",
+                    Width = 80
+                });
+                dgvDetails.Font = new Font("Arial", 10);
             }
         }
     }

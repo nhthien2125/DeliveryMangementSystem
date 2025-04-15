@@ -56,7 +56,7 @@ namespace DeliveryMangementSystem
                 }
                 else
                 {
-                    Hide();
+                    this.Hide();
                     switch (CheckLogin().role)
                     {
                         case UserRole.Admin:
@@ -69,7 +69,7 @@ namespace DeliveryMangementSystem
                             break;
                     }
                     txtPassword.Clear();
-                    Show();
+                    this.Show();
                 }
             }
             else

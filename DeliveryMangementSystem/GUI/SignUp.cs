@@ -82,8 +82,8 @@ namespace DeliveryMangementSystem.GUI
                             _context.SaveChanges();
                             MessageBox.Show("Đăng ký thành công!");
                             this.DialogResult = DialogResult.OK;
-                            var newFID = _context.GenerateNewId(_context.Accounts, a => a.S_ID, "SHIPPER");
-                            newAccount.S_ID = newFID;
+                            var newFKID = _context.GenerateNewId(_context.Accounts, a => a.S_ID, "SHIPPER");
+                            newAccount.S_ID = newFKID;
                             _context.SaveChanges();
                         }
                     }
