@@ -188,11 +188,17 @@
     <Compile Include="GUI\Aministrator.Designer.cs">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EditBranches.cs">
-      <SubType>Form</SubType>
+    <Compile Include="GUI\Reusable Control\UC_AssignOrder.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\EditBranches.Designer.cs">
-      <DependentUpon>EditBranches.cs</DependentUpon>
+    <Compile Include="GUI\Reusable Control\UC_AssignOrder.Designer.cs">
+      <DependentUpon>UC_AssignOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reusable Control\UC_BranchChanger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Reusable Control\UC_BranchChanger.Designer.cs">
+      <DependentUpon>UC_BranchChanger.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Reusable Control\UC_ProfileChanger.cs">
       <SubType>UserControl</SubType>
@@ -285,8 +291,11 @@
     <EmbeddedResource Include="GUI\Aministrator.resx">
       <DependentUpon>Aministrator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EditBranches.resx">
-      <DependentUpon>EditBranches.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Reusable Control\UC_AssignOrder.resx">
+      <DependentUpon>UC_AssignOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reusable Control\UC_BranchChanger.resx">
+      <DependentUpon>UC_BranchChanger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reusable Control\UC_ProfileChanger.resx">
       <DependentUpon>UC_ProfileChanger.cs</DependentUpon>

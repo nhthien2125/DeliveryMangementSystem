@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeliveryMangementSystem.Forms.Reusable_Control;
+using DeliveryMangementSystem.GUI.Reusable_Control;
 using DeliveryMangementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -117,6 +118,7 @@ namespace DeliveryMangementSystem.Forms
                 Width = 100
             });
 
+            //dgvOrders
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Id",
@@ -132,6 +134,7 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "Customer_ID",
                 DataPropertyName = "Customer_ID",
                 HeaderText = "Khách hàng",
                 Width = 100
@@ -346,7 +349,6 @@ namespace DeliveryMangementSystem.Forms
             }
             dgvOrders.DataSource = orders.ToList();
         }
-
         private void btnResetFilter_Click(object sender, EventArgs e)
         {
             LoadOrdersByShipperID();
@@ -383,6 +385,30 @@ namespace DeliveryMangementSystem.Forms
                     MessageBox.Show("Mật khẩu không đúng, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void btnCustomerDetails_Click(object sender, EventArgs e)
+        {
+            if (dgvOrders.SelectedRows.Count == 1)
+            {
+                string CusID = dgvOrders.SelectedRows[0].Cells["Customer_ID"].Value.ToString();
+                var customer = db.Customers.FirstOrDefault(o => o.Customer_ID == CusID);
+                if (customer != null)
+                {
+                    new frmAccountDetail(null, customer.Customer_ID).ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đơn hàng để xem thông tin khách hàng!");
+            }
+        }
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            UC_AssignOrder uc = new UC_AssignOrder(Shipper_Id);
+            uc.Dock = DockStyle.Fill;
+            panel6.Controls.Add(uc);
+            uc.BringToFront();
         }
     }
 }

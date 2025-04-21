@@ -38,13 +38,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tctrlShipper = new System.Windows.Forms.TabControl();
             this.tpProfile = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCompletedOrders = new System.Windows.Forms.DataGridView();
             this.tpOrderManagement = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAssign = new System.Windows.Forms.Button();
+            this.btnCustomerDetails = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbStatusFilter = new System.Windows.Forms.ToolStripDropDownButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,38 +74,30 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.pnlChangePassword = new System.Windows.Forms.Panel();
             this.pnlChange = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMail = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tctrlShipper.SuspendLayout();
             this.tpProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).BeginInit();
             this.tpOrderManagement.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tpChangePass.SuspendLayout();
             this.pnlDelAcc.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -193,7 +199,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(194, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(758, 493);
+            this.panel2.Size = new System.Drawing.Size(830, 493);
             this.panel2.TabIndex = 1;
             // 
             // tctrlShipper
@@ -205,7 +211,7 @@
             this.tctrlShipper.Location = new System.Drawing.Point(0, 0);
             this.tctrlShipper.Name = "tctrlShipper";
             this.tctrlShipper.SelectedIndex = 0;
-            this.tctrlShipper.Size = new System.Drawing.Size(758, 493);
+            this.tctrlShipper.Size = new System.Drawing.Size(830, 493);
             this.tctrlShipper.TabIndex = 0;
             // 
             // tpProfile
@@ -221,261 +227,15 @@
             this.tpProfile.TabIndex = 4;
             this.tpProfile.Text = "pro5";
             // 
-            // tableLayoutPanel6
+            // pictureBox1
             // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 249);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(747, 212);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Đơn hàng đã hoàn thành:";
-            // 
-            // dgvCompletedOrders
-            // 
-            this.dgvCompletedOrders.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dgvCompletedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompletedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCompletedOrders.Location = new System.Drawing.Point(3, 26);
-            this.dgvCompletedOrders.Name = "dgvCompletedOrders";
-            this.dgvCompletedOrders.RowHeadersWidth = 51;
-            this.dgvCompletedOrders.RowTemplate.Height = 24;
-            this.dgvCompletedOrders.Size = new System.Drawing.Size(741, 183);
-            this.dgvCompletedOrders.TabIndex = 2;
-            // 
-            // tpOrderManagement
-            // 
-            this.tpOrderManagement.Controls.Add(this.tableLayoutPanel1);
-            this.tpOrderManagement.Location = new System.Drawing.Point(4, 25);
-            this.tpOrderManagement.Name = "tpOrderManagement";
-            this.tpOrderManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOrderManagement.Size = new System.Drawing.Size(749, 476);
-            this.tpOrderManagement.TabIndex = 3;
-            this.tpOrderManagement.Text = "Orrder";
-            this.tpOrderManagement.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.53754F));
-            this.tableLayoutPanel1.Controls.Add(this.dgvOrders, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(743, 470);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrders.Location = new System.Drawing.Point(3, 3);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.RowHeadersWidth = 51;
-            this.dgvOrders.RowTemplate.Height = 24;
-            this.dgvOrders.Size = new System.Drawing.Size(737, 323);
-            this.dgvOrders.TabIndex = 0;
-            this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 4;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.toolStrip1, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.panel4, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 332);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(737, 135);
-            this.tableLayoutPanel7.TabIndex = 2;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbStatusFilter});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(184, 27);
-            this.toolStrip1.TabIndex = 10;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbStatusFilter
-            // 
-            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
-            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbStatusFilter.Name = "tsbStatusFilter";
-            this.tsbStatusFilter.Size = new System.Drawing.Size(121, 24);
-            this.tsbStatusFilter.Text = "📶Status Filter";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Controls.Add(this.cbbStatus);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(555, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(179, 129);
-            this.panel4.TabIndex = 5;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(20, 56);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(142, 45);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Cập nhật";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbbStatus
-            // 
-            this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(20, 25);
-            this.cbbStatus.Name = "cbbStatus";
-            this.cbbStatus.Size = new System.Drawing.Size(143, 24);
-            this.cbbStatus.TabIndex = 1;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbPaymentFilter});
-            this.toolStrip2.Location = new System.Drawing.Point(184, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(184, 27);
-            this.toolStrip2.TabIndex = 9;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // tsbPaymentFilter
-            // 
-            this.tsbPaymentFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbPaymentFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaymentFilter.Image")));
-            this.tsbPaymentFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPaymentFilter.Name = "tsbPaymentFilter";
-            this.tsbPaymentFilter.Size = new System.Drawing.Size(137, 24);
-            this.tsbPaymentFilter.Text = "💳Payment Filter";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnResetFilter);
-            this.panel3.Controls.Add(this.btnApply);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(371, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 129);
-            this.panel3.TabIndex = 11;
-            // 
-            // btnResetFilter
-            // 
-            this.btnResetFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnResetFilter.Location = new System.Drawing.Point(18, 14);
-            this.btnResetFilter.Name = "btnResetFilter";
-            this.btnResetFilter.Size = new System.Drawing.Size(142, 45);
-            this.btnResetFilter.TabIndex = 3;
-            this.btnResetFilter.Text = "Xóa bộ lọc";
-            this.btnResetFilter.UseVisualStyleBackColor = true;
-            this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
-            // 
-            // btnApply
-            // 
-            this.btnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnApply.Location = new System.Drawing.Point(18, 68);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(142, 45);
-            this.btnApply.TabIndex = 2;
-            this.btnApply.Text = "Áp dụng lọc";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click_1);
-            // 
-            // tpChangePass
-            // 
-            this.tpChangePass.Controls.Add(this.pnlDelAcc);
-            this.tpChangePass.Controls.Add(this.pnlChangePassword);
-            this.tpChangePass.Controls.Add(this.pnlChange);
-            this.tpChangePass.Location = new System.Drawing.Point(4, 25);
-            this.tpChangePass.Name = "tpChangePass";
-            this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChangePass.Size = new System.Drawing.Size(750, 464);
-            this.tpChangePass.TabIndex = 5;
-            this.tpChangePass.Text = "Change";
-            this.tpChangePass.UseVisualStyleBackColor = true;
-            // 
-            // pnlDelAcc
-            // 
-            this.pnlDelAcc.BackColor = System.Drawing.Color.White;
-            this.pnlDelAcc.Controls.Add(this.btnDelete);
-            this.pnlDelAcc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDelAcc.Location = new System.Drawing.Point(3, 327);
-            this.pnlDelAcc.Name = "pnlDelAcc";
-            this.pnlDelAcc.Size = new System.Drawing.Size(744, 134);
-            this.pnlDelAcc.TabIndex = 2;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnDelete.Location = new System.Drawing.Point(259, 29);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(226, 76);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "☢️ Xóa Tài Khoản ☢️";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // pnlChangePassword
-            // 
-            this.pnlChangePassword.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChangePassword.Location = new System.Drawing.Point(3, 3);
-            this.pnlChangePassword.Name = "pnlChangePassword";
-            this.pnlChangePassword.Size = new System.Drawing.Size(744, 339);
-            this.pnlChangePassword.TabIndex = 1;
-            // 
-            // pnlChange
-            // 
-            this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChange.Location = new System.Drawing.Point(3, 3);
-            this.pnlChange.Name = "pnlChange";
-            this.pnlChange.Size = new System.Drawing.Size(744, 458);
-            this.pnlChange.TabIndex = 0;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(213, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel5
             // 
@@ -612,21 +372,308 @@
             this.lblPhone.TabIndex = 6;
             this.lblPhone.Text = "label5";
             // 
-            // pictureBox1
+            // tableLayoutPanel6
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 233);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.dgvCompletedOrders, 0, 1);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 249);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(747, 212);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 23);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Đơn hàng đã hoàn thành:";
+            // 
+            // dgvCompletedOrders
+            // 
+            this.dgvCompletedOrders.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvCompletedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompletedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompletedOrders.Location = new System.Drawing.Point(3, 26);
+            this.dgvCompletedOrders.Name = "dgvCompletedOrders";
+            this.dgvCompletedOrders.RowHeadersWidth = 51;
+            this.dgvCompletedOrders.RowTemplate.Height = 24;
+            this.dgvCompletedOrders.Size = new System.Drawing.Size(741, 183);
+            this.dgvCompletedOrders.TabIndex = 2;
+            // 
+            // tpOrderManagement
+            // 
+            this.tpOrderManagement.Controls.Add(this.tableLayoutPanel1);
+            this.tpOrderManagement.Location = new System.Drawing.Point(4, 25);
+            this.tpOrderManagement.Name = "tpOrderManagement";
+            this.tpOrderManagement.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOrderManagement.Size = new System.Drawing.Size(822, 464);
+            this.tpOrderManagement.TabIndex = 3;
+            this.tpOrderManagement.Text = "Orrder";
+            this.tpOrderManagement.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.53754F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(816, 458);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 5;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.88618F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0542F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.88618F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.13821F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.89973F));
+            this.tableLayoutPanel7.Controls.Add(this.panel5, 4, 0);
+            this.tableLayoutPanel7.Controls.Add(this.toolStrip1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel4, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.toolStrip2, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel3, 2, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 325);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(810, 130);
+            this.tableLayoutPanel7.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnAssign);
+            this.panel5.Controls.Add(this.btnCustomerDetails);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(626, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(181, 124);
+            this.panel5.TabIndex = 12;
+            // 
+            // btnAssign
+            // 
+            this.btnAssign.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAssign.Location = new System.Drawing.Point(28, 67);
+            this.btnAssign.Name = "btnAssign";
+            this.btnAssign.Size = new System.Drawing.Size(124, 45);
+            this.btnAssign.TabIndex = 2;
+            this.btnAssign.Text = "Nhận đơn mới";
+            this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
+            // 
+            // btnCustomerDetails
+            // 
+            this.btnCustomerDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomerDetails.Location = new System.Drawing.Point(28, 13);
+            this.btnCustomerDetails.Name = "btnCustomerDetails";
+            this.btnCustomerDetails.Size = new System.Drawing.Size(124, 45);
+            this.btnCustomerDetails.TabIndex = 1;
+            this.btnCustomerDetails.Text = "Thông tin khách hàng";
+            this.btnCustomerDetails.UseVisualStyleBackColor = true;
+            this.btnCustomerDetails.Click += new System.EventHandler(this.btnCustomerDetails_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbStatusFilter});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(145, 27);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbStatusFilter
+            // 
+            this.tsbStatusFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbStatusFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbStatusFilter.Image")));
+            this.tsbStatusFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbStatusFilter.Name = "tsbStatusFilter";
+            this.tsbStatusFilter.Size = new System.Drawing.Size(121, 24);
+            this.tsbStatusFilter.Text = "📶Status Filter";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.cbbStatus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(455, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(165, 124);
+            this.panel4.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.Location = new System.Drawing.Point(20, 61);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 45);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Cập nhật";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbbStatus.FormattingEnabled = true;
+            this.cbbStatus.Location = new System.Drawing.Point(20, 19);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(124, 24);
+            this.cbbStatus.TabIndex = 1;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbPaymentFilter});
+            this.toolStrip2.Location = new System.Drawing.Point(145, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(162, 27);
+            this.toolStrip2.TabIndex = 9;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // tsbPaymentFilter
+            // 
+            this.tsbPaymentFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbPaymentFilter.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaymentFilter.Image")));
+            this.tsbPaymentFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPaymentFilter.Name = "tsbPaymentFilter";
+            this.tsbPaymentFilter.Size = new System.Drawing.Size(137, 24);
+            this.tsbPaymentFilter.Text = "💳Payment Filter";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnResetFilter);
+            this.panel3.Controls.Add(this.btnApply);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(310, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(139, 124);
+            this.panel3.TabIndex = 11;
+            // 
+            // btnResetFilter
+            // 
+            this.btnResetFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnResetFilter.Location = new System.Drawing.Point(26, 11);
+            this.btnResetFilter.Name = "btnResetFilter";
+            this.btnResetFilter.Size = new System.Drawing.Size(88, 45);
+            this.btnResetFilter.TabIndex = 3;
+            this.btnResetFilter.Text = "Xóa bộ lọc";
+            this.btnResetFilter.UseVisualStyleBackColor = true;
+            this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnApply.Location = new System.Drawing.Point(26, 65);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(88, 45);
+            this.btnApply.TabIndex = 2;
+            this.btnApply.Text = "Áp dụng lọc";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click_1);
+            // 
+            // tpChangePass
+            // 
+            this.tpChangePass.Controls.Add(this.pnlDelAcc);
+            this.tpChangePass.Controls.Add(this.pnlChangePassword);
+            this.tpChangePass.Controls.Add(this.pnlChange);
+            this.tpChangePass.Location = new System.Drawing.Point(4, 25);
+            this.tpChangePass.Name = "tpChangePass";
+            this.tpChangePass.Padding = new System.Windows.Forms.Padding(3);
+            this.tpChangePass.Size = new System.Drawing.Size(750, 464);
+            this.tpChangePass.TabIndex = 5;
+            this.tpChangePass.Text = "Change";
+            this.tpChangePass.UseVisualStyleBackColor = true;
+            // 
+            // pnlDelAcc
+            // 
+            this.pnlDelAcc.BackColor = System.Drawing.Color.White;
+            this.pnlDelAcc.Controls.Add(this.btnDelete);
+            this.pnlDelAcc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDelAcc.Location = new System.Drawing.Point(3, 327);
+            this.pnlDelAcc.Name = "pnlDelAcc";
+            this.pnlDelAcc.Size = new System.Drawing.Size(744, 134);
+            this.pnlDelAcc.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnDelete.Location = new System.Drawing.Point(259, 29);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(226, 76);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "☢️ Xóa Tài Khoản ☢️";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // pnlChangePassword
+            // 
+            this.pnlChangePassword.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlChangePassword.Location = new System.Drawing.Point(3, 3);
+            this.pnlChangePassword.Name = "pnlChangePassword";
+            this.pnlChangePassword.Size = new System.Drawing.Size(744, 339);
+            this.pnlChangePassword.TabIndex = 1;
+            // 
+            // pnlChange
+            // 
+            this.pnlChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChange.Location = new System.Drawing.Point(3, 3);
+            this.pnlChange.Name = "pnlChange";
+            this.pnlChange.Size = new System.Drawing.Size(744, 458);
+            this.pnlChange.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dgvOrders);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(810, 316);
+            this.panel6.TabIndex = 3;
+            // 
+            // dgvOrders
+            // 
+            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrders.Location = new System.Drawing.Point(0, 0);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.RowHeadersWidth = 51;
+            this.dgvOrders.RowTemplate.Height = 24;
+            this.dgvOrders.Size = new System.Drawing.Size(810, 316);
+            this.dgvOrders.TabIndex = 1;
             // 
             // frmShipper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 493);
+            this.ClientSize = new System.Drawing.Size(1024, 493);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmShipper";
@@ -638,14 +685,19 @@
             this.panel2.ResumeLayout(false);
             this.tctrlShipper.ResumeLayout(false);
             this.tpProfile.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompletedOrders)).EndInit();
             this.tpOrderManagement.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -654,11 +706,8 @@
             this.panel3.ResumeLayout(false);
             this.tpChangePass.ResumeLayout(false);
             this.pnlDelAcc.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +719,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tctrlShipper;
         private System.Windows.Forms.TabPage tpOrderManagement;
-        private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnProfile;
@@ -708,5 +756,10 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnAssign;
+        private System.Windows.Forms.Button btnCustomerDetails;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dgvOrders;
     }
 }

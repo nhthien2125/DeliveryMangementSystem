@@ -7,16 +7,19 @@ using DeliveryMangementSystem.Forms.Reusable_Control;
 using Microsoft.EntityFrameworkCore;
 using DeliveryMangementSystem.Models;
 using DeliveryMangementSystem.GUI;
-using System.Drawing.Drawing2D;
+using DeliveryMangementSystem.GUI.Reusable_Control;
+using System.IdentityModel.Protocols.WSTrust;
 namespace DeliveryMangementSystem.Forms
 {
     public partial class frmAdmin : Form
     {
         //Varriables
         private readonly string Id;
-        private ToolStripDropDown dropDown;
+        private ToolStripDropDown managementDropDown;
         private Button btnAdd;
         private Button btnEdit;
+        private Button btnDeleteBranch;
+
 
         //Methods
         private void LoadDataGridViewBranches()
@@ -32,6 +35,7 @@ namespace DeliveryMangementSystem.Forms
                     NumberOfOrders = b.Orders.Count(),
                     PendingOrders = b.Orders.Where(o => o.Status == OrderStatus.Pending).Count(),
                     TotalAmount = b.Orders.Where(o => o.Status  == OrderStatus.Delivered).Sum(o => o.Total_Amount),
+                    Status = b.Orders.Count() > 0 ? "Đang hoạt động" : "Ngừng hoạt động"
                 }).ToList();
                 dgvBranches.DataSource = branches;
             }
@@ -138,12 +142,20 @@ namespace DeliveryMangementSystem.Forms
                 HeaderText = "Tổng doanh thu",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
             });
+            dgvBranches.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Status",
+                DataPropertyName = "Status",
+                HeaderText = "Tình trạng hoạt động",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
             dgvBranches.Font = new Font("Arial", 8);
         } //for dgvBranches
+
         private void CustomizedMenuManager()
         {
             //Dropdown 
-            dropDown = new ToolStripDropDown();
+            managementDropDown = new ToolStripDropDown();
 
             btnAdd = new Button
             {
@@ -158,7 +170,6 @@ namespace DeliveryMangementSystem.Forms
                 frm.ShowDialog();
                 LoadDataGridViewBranches();
             };
-            dropDown.Items.Add(new ToolStripControlHost(btnAdd));
 
             btnEdit = new Button
             {
@@ -172,18 +183,63 @@ namespace DeliveryMangementSystem.Forms
                 if (dgvBranches.SelectedRows.Count == 1)
                 {
                     string branchId = dgvBranches.SelectedRows[0].Cells["Branch_ID"].Value.ToString();
-                    var frm = new frmEditBranches(branchId);
-                    frm.ShowDialog();
-                    LoadDataGridViewBranches();
+                    UC_BranchChanger uC_BranchChanger = new UC_BranchChanger(branchId)
+                    {
+                        Dock = DockStyle.Fill
+                    };
+                    pnlBranch.Controls.Add(uC_BranchChanger);
+                    uC_BranchChanger.BringToFront();
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn một chi nhánh!");
                 }
             };
-            dropDown.Items.Add(new ToolStripControlHost(btnEdit));
 
-            tsbMenuManager.DropDown = dropDown;
+            btnDeleteBranch = new Button
+            {
+                Text = "Xóa",
+                Dock = DockStyle.Top,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.Black
+            };
+            btnDeleteBranch.Click += (s, e) =>
+            {
+                if (dgvBranches.SelectedRows.Count == 1)
+                {
+                    string branchId = dgvBranches.SelectedRows[0].Cells["Branch_ID"].Value.ToString();
+                    using (var db = new myDbContext())
+                    {
+                        var branch = db.Branches.Include(o => o.Orders).FirstOrDefault(o => o.Branch_ID == branchId);
+                        if (branch != null)
+                        {
+                            if (branch.Orders.Count() > 0)
+                            {
+                                MessageBox.Show("Chi nhánh này đang hoạt động, không thể xóa!");
+                            }
+                            else
+                            {
+                                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa chi nhánh {branchId}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (result == DialogResult.Yes)
+                                {
+                                    db.Branches.Remove(branch);
+                                    db.SaveChanges();
+                                    LoadDataGridViewBranches();
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một chi nhánh!");
+                }
+            };
+            managementDropDown.Items.Add(new ToolStripControlHost(btnAdd));
+            managementDropDown.Items.Add(new ToolStripControlHost(btnEdit));
+            managementDropDown.Items.Add(new ToolStripControlHost(btnDeleteBranch));
+
+            tsmMenuManagement.DropDown = managementDropDown;
         }
 
 
@@ -247,7 +303,7 @@ namespace DeliveryMangementSystem.Forms
                         var shipper = db.Shippers.Find(account.S_ID);
                         if (shipper != null)
                         {
-                            var frm = new frmAccountDetail(shipper.Shipper_ID);
+                            var frm = new frmAccountDetail(shipper.Shipper_ID, null);
                             frm.ShowDialog();
                         }
                     }
@@ -450,5 +506,6 @@ namespace DeliveryMangementSystem.Forms
                 dgvDetails.Font = new Font("Arial", 10);
             }
         }
+
     }
 }

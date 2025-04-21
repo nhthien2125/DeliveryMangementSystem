@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountDetail));
             this.grbDetail = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,10 +40,9 @@
             this.lblTitleName = new System.Windows.Forms.Label();
             this.lblTitleID = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbDetail.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbDetail
@@ -58,7 +58,17 @@
             this.grbDetail.Size = new System.Drawing.Size(660, 267);
             this.grbDetail.TabIndex = 0;
             this.grbDetail.TabStop = false;
-            this.grbDetail.Text = "Users Detail";
+            this.grbDetail.Text = "Thông tin chi tiết";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(223, 218);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -138,9 +148,9 @@
             this.lblTitleRole.Location = new System.Drawing.Point(9, 115);
             this.lblTitleRole.Name = "lblTitleRole";
             this.lblTitleRole.Padding = new System.Windows.Forms.Padding(5);
-            this.lblTitleRole.Size = new System.Drawing.Size(85, 35);
+            this.lblTitleRole.Size = new System.Drawing.Size(111, 35);
             this.lblTitleRole.TabIndex = 8;
-            this.lblTitleRole.Text = "Phone:";
+            this.lblTitleRole.Text = "SĐ.Thoại:";
             this.lblTitleRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitleName
@@ -152,9 +162,9 @@
             this.lblTitleName.Location = new System.Drawing.Point(9, 64);
             this.lblTitleName.Name = "lblTitleName";
             this.lblTitleName.Padding = new System.Windows.Forms.Padding(5);
-            this.lblTitleName.Size = new System.Drawing.Size(80, 35);
+            this.lblTitleName.Size = new System.Drawing.Size(93, 35);
             this.lblTitleName.TabIndex = 2;
-            this.lblTitleName.Text = "Name:";
+            this.lblTitleName.Text = "Họ Tên:";
             this.lblTitleName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitleID
@@ -181,16 +191,6 @@
             this.lblUserId.TabIndex = 9;
             this.lblUserId.Text = "label1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 218);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmAccountDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,9 +202,9 @@
             this.Text = "AccountDetail";
             this.Load += new System.EventHandler(this.frmAccountDetail_Load_1);
             this.grbDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

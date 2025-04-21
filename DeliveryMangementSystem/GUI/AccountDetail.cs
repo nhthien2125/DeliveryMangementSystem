@@ -17,23 +17,43 @@ namespace DeliveryMangementSystem.Forms
     public partial class frmAccountDetail : Form
     {
         private readonly string ShipperID;
-        public frmAccountDetail(string S_Id)
+        private readonly string CustomerID;
+        public frmAccountDetail(string S_Id,string C_Id)
         {
             InitializeComponent();
             ShipperID = S_Id;
+            CustomerID = C_Id;
         }
 
         private void frmAccountDetail_Load_1(object sender, EventArgs e)
         {
-            using (var db = new myDbContext())
+            if (CustomerID == null)
             {
-                var shipper = db.Shippers.Find(ShipperID);
-                if (shipper != null)
+                using (var db = new myDbContext())
                 {
-                    lblUserId.Text = shipper.Shipper_ID.ToString();
-                    lblName.Text = shipper.Name;
-                    lblPhone.Text = shipper.Phone;
-                    lblMail.Text = shipper.Email;
+                    var shipper = db.Shippers.Find(ShipperID);
+                    if (shipper != null)
+                    {
+                        lblUserId.Text = shipper.Shipper_ID.ToString();
+                        lblName.Text = shipper.Name;
+                        lblPhone.Text = shipper.Phone;
+                        lblMail.Text = shipper.Email;
+                    }
+                }
+            }
+            else if (ShipperID == null)
+            {
+                using (var db = new myDbContext())
+                {
+                    var customer = db.Customers.Find(CustomerID);
+                    if (customer != null)
+                    {
+                        lblUserId.Text = customer.Customer_ID.ToString();
+                        lblName.Text = customer.Name;
+                        lblPhone.Text = customer.Phone;
+                        label1.Text = "Địa chỉ";
+                        lblMail.Text = customer.Address;
+                    }
                 }
             }
         }
