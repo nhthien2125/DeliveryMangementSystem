@@ -55,13 +55,13 @@
             this.tpChangePassword = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.gridHeaderContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.nameBrandM = new System.Windows.Forms.Label();
             this.iconBrand = new System.Windows.Forms.PictureBox();
             this.tlpNav = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnBranchManagement = new System.Windows.Forms.Button();
             this.btnAccountManagement = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             this.tabControlAdmin.SuspendLayout();
             this.tpAccount.SuspendLayout();
@@ -327,7 +327,7 @@
             // tsmMenuManagement
             // 
             this.tsmMenuManagement.Name = "tsmMenuManagement";
-            this.tsmMenuManagement.Size = new System.Drawing.Size(224, 28);
+            this.tsmMenuManagement.Size = new System.Drawing.Size(196, 28);
             this.tsmMenuManagement.Text = "&Management";
             // 
             // pnlDetailsOrder
@@ -392,10 +392,10 @@
             // 
             this.gridHeaderContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridHeaderContainer.ColumnCount = 2;
-            this.gridHeaderContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.04833F));
-            this.gridHeaderContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.95168F));
-            this.gridHeaderContainer.Controls.Add(this.nameBrandM, 1, 1);
+            this.gridHeaderContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.8209F));
+            this.gridHeaderContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.17911F));
             this.gridHeaderContainer.Controls.Add(this.iconBrand, 0, 1);
+            this.gridHeaderContainer.Controls.Add(this.label1, 1, 1);
             this.gridHeaderContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridHeaderContainer.Location = new System.Drawing.Point(11, 20);
             this.gridHeaderContainer.Margin = new System.Windows.Forms.Padding(11, 20, 11, 10);
@@ -407,28 +407,17 @@
             this.gridHeaderContainer.Size = new System.Drawing.Size(268, 93);
             this.gridHeaderContainer.TabIndex = 4;
             // 
-            // nameBrandM
-            // 
-            this.nameBrandM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nameBrandM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nameBrandM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.nameBrandM.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.nameBrandM.Location = new System.Drawing.Point(64, 17);
-            this.nameBrandM.Name = "nameBrandM";
-            this.nameBrandM.Size = new System.Drawing.Size(143, 58);
-            this.nameBrandM.TabIndex = 1;
-            this.nameBrandM.Text = "TL Delivery";
-            // 
             // iconBrand
             // 
             this.iconBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.iconBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.iconBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconBrand.Location = new System.Drawing.Point(3, 19);
+            this.iconBrand.Image = ((System.Drawing.Image)(resources.GetObject("iconBrand.Image")));
+            this.iconBrand.Location = new System.Drawing.Point(3, 2);
             this.iconBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBrand.Name = "iconBrand";
-            this.iconBrand.Size = new System.Drawing.Size(55, 55);
-            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconBrand.Size = new System.Drawing.Size(90, 89);
+            this.iconBrand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconBrand.TabIndex = 2;
             this.iconBrand.TabStop = false;
             // 
@@ -516,6 +505,18 @@
             this.btnAccountManagement.UseVisualStyleBackColor = false;
             this.btnAccountManagement.Click += new System.EventHandler(this.btnAccountManagement_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(109, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 29);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "TL Delivery";
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -548,6 +549,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.gridHeaderContainer.ResumeLayout(false);
+            this.gridHeaderContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBrand)).EndInit();
             this.tlpNav.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -577,7 +579,6 @@
         private System.Windows.Forms.Button btnDeactivate;
         private System.Windows.Forms.Button btnActive;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label nameBrandM;
         private System.Windows.Forms.TabPage tpBranch;
         private System.Windows.Forms.Panel pnlBranch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -590,5 +591,6 @@
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.DataGridView dgvDetails;
         private System.Windows.Forms.ToolStripMenuItem tsmMenuManagement;
+        private System.Windows.Forms.Label label1;
     }
 }

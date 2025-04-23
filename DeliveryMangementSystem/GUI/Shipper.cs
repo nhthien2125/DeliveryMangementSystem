@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeliveryMangementSystem.Forms.Reusable_Control;
 using DeliveryMangementSystem.GUI.Reusable_Control;
@@ -14,9 +11,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DeliveryMangementSystem.Forms
 {
-    public partial class frmShipper: Form
+    public partial class frmShipper : Form
     {
-        
+
         //Attributes
         private readonly string Account_Id;
         private readonly string Shipper_Id;
@@ -82,6 +79,7 @@ namespace DeliveryMangementSystem.Forms
             });
             dgvCompletedOrders.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "Customer_ID",
                 DataPropertyName = "Customer_ID",
                 HeaderText = "Khách hàng",
                 Width = 100
@@ -213,7 +211,7 @@ namespace DeliveryMangementSystem.Forms
             clbPaymentFilter.ItemCheck += clbPaymentFilter_ItemCheck;
 
             tsbPaymentFilter.DropDown = dropDown;
-            
+
         }
         //constructor
         public frmShipper(string A_id, string S_id)
@@ -241,7 +239,7 @@ namespace DeliveryMangementSystem.Forms
             // hiding tab headers
             tctrlShipper.Appearance = TabAppearance.FlatButtons;
             tctrlShipper.SizeMode = TabSizeMode.Fixed;
-            tctrlShipper.ItemSize = new Size(0, 1); 
+            tctrlShipper.ItemSize = new Size(0, 1);
             tctrlShipper.Multiline = true;
 
             CustomizedMenuStatusFilter();
@@ -299,7 +297,7 @@ namespace DeliveryMangementSystem.Forms
         }
         private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >=0)
+            if (e.RowIndex >= 0)
             {
                 using (var db = new myDbContext())
                 {
@@ -308,16 +306,16 @@ namespace DeliveryMangementSystem.Forms
                     cbbStatus.SelectedValue = order.Status;
                 }
             }
-        } 
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (dgvOrders.SelectedRows.Count ==1 )
+            if (dgvOrders.SelectedRows.Count == 1)
             {
                 using (var db = new myDbContext())
                 {
                     var order = db.Orders.Find(dgvOrders.SelectedRows[0].Cells[0].Value);
                     order.Status = (OrderStatus)cbbStatus.SelectedValue;
-                    
+
                     if (order.Status == OrderStatus.Delivered) order.Delivery_Date = DateTime.Now;
                     else order.Delivery_Date = null;
                     db.SaveChanges();
